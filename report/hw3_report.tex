@@ -76,8 +76,24 @@ Our paper is organized as follows:
 For our codes we use NERSC's Edison machine. The machine has 5,576 compute nodes. Each node has 64GB DDR3 1866\,MHz RAM and two sockets, each of which is populated with a 12-core Intel ``Ivy Bridge" processor running at 2.4\,GHz. Each core has one or two user threads, a 256 bit vector unit, and is nominally capable of 19.2 Gflops. Notably, for our purposes, each core has its own L1 and L2 cache. The L1 cache has 64\,KB (32\,KB instruction cache, 32\,KB data) and the L2 cache has 256\,KB. The 12 cores collectively share a 30\,MB L3 cache. The caches have a bandwidth of 100, 40, and 23 Gbyte/s, respectively.\footnote{\url{http://www.nersc.gov/users/computational-systems/edison/configuration/}} Both the L1 and L2 caches are 8-way and have a 64 byte line size.\footnote{\url{http://www.7-cpu.com/cpu/IvyBridge.html}} 
 
 
-\section{Serial Approach}
-Before coding up the particle dynamics in parallel, we describe the approach for shotgun denova genome assembly as written in serial. 
+\section{Generalized Serial Approach}
+Before coding up the genome assembly in parallel, we will first describe the approach for shotgun de nova genome assembly with a serial algorithm for comparison with setting up a UPC algorithm. Algorithm~\ref{serial} shows a cleaned up version of the main bulk of the code while Algorithms~\ref{packingDNAseq}- ~\ref{contig_generation} show the code used to define packing routines and structures for the kmers. Overall one can see that there are three parts to the code: (1) Initialization of kmer values and hash table memory, (2) De Bruijn Graph Construction, (3) De Bruijn Graph Traversal. 
+
+The code takes the input to be a set of unique k-mers along with their corresponding forward and backward extensions. To denote start/terminating kmer for a contig, there is a possibility of an extension being a ``guard" extension F which is incorporated into the hash table. We assume that the unique kmers have already been screened for errors so that the first step of the algorithm is to read in the unique values and construct a hash table with keys equal to the kmer and values equal to the forward and backward extensions. As shown in Algorithm ~\ref{serial} the hash table is initialized with pre-allocated memory.  Within the graph construction step, the hash table is populated and a Start list is created to denote which Kmers will begin a contig. 
+
+After the hash table has been populated, the Graph Traversal step begins by looping through the kmer Start list, which provides a ``seed" for the contigs that are created. Each traversal seed is added onto by appending the  the forward extension to the last n-1 k-mer values (where n is the kmer length defined in ~\ref{contig_generation}) and referring to the hash table for the next forward extension. This process is continued until a ``guard" extension is reached, at which point the contig is finished and printed to an external file. 
+
+Within the serial code, many external functions and variables are referenced which were defined in Algorithms~\ref{packingDNAseq}- ~\ref{contig_generation}. These are displayed below the serial implementation code.
+
+\mycode{serial}{Serial Implementation (C)}{code-serial.c}{c} 
+
+\mycode{packingDNAseq}{DNA packing routine (Fortran)}{code-packingDNAseq.h}{fortran}
+
+\mycode{kmer_hash}{k-mer hash table routine (Fortran)}{code-kmer_hash.h}{fortran}
+
+\mycode{contig_generation}{Generation of contigs routine (Fortran)}{code-contig_generation.h}{fortran}
+
+
 
 \section{UPC approach}
 Our extension to the UPC langauge follows the general outline of the serial code...
