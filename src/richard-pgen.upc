@@ -28,7 +28,11 @@ typedef struct {
 
 typedef unsigned char ksym_t;
 
-shared kmer *kmers;
+//These are both private pointers to shared space
+typedef shared kmer* kmer_ptr;
+shared kmer_ptr *smers; //Start kmers!
+shared int  current_smer;
+kmer_ptr kmers;
 
 char SymbolToBibit(char symbol){
   switch(symbol){
@@ -101,6 +105,11 @@ void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
   //printf("Store at: %lld\n",i);
 
   kmers[i] = temp;
+
+  if(l_ext=='F' || r_ext=='F'){
+    smers[current_smer] = &kmers[i];
+    current_smer++;
+  }
 }
 
 
@@ -108,6 +117,8 @@ int main(int argc, char *argv[]){
 
 	/** Declarations **/
 	double inputTime=0.0, constrTime=0.0, traversalTime=0.0;
+
+  current_smer = 0;
 
 	/** Read input **/
 	upc_barrier;
@@ -161,10 +172,13 @@ int main(int argc, char *argv[]){
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
+  smers           = upc_all_alloc(THREADS, sizeof(shared kmer*)*line_count/1000);
 
   //Declare all buckets unused
   upc_forall(int i=0;i<hashtable_size;i++;&kmers[i])
     kmers[i].l_ext = 0;
+
+  upc_barrier;
 
   if(MYTHREAD==0){
     FILE *fin = fopen(argv[1],"r");
@@ -176,12 +190,11 @@ int main(int argc, char *argv[]){
       AddKmer(kstr,l_ext,r_ext);
     }
     fclose(fin);
-  }
 
-  if(MYTHREAD==0){
-    for(int i=0;i<hashtable_size;i++)
-      if(kmers[i].l_ext!=0)
-        PrintKmer(kmers[i]);
+    //Print kmers for debugging purposes
+    // for(int i=0;i<hashtable_size;i++)
+    //   if(kmers[i].l_ext!=0)
+    //     PrintKmer(kmers[i]);
   }
 
 	///////////////////////////////////////////
@@ -208,6 +221,13 @@ int main(int argc, char *argv[]){
 	////////////////////////////////////////////////////////////
 	upc_barrier;
 	//traversalTime += gettime();
+
+  //Distributed graph traversal!
+  upc_forall(int i=0;i<current_smer;i++;&smers[i]){
+    if(MYTHREAD==0){
+      PrintKmer(*smers[i]);
+    }
+  }
 
 	/** Print timing and output info **/
 	/***** DO NOT CHANGE THIS PART ****/
