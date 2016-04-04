@@ -15,6 +15,7 @@
 #define KMER_PACKED_LENGTH (KMER_LENGTH/4+1)
 #define KMER_LAST_OFFSET   (2*(4-KMER_LENGTH%4))
 #define KMER_LAST_MASK     (0xFF << KMER_LAST_OFFSET) //Puts zeros where there should be no data
+#define CONTIG_SEQ_MAX     1000000
 
 typedef unsigned char ksym_t;
 
@@ -243,8 +244,6 @@ kmer_ptr NextKmer(const kmer_ptr km, char direction){
 
 void GenContig(kmer_ptr km){
   char direction;
-
-  const int CONTIG_SEQ_MAX = 1000000;
 
   ksym_t contigseq[CONTIG_SEQ_MAX];
   int contiseq_len = 0;
