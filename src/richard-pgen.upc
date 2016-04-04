@@ -1,117 +1,14 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <sys/time.h>
 #include <math.h>
 #include <time.h>
 #include <upc.h>
+#include "richard-kmer.h"
 //#include <upc_io.h>
 
 //#include "packingDNAseq.h"
 //#include "kmer_hash.h"
-
-#define XSTR(s) STR(s)
-#define STR(s) #s
-
-#define KMER_PACKED_LENGTH (KMER_LENGTH/4+1)
-
-shared int kmer_len;
-shared int line_len;
-shared int line_count;
-int hashtable_size;
-
-typedef struct {
-  char kmer[KMER_PACKED_LENGTH];
-  char l_ext;
-  char r_ext;
-} kmer;
-
-typedef unsigned char ksym_t;
-
-//These are both private pointers to shared space
-typedef shared kmer* kmer_ptr;
-shared kmer_ptr *smers; //Start kmers!
-shared int  current_smer;
-kmer_ptr kmers;
-
-char SymbolToBibit(char symbol){
-  switch(symbol){
-    case 'A': return 0;
-    case 'C': return 1;
-    case 'G': return 2;
-    case 'T': return 3;
-  }
-  printf("Unknown character: %c\n",symbol);
-  return -1;
-}
-
-void PrintCharBits(ksym_t a){
-  for(int i=7;i>=0;i--)
-    printf("%d",(int)((a&(1<<i))!=0));
-  printf(" ");
-}
-
-void PrintPackedKmer(const ksym_t *kmer){
-  for(int i=0;i<KMER_PACKED_LENGTH;i++)
-    PrintCharBits(kmer[i]);
-  printf("\n");
-}
-
-void PrintKmer(const kmer km){
-  PrintPackedKmer(km.kmer);
-  printf("\t%c %c\n",km.l_ext,km.r_ext);
-}
-
-void PackSequence(const unsigned char *unpacked, unsigned char *packed){
-  char pack_offset = 0;
-  for(int i=0;i<KMER_LENGTH;i++,unpacked++){
-    if(pack_offset==0) //Make sure memory is initialized to 0
-      *packed = 0;
-    char bibit   = SymbolToBibit(*unpacked);
-    *packed     |= (bibit<<pack_offset);
-    pack_offset += 2;
-    if(pack_offset==8){
-      pack_offset = 0;
-      packed++;
-    }
-  }
-}
-
-int CompareKmer(const ksym_t *seq1, const ksym_t *seq2){
-  return memcmp(seq1, seq2, KMER_PACKED_LENGTH);
-}
-
-int64_t HashKmer(int64_t hashtable_size, const ksym_t *kmer){
-  int64_t hashval;
-  hashval = 5381;
-  for(int i = 0; i < (KMER_PACKED_LENGTH); i++)
-    hashval = kmer[i] + (hashval << 5) + hashval;
-
-  return hashval % hashtable_size;
-}
-
-void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
-  kmer temp;
-  //printf("Packing: %.19s\n",raw_kmer);  
-  PackSequence(raw_kmer,temp.kmer);
-  //PrintPackedKmer(kmer_packed);
-  int64_t i = HashKmer(hashtable_size,temp.kmer);
-  temp.l_ext = l_ext;
-  temp.r_ext = r_ext;
-
-  //Linear probing
-  for(;kmers[i].l_ext!=0;i++){}
-
-  //printf("Store at: %lld\n",i);
-
-  kmers[i] = temp;
-
-  if(l_ext=='F' || r_ext=='F'){
-    smers[current_smer] = &kmers[i];
-    current_smer++;
-  }
-}
-
 
 int main(int argc, char *argv[]){
 
@@ -135,8 +32,8 @@ int main(int argc, char *argv[]){
       printf("Failed to open kmers file!\n");
       upc_global_exit(-3);
     }
-    char first_chars[200];
-    if(fread(first_chars,sizeof(char),200,fin)!=200){
+    unsigned char first_chars[200];
+    if(fread(first_chars,sizeof(unsigned char),200,fin)!=200){
       printf("Failed to read first part of kmers file!\n");
       upc_global_exit(-2);
     }
@@ -152,7 +49,7 @@ int main(int argc, char *argv[]){
       }
     }
 
-    fseek(fin, sizeof(char), SEEK_END);
+    fseek(fin, sizeof(unsigned char), SEEK_END);
     long file_length = ftell(fin);
     //fseek(fin, 0L, SEEK_SET); //TODO
     line_count = file_length/line_len;
@@ -180,12 +77,13 @@ int main(int argc, char *argv[]){
 
   upc_barrier;
 
+  printf("Reading file")
   if(MYTHREAD==0){
     FILE *fin = fopen(argv[1],"r");
     for(int i=0;i<line_count;i++){
-      char kstr[KMER_LENGTH];
-      char l_ext;
-      char r_ext;
+      ksym_t kstr[KMER_LENGTH];
+      ksym_t l_ext;
+      ksym_t r_ext;
       fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
       AddKmer(kstr,l_ext,r_ext);
     }
