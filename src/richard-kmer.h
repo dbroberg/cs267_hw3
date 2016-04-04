@@ -117,7 +117,7 @@ void PackSequence(const ksym_t *unpacked, ksym_t *packed){
   }
 }
 
-void PrintPackedAsString(const ksym_t *packed){
+void ConvertPackedToString(const ksym_t *packed, ksym_t *unpacked){
   for(int i=0;i<KMER_PACKED_LENGTH;i++){
     for(int n=6;n>=0;n-=2){
       if(i==KMER_PACKED_LENGTH-1 && n<KMER_LAST_OFFSET)
@@ -125,9 +125,16 @@ void PrintPackedAsString(const ksym_t *packed){
       char temp = packed[i];
       temp    >>= n;
       temp     &= 0x3;
-      printf("%c",BibitToSymbol(temp));
+      *unpacked = BibitToSymbol(temp);
+      unpacked++;
     }
   }
+}
+
+void PrintPackedAsString(const ksym_t *packed){
+  ksym_t unpacked[KMER_LENGTH];
+  ConvertPackedToString(packed,unpacked);
+  printf("%." XSTR(KMER_LENGTH) "s", unpacked);
 }
 
 int CompareKmer(const ksym_t *seq1, const ksym_t *seq2){
@@ -159,7 +166,7 @@ void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
 
   kmers[i] = temp;
 
-  if(l_ext=='F' || r_ext=='F'){
+  if(l_ext=='F'){ // || r_ext=='F'){ //Only start from left-terminating kmers
     assert(current_smer!=smers_size);
     smers[current_smer] = &kmers[i];
     current_smer++;
@@ -237,6 +244,11 @@ kmer_ptr NextKmer(const kmer_ptr km, char direction){
 void GenContig(kmer_ptr km){
   char direction;
 
+  const int CONTIG_SEQ_MAX = 1000000;
+
+  ksym_t contigseq[CONTIG_SEQ_MAX];
+  int contiseq_len = 0;
+
   if(km->l_ext=='F'){
     direction = 'r';
   } else if(km->r_ext=='F'){
@@ -246,11 +258,25 @@ void GenContig(kmer_ptr km){
     EXIT(-6);
   }
 
+  kmer lkm = *km; //A local copy
+
+  ConvertPackedToString(lkm.kmer,contigseq);
+  contiseq_len = KMER_LENGTH;
   while( km!=NULL && ((direction=='l' && km->l_ext!='F') || (direction=='r' && km->r_ext!='F')) ){
-    //PrintPackedAsString(km->kmer);
-    //printf(" - %c %c\n",km->l_ext,km->r_ext);
+    contigseq[contiseq_len++] = km->r_ext;
+    if(contiseq_len==CONTIG_SEQ_MAX){
+      printf("Reached maximum contig length!\n");
+      EXIT(-7);
+    }
+    PrintPackedAsString(km->kmer);
+    printf(" - %c %c\n",km->l_ext,km->r_ext);
     km = NextKmer(km, direction);
   }
+
+  contigseq[contiseq_len] = '\0';
+
+  printf("%s\n",contigseq);
+
   //if(km!=NULL){
   //  PrintPackedAsString(km->kmer);
   //  printf(" - %c %c\n",km->l_ext,km->r_ext);

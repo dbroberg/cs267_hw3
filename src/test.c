@@ -217,8 +217,8 @@ int main(int argc, char *argv[]){
     else
       printf("-empty slot-\n");
 
-  printf("Finding contigs\n");
-  for(int i=0;i<current_smer;i++){
+  printf("Finding a few contigs\n");
+  for(int i=0;i<10;i++){
     printf("Smer %d:\n",i);
     GenContig(smers[i]);
     printf("\n\n\n=====================\n\n\n");
