@@ -34,13 +34,24 @@ int main(int argc, char *argv[]){
 
   printf("Testing packing routine:\n");
   ksym_t packed[KMER_PACKED_LENGTH];
+  ksym_t unpacked[KMER_LENGTH];
   {
-    ksym_t unpacked[KMER_LENGTH];
     for(int i=0;i<KMER_LENGTH;i++)
       unpacked[i] = NumToChar(i);
     PackSequence(unpacked,packed);
 
     PrintPackedKstr(packed);
+  }
+
+  {
+    printf("Testing print inversion:\n");
+    printf("Original: ");
+    for(int i=0;i<KMER_LENGTH;i++)
+      printf("%c",unpacked[i]);
+    printf("\n");
+    printf("Packed:   ");
+    PrintPackedAsString(packed);
+    printf("\n");
   }
 
   {
@@ -197,6 +208,7 @@ int main(int argc, char *argv[]){
   }
   fclose(fin);
 
+  printf("Smers found: %d\n",current_smer);
   
   printf("Printing beginning of hashtable\n");
   for(int i=0;i<300;i++)
@@ -204,6 +216,13 @@ int main(int argc, char *argv[]){
       PrintKmer(kmers[i]);
     else
       printf("-empty slot-\n");
+
+  printf("Finding contigs\n");
+  for(int i=0;i<current_smer;i++){
+    printf("Smer %d:\n",i);
+    GenContig(smers[i]);
+    printf("\n\n\n=====================\n\n\n");
+  }
 
 
   //Distributed graph traversal!

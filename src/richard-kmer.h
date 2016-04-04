@@ -62,6 +62,17 @@ typedef struct {
 
 kmer_ptr kmers;
 
+ksym_t BibitToSymbol(ksym_t symbol){
+  switch(symbol){
+    case 0: return 'A'; 
+    case 1: return 'C';
+    case 2: return 'G';
+    case 3: return 'T';
+  }
+  printf("Unknown sequence: %d",(int)symbol);
+  return 255;
+}
+
 ksym_t SymbolToBibit(ksym_t symbol){
   switch(symbol){
     case 'A': return 0;
@@ -102,6 +113,19 @@ void PackSequence(const ksym_t *unpacked, ksym_t *packed){
     if(pack_offset==-2){
       pack_offset = 6;
       packed++;
+    }
+  }
+}
+
+void PrintPackedAsString(const ksym_t *packed){
+  for(int i=0;i<KMER_PACKED_LENGTH;i++){
+    for(int n=6;n>=0;n-=2){
+      if(i==KMER_PACKED_LENGTH-1 && n<KMER_LAST_OFFSET)
+        return;
+      char temp = packed[i];
+      temp    >>= n;
+      temp     &= 0x3;
+      printf("%c",BibitToSymbol(temp));
     }
   }
 }
@@ -177,11 +201,11 @@ void SetKstrRight(ksym_t *kpacked, ksym_t r_ext){
 
 void ShiftAndAdd(ksym_t *kpacked, char direction, ksym_t l_ext, ksym_t r_ext){
   if(direction=='r'){
-    ShiftKmerRight(kpacked);
-    SetKstrLeft(kpacked,l_ext);
-  } else if(direction=='l'){
     ShiftKmerLeft(kpacked);
     SetKstrRight(kpacked,r_ext);
+  } else if(direction=='l'){
+    ShiftKmerRight(kpacked);
+    SetKstrLeft(kpacked,l_ext);
   }
 }
 
@@ -205,6 +229,8 @@ kmer_ptr NextKmer(const kmer_ptr km, char direction){
 
   ShiftAndAdd(knextstr, direction, km->l_ext, km->r_ext);
 
+  //printf("\tLooking for: ");PrintPackedAsString(knextstr);printf("\n");
+
   return FindKmer(knextstr);
 }
 
@@ -220,9 +246,15 @@ void GenContig(kmer_ptr km){
     EXIT(-6);
   }
 
-  while( (direction=='l' && km->l_ext!='F') || (direction=='r' && km->r_ext!='F') ){
+  while( km!=NULL && ((direction=='l' && km->l_ext!='F') || (direction=='r' && km->r_ext!='F')) ){
+    //PrintPackedAsString(km->kmer);
+    //printf(" - %c %c\n",km->l_ext,km->r_ext);
     km = NextKmer(km, direction);
   }
+  //if(km!=NULL){
+  //  PrintPackedAsString(km->kmer);
+  //  printf(" - %c %c\n",km->l_ext,km->r_ext);
+  //}
 }
 
 #endif

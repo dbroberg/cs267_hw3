@@ -68,17 +68,21 @@ int main(int argc, char *argv[]){
 
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
+  smers_size      = line_count/100;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
   smers           = upc_all_alloc(THREADS, sizeof(shared kmer*)*line_count/1000);
 
   //Declare all buckets unused
+  if(MYTHREAD==0){
+    printf("Initializing hash table\n");
+  }
   upc_forall(int i=0;i<hashtable_size;i++;&kmers[i])
     kmers[i].l_ext = 0;
 
   upc_barrier;
 
-  printf("Reading file")
   if(MYTHREAD==0){
+    printf("Reading file\n");
     FILE *fin = fopen(argv[1],"rb");
     for(int i=0;i<line_count;i++){
       ksym_t kstr[KMER_LENGTH];
@@ -132,10 +136,11 @@ int main(int argc, char *argv[]){
 	//traversalTime += gettime();
 
   //Distributed graph traversal!
+  if(MYTHREAD==0){
+    printf("Generating contigs\n");
+  }
   upc_forall(int i=0;i<current_smer;i++;&smers[i]){
-    if(MYTHREAD==0){
-      PrintKmer(*smers[i]);
-    }
+    GenContig(smers[i]);
   }
 
 	/** Print timing and output info **/
