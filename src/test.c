@@ -112,7 +112,7 @@ int main(int argc, char *argv[]){
     return -1;
   }
 
-  FILE *fin = fopen(argv[1],"r");
+  FILE *fin = fopen(argv[1],"rb");
   if(!fin){
     printf("Failed to open kmers file!\n");
     return -2;
@@ -153,9 +153,10 @@ int main(int argc, char *argv[]){
 
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
+  smers_size      = line_count/100;
   printf("Setting hash table size: %d\n",hashtable_size);
   kmers           = calloc(hashtable_size, sizeof(kmer));
-  smers           = calloc(line_count/1000, sizeof(kmer_ptr));
+  smers           = calloc(smers_size, sizeof(kmer_ptr));
 
   //Declare all buckets unused
   printf("Initializing hashtable\n");
@@ -163,24 +164,33 @@ int main(int argc, char *argv[]){
     kmers[i].l_ext = 0;
 
   printf("Reading file\n");
-  fin = fopen(argv[1],"r");
+  fin = fopen(argv[1],"rb");
   for(int i=0;i<line_count;i++){
     long line_start = ftell(fin);
     ksym_t kstr[KMER_LENGTH];
     ksym_t l_ext;
     ksym_t r_ext;
-    fread(kstr,sizeof(ksym_t),KMER_LENGTH,fin);
+    if(fread(kstr,sizeof(ksym_t),KMER_LENGTH,fin)!=KMER_LENGTH){
+      printf("Didn't read enough characters!\n");
+    }
     fgetc(fin);
     l_ext = fgetc(fin);
     r_ext = fgetc(fin);
     fgetc(fin);
-    //fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
-    if(!CheckRawKstr(kstr) || (1936870<=i && i<=1936880)){
+    if(ferror(fin))
+      printf("Error reading file on line %d at %ld: %s\n", i, line_start, strerror(ferror(fin)));
+    // if(fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext)!=3){
+    //   printf("Unsuccessful read for an argument!\n");
+    //   printf("Problem on line: %d\n",i);
+    //   printf("At file position: %ld\n",line_start);
+    // }
+    if(!CheckRawKstr(kstr)){
       printf("Problem on line: %d\n",i);
       printf("At file position: %ld\n",line_start);
       printf("Read %." XSTR(KMER_LENGTH) "s %c %c\n",kstr,l_ext,r_ext);
       for(int i=0;i<KMER_LENGTH;i++)
         printf(" %02x", kstr[i]);
+      printf(" - %02x %02x", l_ext, r_ext);
       printf("\n");
     }
     AddKmer(kstr,l_ext,r_ext);
@@ -188,8 +198,8 @@ int main(int argc, char *argv[]){
   fclose(fin);
 
   
-  printf("Printing beginning of hashtable");
-  for(int i=0;i<hashtable_size;i++)
+  printf("Printing beginning of hashtable\n");
+  for(int i=0;i<300;i++)
     if(kmers[i].l_ext!=0)
       PrintKmer(kmers[i]);
     else

@@ -79,12 +79,23 @@ int main(int argc, char *argv[]){
 
   printf("Reading file")
   if(MYTHREAD==0){
-    FILE *fin = fopen(argv[1],"r");
+    FILE *fin = fopen(argv[1],"rb");
     for(int i=0;i<line_count;i++){
       ksym_t kstr[KMER_LENGTH];
       ksym_t l_ext;
       ksym_t r_ext;
-      fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
+      //fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
+
+      if(fread(kstr,sizeof(ksym_t),KMER_LENGTH,fin)!=KMER_LENGTH){
+        printf("Didn't read enough characters!\n");
+      }
+      fgetc(fin);
+      l_ext = fgetc(fin);
+      r_ext = fgetc(fin);
+      fgetc(fin);
+
+      if(ferror(fin))
+        printf("Error reading file: %s\n", strerror(ferror(fin)));
       AddKmer(kstr,l_ext,r_ext);
     }
     fclose(fin);

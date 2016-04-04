@@ -4,7 +4,10 @@
 #include <stdlib.h>
 #include <inttypes.h>
 #include <assert.h>
-#include <upc.h>
+
+#ifndef TESTCOMPILE
+  #include <upc.h>
+#endif
 
 #define XSTR(s) STR(s)
 #define STR(s) #s
@@ -37,6 +40,7 @@ typedef unsigned char ksym_t;
 #endif
 
 int hashtable_size;
+int smers_size;
 
 typedef struct {
   ksym_t kmer[KMER_PACKED_LENGTH];
@@ -131,8 +135,8 @@ void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
 
   kmers[i] = temp;
 
-  //TODO: Add list overflow check here!
   if(l_ext=='F' || r_ext=='F'){
+    assert(current_smer!=smers_size);
     smers[current_smer] = &kmers[i];
     current_smer++;
   }
