@@ -10,14 +10,14 @@
 //#include "packingDNAseq.h"
 //#include "kmer_hash.h"
 
+shared int lines_read[THREADS];
+
 int main(int argc, char *argv[]){
 
 	/** Declarations **/
 	double inputTime=0.0, traversalTime=0.0;
 
   current_smer = 0;
-
-  current_smer_lock = upc_all_lock_alloc();
 
 	/** Read input **/
 	upc_barrier;
@@ -70,14 +70,9 @@ int main(int argc, char *argv[]){
 
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
-  smers_size      = line_count/100;
-  locks_size      = hashtable_size/1000;
+  smers_size      = line_count/100/THREADS;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
-  smers           = upc_all_alloc(THREADS, sizeof(shared kmer*)*line_count/1000);
-  locks           = upc_all_alloc(THREADS, locks_size*sizeof(lockptr)/THREADS);
-
-  upc_forall(int i=0;i<locks_size;i++;&locks[i])
-    locks[i] = upc_global_lock_alloc();
+  smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
 
   //Declare all buckets unused
   if(MYTHREAD==0){
@@ -102,7 +97,11 @@ int main(int argc, char *argv[]){
   if(MYTHREAD==THREADS-1)
     stop_line = line_count;
 
+  lines_read[MYTHREAD] = 0;
+
   for(int i=start_line;i<stop_line;i++){
+    lines_read[MYTHREAD]++;
+
     ksym_t kstr[KMER_LENGTH];
     ksym_t l_ext;
     ksym_t r_ext;
@@ -124,7 +123,12 @@ int main(int argc, char *argv[]){
 
 	inputTime += gettime();
 
-  double kmlist_offload;
+  double kmlist_offload=0;
+
+  // for(int i=0;i<THREADS;i++){           
+  //   upc_barrier;
+  //   ListCount();
+  // }
 
   kmlist_offload -= gettime();
   printf("Loading kmlist\n");
@@ -135,19 +139,62 @@ int main(int argc, char *argv[]){
   }
   upc_barrier;
 
-  assert(kmlist==NULL);
-
   kmlist_offload += gettime();
 
+  // for(int i=0;i<THREADS;i++){           
+  //   upc_barrier;
+  //   ListCount();
+  // }
 
-	/** Graph traversal **/
-	traversalTime -= gettime();
-  if(MYTHREAD==0){
-    printf("Generating contigs\n");
-  }
+  // for(int i=0;i<THREADS;i++){           
+  //   upc_barrier;
+  //   ListPrint();
+  // }
+  
 
+  /** Graph traversal **/
+  // if(MYTHREAD==0){
+  //   int total_lines_read=0;
+  //   for(int i=0;i<THREADS;i++)
+  //     total_lines_read+=lines_read[i];
+  //   int total_nodes_inspected=0;
+  //   for(int i=0;i<THREADS;i++)
+  //     total_nodes_inspected+=nodes_inspected[i];
+  //   int total_kmers_inserted=0;
+  //   for(int i=0;i<THREADS;i++)
+  //     total_kmers_inserted+=kmers_inserted[i];
+  //   int total_kmers_added=0;
+  //   for(int i=0;i<THREADS;i++)
+  //     total_kmers_added+=kmers_added[i];
+  //   int total_contigs=0;
+  //   for(int i=0;i<THREADS;i++)
+  //     total_contigs+=contig_count[i];
+
+  //   printf("Lines read:      %d\n", total_lines_read);
+  //   printf("Kmers inserted:  %d\n", total_kmers_inserted);
+  //   printf("Kmers inspected: %d\n", total_nodes_inspected);
+  //   printf("Kmers added:     %d\n", total_kmers_added);
+  //   printf("Contigs found:   %d\n", total_contigs);
+  //   printf("Current smer:    %d\n",  current_smer);
+  //   printf("Generating contigs\n");
+  // }
+
+  // for(int i=0;i<THREADS;i++){
+  //   upc_barrier;
+  //   if(MYTHREAD==i){
+  //     printf("THREAD %d\n",MYTHREAD);
+  //     printf("Lines read: %d\n",lines_read[MYTHREAD]);
+  //     printf("Kmers inserted: %d\n", kmers_inserted[MYTHREAD]);
+  //     printf("Kmers inspected: %d\n", nodes_inspected[MYTHREAD]);
+  //     printf("Kmers added: %d\n", kmers_added[MYTHREAD]);
+  //   }
+  // }
+
+  assert(kmlist==NULL);
+
+  traversalTime -= gettime();
   char output_name[100];
-  sprintf(output_name,"pgen-%d.out",MYTHREAD);
+  sprintf(output_name,"/z/pgen-%d.out",MYTHREAD);
   
   FILE *fout = fopen(output_name, "wb");
   if(!fout){
@@ -155,10 +202,20 @@ int main(int argc, char *argv[]){
     upc_global_exit(-9);
   }
 
-  upc_forall(int i = 0;i<current_smer;i++;&smers[i])
+  if(MYTHREAD==0){
+    printf("Generating contigs...\n");
+  }
+  for(int i=0;i<current_smer;i++)
     GenContig(fout,smers[i]);
 	upc_barrier;
 	traversalTime += gettime();
+
+  if(MYTHREAD==0){
+    int total_contigs_generated=0;
+    for(int i=0;i<THREADS;i++)
+      total_contigs_generated += contigs_generated[i];
+    printf("Contigs generated: %d\n",total_contigs_generated);
+  }
 
 	/** Print timing and output info **/
 	/***** DO NOT CHANGE THIS PART ****/
@@ -168,6 +225,7 @@ int main(int argc, char *argv[]){
 		printf("Input reading time: %f seconds\n", inputTime);
 		printf("Graph traversal time: %f seconds\n", traversalTime);
     printf("Kmlist offload: %f seconds\n", kmlist_offload);
+    printf("Total time: %fs\n", (inputTime+traversalTime+kmlist_offload));
 	}
 	return 0;
 }

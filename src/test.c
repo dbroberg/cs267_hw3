@@ -208,7 +208,6 @@ int main(int argc, char *argv[]){
   }
   fclose(fin);
 
-  printf("Hash collisions: %d\n", hash_collisions);
   printf("Smers found: %d\n",current_smer);
   
   printf("Printing beginning of hashtable\n");

@@ -22,9 +22,12 @@ typedef unsigned char ksym_t;
 
 #ifndef TESTCOMPILE
   #define EXIT(X) upc_global_exit(X)
+  #define upc_lock(X) 1;
+  #define upc_unlock(X) 1;
 #else 
   #include <stdlib.h>
   #define THREADS 1
+  #define MYTHREAD 0
   #define EXIT(X) exit(X)
   #define upc_memget memcpy
 #endif
@@ -41,9 +44,20 @@ typedef unsigned char ksym_t;
   int line_count;
 #endif
 
+#ifndef TESTCOMPILE
+  shared int kmers_inserted[THREADS];
+  shared int kmers_added[THREADS];
+  shared int nodes_inspected[THREADS];
+  shared int contigs_generated[THREADS];
+  shared int contig_count[THREADS];
+#else
+  int kmers_inserted[THREADS];
+  int kmers_added[THREADS];
+  int nodes_inspected[THREADS];
+#endif
+
 int hashtable_size;
 int smers_size;
-int locks_size;
 
 typedef struct {
   ksym_t kmer[KMER_PACKED_LENGTH];
@@ -61,17 +75,12 @@ typedef struct kmlist_t KmListNode;
 
 KmListNode *kmlist = NULL;
 
-
 #ifndef TESTCOMPILE
-  //These are private pointers to shared space
-  typedef shared kmer* kmer_ptr;
-  typedef upc_lock_t*  lockptr;
-  shared kmer_ptr*     smers;        //Start kmers!
-  shared lockptr*      locks;
-  shared int           current_smer; //Next empty start kmer location
-  shared lockptr       current_smer_lock;
+  typedef strict shared kmer* kmer_ptr; //These are private pointers to shared space
+  kmer_ptr*            smers;           //Private list of pointers to smers in shared space
+  int                  current_smer; 
 #else
-  typedef kmer*        kmer_ptr;
+  typedef kmer*        kmer_ptr;        //Shared pointer to shared pointers
   kmer_ptr*            smers;
   int current_smer;
 #endif
@@ -180,22 +189,21 @@ int64_t HashKmer(int64_t hashtable_size, const ksym_t *kpacked){
   return hashval % hashtable_size;
 }
 
-
 void InsertKmer(int64_t hash, const kmer temp){
+  kmers_inserted[MYTHREAD]++;
+  assert(kmers[hash].l_ext==0);
   kmers[hash] = temp;
-  upc_lock(current_smer_lock);
   if(temp.l_ext=='F'){ // || r_ext=='F'){ //Only start from left-terminating kmers
+    contig_count[MYTHREAD]++;
     assert(current_smer!=smers_size);
     smers[current_smer] = &kmers[hash];
     current_smer++;
   }
-  upc_unlock(current_smer_lock);
 }
 
 int64_t GetOpenBin(int64_t hash){
-  //printf("%ld\n", hash);
-  for(;kmers[hash].l_ext!=0;hash++){}
-  return hash;
+  for(;kmers[hash].l_ext!=0;hash=(hash+1)%hashtable_size){}
+  return hash;         
 }
 
 void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
@@ -210,8 +218,10 @@ void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
   //Linear probing
   hash = GetOpenBin(hash);
 
-  if(upc_threadof(&kmers[hash])==MYTHREAD){
-    InsertKmer(hash,kmtemp);
+  kmers_added[MYTHREAD]++;
+
+  if(upc_threadof(&kmers[hash])==MYTHREAD){ //I can guarantee atomicity to this
+   InsertKmer(hash,kmtemp);
   } else {
     KmListNode *tempnode = malloc(sizeof(KmListNode));
     tempnode->km         = kmtemp;
@@ -265,13 +275,12 @@ void ShiftAndAdd(ksym_t *kpacked, char direction, ksym_t l_ext, ksym_t r_ext){
 }
 
 kmer_ptr FindKmer(const ksym_t *kstr){
-  int64_t offset   = HashKmer(hashtable_size, kstr);
-  kmer_ptr hashloc = &kmers[offset];
-  for(;hashloc->l_ext!=0;hashloc++){
+  int64_t hash = HashKmer(hashtable_size, kstr);
+  for(;kmers[hash].l_ext!=0;hash=(hash+1)%hashtable_size){
     ksym_t remote_kstr[KMER_PACKED_LENGTH];
-    upc_memget(remote_kstr, hashloc->kmer, KMER_PACKED_LENGTH);
+    upc_memget(remote_kstr, kmers[hash].kmer, KMER_PACKED_LENGTH);
     if(CompareKmer(kstr,remote_kstr))
-      return hashloc;
+      return &kmers[hash];
   }
   return NULL;
 }
@@ -293,25 +302,53 @@ void LoadKmList(int i){
   int low  = hashtable_size/THREADS*i;
   int high = hashtable_size/THREADS*(i+1);
 
-  KmListNode *lptr = kmlist;
+  if(i==THREADS-1)
+    high = hashtable_size;
+
+  KmListNode *lptr     = kmlist;
+  KmListNode **prevptr = &kmlist;
   while(lptr!=NULL){
-    if(low<= lptr->hash && lptr->hash<high){ //Do we have permission to write here?
+    if(low<= lptr->hash && lptr->hash <high){ //Do we have permission to write here?
       lptr->hash = GetOpenBin(lptr->hash);
-      if( !(low<= lptr->hash && lptr->hash<high) ) //Are we still in the locked range?
-        lptr = lptr->next;
+      if( !(low<= lptr->hash && lptr->hash<high) ){ //Are we still in the locked range?
+        prevptr = &(lptr->next);
+        lptr    = lptr->next;
+        continue;
+      }
       InsertKmer(lptr->hash, lptr->km);
       KmListNode *next = lptr->next;
       free(lptr);
-      lptr = next;
+      (*prevptr) = next;
+      lptr       = next;
+      nodes_inspected[MYTHREAD]++;
     } else {
-      lptr = lptr->next;
+      nodes_inspected[MYTHREAD]++;
+      prevptr = &(lptr->next);
+      lptr    = lptr->next;
     }
   }
-  kmlist = lptr;
+}
+
+//TODO
+void ListCount(){
+  int i=0;
+  KmListNode *lptr = kmlist;
+  for(i=0;lptr!=NULL;lptr=lptr->next,i++){}
+  printf("Thread %d List size: %d\n",MYTHREAD,i);
+}
+
+//TODO
+void ListPrint(){
+  printf("Thread %d:\n",MYTHREAD);
+  for(KmListNode *lptr=kmlist;lptr!=NULL;lptr=lptr->next){
+    printf("\tHash: %ld\n",lptr->hash);
+  }
 }
 
 void GenContig(FILE *fout, kmer_ptr km){
   char direction;
+
+  contigs_generated[MYTHREAD]++;
 
   ksym_t contigseq[CONTIG_SEQ_MAX];
   int contiseq_len = 0;
@@ -322,6 +359,8 @@ void GenContig(FILE *fout, kmer_ptr km){
     direction = 'l';
   } else {
     printf("Cannot generate a contig from a kmer that doesn't start a sequence.\n");
+    PrintKmer(*km);
+    return;
     EXIT(-6);
   }
 
