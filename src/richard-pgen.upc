@@ -13,6 +13,8 @@
 shared int lines_read[THREADS];
 
 int main(int argc, char *argv[]){
+  double totalTime=0.0;
+  totalTime -= gettime();
 
 	/** Declarations **/
 	double inputTime=0.0, traversalTime=0.0;
@@ -217,6 +219,8 @@ int main(int argc, char *argv[]){
     printf("Contigs generated: %d\n",total_contigs_generated);
   }
 
+  totalTime += gettime();
+
 	/** Print timing and output info **/
 	/***** DO NOT CHANGE THIS PART ****/
 	if(MYTHREAD==0){
@@ -225,7 +229,7 @@ int main(int argc, char *argv[]){
 		printf("Input reading time: %f seconds\n", inputTime);
 		printf("Graph traversal time: %f seconds\n", traversalTime);
     printf("Kmlist offload: %f seconds\n", kmlist_offload);
-    printf("Total time: %fs\n", (inputTime+traversalTime+kmlist_offload));
+    printf("Total time: %fs\n", (totalTime));
 	}
 	return 0;
 }
