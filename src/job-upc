@@ -12,10 +12,13 @@ INPUT=test		# Path to your input file
 
 cd ${PWD}
 
+rm -f pgen*out
+
 # Run program
 srun -n 1 ./serial ${INPUT}
 upcrun -n $P -shared-heap=1G ./pgen ${INPUT}
 
+cat pgen*out | sort > pgen.out
 
 # Sort contigs in both output files to compare
 sort serial.out > serial.sorted
