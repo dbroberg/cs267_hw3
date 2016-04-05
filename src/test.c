@@ -162,7 +162,7 @@ int main(int argc, char *argv[]){
   }
   fclose(fin);
 
-  int bucket_size = 3*line_count/THREADS;
+  int bucket_size = 5*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
   smers_size      = line_count/100;
   printf("Setting hash table size: %d\n",hashtable_size);
@@ -208,6 +208,7 @@ int main(int argc, char *argv[]){
   }
   fclose(fin);
 
+  printf("Hash collisions: %d\n", hash_collisions);
   printf("Smers found: %d\n",current_smer);
   
   printf("Printing beginning of hashtable\n");
@@ -217,10 +218,12 @@ int main(int argc, char *argv[]){
     else
       printf("-empty slot-\n");
 
+  FILE* fout = fopen("/z/test.out","wb");
+
   printf("Finding a few contigs\n");
   for(int i=0;i<10;i++){
     printf("Smer %d:\n",i);
-    GenContig(smers[i]);
+    GenContig(fout,smers[i]);
     printf("\n\n\n=====================\n\n\n");
   }
 

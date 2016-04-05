@@ -1,4 +1,4 @@
-CC = CC
+CC = gcc
 UPCC = upcc
 
 KMER_LENGTH 		= 19

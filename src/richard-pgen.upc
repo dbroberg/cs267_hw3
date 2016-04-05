@@ -13,13 +13,15 @@
 int main(int argc, char *argv[]){
 
 	/** Declarations **/
-	double inputTime=0.0, constrTime=0.0, traversalTime=0.0;
+	double inputTime=0.0, traversalTime=0.0;
 
   current_smer = 0;
 
+  current_smer_lock = upc_all_lock_alloc();
+
 	/** Read input **/
 	upc_barrier;
-	//inputTime -= gettime();
+	inputTime -= gettime();
 
   if(argc!=2){
     printf("Need to specify program file!\n");
@@ -69,8 +71,13 @@ int main(int argc, char *argv[]){
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
   smers_size      = line_count/100;
+  locks_size      = hashtable_size/1000;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
   smers           = upc_all_alloc(THREADS, sizeof(shared kmer*)*line_count/1000);
+  locks           = upc_all_alloc(THREADS, locks_size*sizeof(lockptr)/THREADS);
+
+  upc_forall(int i=0;i<locks_size;i++;&locks[i])
+    locks[i] = upc_global_lock_alloc();
 
   //Declare all buckets unused
   if(MYTHREAD==0){
@@ -83,65 +90,71 @@ int main(int argc, char *argv[]){
 
   if(MYTHREAD==0){
     printf("Reading file\n");
-    FILE *fin = fopen(argv[1],"rb");
-    for(int i=0;i<line_count;i++){
-      ksym_t kstr[KMER_LENGTH];
-      ksym_t l_ext;
-      ksym_t r_ext;
-      //fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
-
-      if(fread(kstr,sizeof(ksym_t),KMER_LENGTH,fin)!=KMER_LENGTH){
-        printf("Didn't read enough characters!\n");
-      }
-      fgetc(fin);
-      l_ext = fgetc(fin);
-      r_ext = fgetc(fin);
-      fgetc(fin);
-
-      if(ferror(fin))
-        printf("Error reading file: %s\n", strerror(ferror(fin)));
-      AddKmer(kstr,l_ext,r_ext);
-    }
-    fclose(fin);
-
-    //Print kmers for debugging purposes
-    // for(int i=0;i<hashtable_size;i++)
-    //   if(kmers[i].l_ext!=0)
-    //     PrintKmer(kmers[i]);
   }
 
-	///////////////////////////////////////////
-	// Your code for input file reading here //
-	///////////////////////////////////////////
-	upc_barrier;
-	//inputTime += gettime();
+  //Open file
+  FILE *fin = fopen(argv[1],"rb");
+  //Seek location to start reading from
+  int start_line = line_count/THREADS*MYTHREAD;
+  int stop_line  = line_count/THREADS*(MYTHREAD+1);
+  fseek(fin, start_line*line_len, SEEK_SET);
+  //Determine when to stop reading
+  if(MYTHREAD==THREADS-1)
+    stop_line = line_count;
 
+  for(int i=start_line;i<stop_line;i++){
+    ksym_t kstr[KMER_LENGTH];
+    ksym_t l_ext;
+    ksym_t r_ext;
+    //fscanf(fin,"%" XSTR(KMER_LENGTH) "c %c%c ",kstr,&l_ext,&r_ext);
 
+    if(fread(kstr,sizeof(ksym_t),KMER_LENGTH,fin)!=KMER_LENGTH){
+      printf("Didn't read enough characters!\n");
+    }
+    fgetc(fin);
+    l_ext = fgetc(fin);
+    r_ext = fgetc(fin);
+    fgetc(fin);
 
-	/** Graph construction **/
-	//constrTime -= gettime();
-	///////////////////////////////////////////
-	// Your code for graph construction here //
-	///////////////////////////////////////////
-	upc_barrier;
-	//constrTime += gettime();
+    if(ferror(fin))
+      printf("Error reading file: %s\n", strerror(ferror(fin)));
+    AddKmer(kstr,l_ext,r_ext);
+  }
+  fclose(fin);
+
+	inputTime += gettime();
+
+  double kmlist_offload;
+
+  kmlist_offload -= gettime();
+  printf("Loading kmlist\n");
+  for(int j=0;j<2;j++)                  //Do this twice to account for hash targets moving across boundaries
+  for(int i=0;i<THREADS;i++){           //Move linked list into table
+    upc_barrier;
+    LoadKmList( (MYTHREAD+i)%THREADS );
+  }
+  upc_barrier;
+
+  assert(kmlist==NULL);
+
+  kmlist_offload += gettime();
+
 
 	/** Graph traversal **/
-	//traversalTime -= gettime();
-	////////////////////////////////////////////////////////////
-	// Your code for graph traversal and output printing here //
-	// Save your output to "pgen.out"                         //
-	////////////////////////////////////////////////////////////
-	upc_barrier;
-	//traversalTime += gettime();
-
-  //Distributed graph traversal!
+	traversalTime -= gettime();
   if(MYTHREAD==0){
     printf("Generating contigs\n");
   }
-  upc_forall(int i=0;i<current_smer;i++;&smers[i]){
-    GenContig(smers[i]);
-  }
+
+  char output_name[100];
+  sprintf(output_name,"/z/pgen-%d.out",MYTHREAD);
+  
+  FILE *fout = fopen(output_name, "wb");
+
+  upc_forall(int i = 0;i<current_smer;i++;&smers[i])
+    GenContig(fout,smers[i]);
+	upc_barrier;
+	traversalTime += gettime();
 
 	/** Print timing and output info **/
 	/***** DO NOT CHANGE THIS PART ****/
@@ -149,8 +162,8 @@ int main(int argc, char *argv[]){
 		printf("%s: Input set: %s\n", argv[0], argv[1]);
 		printf("Number of UPC threads: %d\n", THREADS);
 		printf("Input reading time: %f seconds\n", inputTime);
-		printf("Graph construction time: %f seconds\n", constrTime);
 		printf("Graph traversal time: %f seconds\n", traversalTime);
+    printf("Kmlist offload: %f seconds\n", kmlist_offload);
 	}
 	return 0;
 }

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <inttypes.h>
 #include <assert.h>
+#include <sys/time.h>
 
 #ifndef TESTCOMPILE
   #include <upc.h>
@@ -42,6 +43,7 @@ typedef unsigned char ksym_t;
 
 int hashtable_size;
 int smers_size;
+int locks_size;
 
 typedef struct {
   ksym_t kmer[KMER_PACKED_LENGTH];
@@ -49,12 +51,25 @@ typedef struct {
   ksym_t r_ext;
 } kmer;
 
+struct kmlist_t {
+  int64_t hash;
+  kmer km;
+  struct kmlist_t *next;
+};
+
+typedef struct kmlist_t KmListNode;
+
+KmListNode *kmlist = NULL;
+
 
 #ifndef TESTCOMPILE
   //These are private pointers to shared space
   typedef shared kmer* kmer_ptr;
+  typedef upc_lock_t*  lockptr;
   shared kmer_ptr*     smers;        //Start kmers!
+  shared lockptr*      locks;
   shared int           current_smer; //Next empty start kmer location
+  shared lockptr       current_smer_lock;
 #else
   typedef kmer*        kmer_ptr;
   kmer_ptr*            smers;
@@ -62,6 +77,20 @@ typedef struct {
 #endif
 
 kmer_ptr kmers;
+
+
+
+
+static double gettime(void) {
+    struct timeval tv;
+    if (gettimeofday(&tv, NULL)) {
+  perror("gettimeofday");
+  abort();
+    }
+   return ((double)tv.tv_sec) + tv.tv_usec/1000000.0;
+}
+
+
 
 ksym_t BibitToSymbol(ksym_t symbol){
   switch(symbol){
@@ -151,26 +180,45 @@ int64_t HashKmer(int64_t hashtable_size, const ksym_t *kpacked){
   return hashval % hashtable_size;
 }
 
+int hash_collisions = 0;
+
+void InsertKmer(int64_t hash, const kmer temp){
+  kmers[hash] = temp;
+  upc_lock(current_smer_lock);
+  if(temp.l_ext=='F'){ // || r_ext=='F'){ //Only start from left-terminating kmers
+    assert(current_smer!=smers_size);
+    smers[current_smer] = &kmers[hash];
+    current_smer++;
+  }
+  upc_unlock(current_smer_lock);
+}
+
+int64_t GetOpenBin(int64_t hash){
+  //printf("%ld\n", hash);
+  for(;kmers[hash].l_ext!=0;hash++,hash_collisions++){}
+  return hash;
+}
+
 void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
-  kmer temp;
+  kmer kmtemp;
   //printf("Packing: %.19s\n",raw_kmer);  
-  PackSequence(raw_kmer,temp.kmer);
+  PackSequence(raw_kmer,kmtemp.kmer);
   //PrintPackedKmer(kmer_packed);
-  int64_t i = HashKmer(hashtable_size,temp.kmer);
-  temp.l_ext = l_ext;
-  temp.r_ext = r_ext;
+  int64_t hash = HashKmer(hashtable_size,kmtemp.kmer);
+  kmtemp.l_ext = l_ext;
+  kmtemp.r_ext = r_ext;
 
   //Linear probing
-  for(;kmers[i].l_ext!=0;i++){}
+  hash = GetOpenBin(hash);
 
-  //printf("Store at: %lld\n",i);
-
-  kmers[i] = temp;
-
-  if(l_ext=='F'){ // || r_ext=='F'){ //Only start from left-terminating kmers
-    assert(current_smer!=smers_size);
-    smers[current_smer] = &kmers[i];
-    current_smer++;
+  if(upc_threadof(&kmers[hash])==MYTHREAD){
+    InsertKmer(hash,kmtemp);
+  } else {
+    KmListNode *tempnode = malloc(sizeof(KmListNode));
+    tempnode->km         = kmtemp;
+    tempnode->hash       = hash;
+    tempnode->next       = kmlist;
+    kmlist               = tempnode;
   }
 }
 
@@ -242,7 +290,28 @@ kmer_ptr NextKmer(const kmer_ptr km, char direction){
   return FindKmer(knextstr);
 }
 
-void GenContig(kmer_ptr km){
+void LoadKmList(int i){
+  int low  = hashtable_size/THREADS*i;
+  int high = hashtable_size/THREADS*(i+1);
+
+  KmListNode *lptr = kmlist;
+  while(lptr!=NULL){
+    if(low<= lptr->hash && lptr->hash<high){ //Do we have permission to write here?
+      lptr->hash = GetOpenBin(lptr->hash);
+      if( !(low<= lptr->hash && lptr->hash<high) ) //Are we still in the locked range?
+        lptr = lptr->next;
+      InsertKmer(lptr->hash, lptr->km);
+      KmListNode *next = lptr->next;
+      free(lptr);
+      lptr = next;
+    } else {
+      lptr = lptr->next;
+    }
+  }
+  kmlist = lptr;
+}
+
+void GenContig(FILE *fout, kmer_ptr km){
   char direction;
 
   ksym_t contigseq[CONTIG_SEQ_MAX];
@@ -267,14 +336,15 @@ void GenContig(kmer_ptr km){
       printf("Reached maximum contig length!\n");
       EXIT(-7);
     }
-    PrintPackedAsString(km->kmer);
-    printf(" - %c %c\n",km->l_ext,km->r_ext);
+    //PrintPackedAsString(km->kmer);
+    //printf(" - %c %c\n",km->l_ext,km->r_ext);
     km = NextKmer(km, direction);
   }
 
   contigseq[contiseq_len] = '\0';
+  fprintf(fout, "%s\n", contigseq);
 
-  printf("%s\n",contigseq);
+  //printf("%s\n",contigseq);
 
   //if(km!=NULL){
   //  PrintPackedAsString(km->kmer);
