@@ -147,9 +147,13 @@ int main(int argc, char *argv[]){
   }
 
   char output_name[100];
-  sprintf(output_name,"/z/pgen-%d.out",MYTHREAD);
+  sprintf(output_name,"pgen-%d.out",MYTHREAD);
   
   FILE *fout = fopen(output_name, "wb");
+  if(!fout){
+    printf("Could not open output file!");
+    upc_global_exit(-9);
+  }
 
   upc_forall(int i = 0;i<current_smer;i++;&smers[i])
     GenContig(fout,smers[i]);
