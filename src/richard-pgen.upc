@@ -196,7 +196,7 @@ int main(int argc, char *argv[]){
 
   traversalTime -= gettime();
   char output_name[100];
-  sprintf(output_name,"/z/pgen-%d.out",MYTHREAD);
+  sprintf(output_name,"/z/pgen-T%d-%d.out",THREADS,MYTHREAD);
   
   FILE *fout = fopen(output_name, "wb");
   if(!fout){
