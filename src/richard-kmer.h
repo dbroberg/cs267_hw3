@@ -180,7 +180,6 @@ int64_t HashKmer(int64_t hashtable_size, const ksym_t *kpacked){
   return hashval % hashtable_size;
 }
 
-int hash_collisions = 0;
 
 void InsertKmer(int64_t hash, const kmer temp){
   kmers[hash] = temp;
@@ -195,7 +194,7 @@ void InsertKmer(int64_t hash, const kmer temp){
 
 int64_t GetOpenBin(int64_t hash){
   //printf("%ld\n", hash);
-  for(;kmers[hash].l_ext!=0;hash++,hash_collisions++){}
+  for(;kmers[hash].l_ext!=0;hash++){}
   return hash;
 }
 
