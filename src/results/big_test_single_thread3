@@ -1,0 +1,15 @@
+UPCR: UPC thread 0 of 1 on nid00291 (pshm node 0 of 1, process 0 of 1, pid=18652)
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 1
+Input reading time: 21.783457 seconds
+Graph traversal time: 8.767865 seconds
+Kmlist offload: 0.000007 seconds
+Total time: 30.551332s
