@@ -88,15 +88,43 @@ Our algorithm begins by detecting how many kmers are in the input. It then alloc
 
 Kmers are hashed using Dan Bernstein's \texttt{djb2} hash function. Tests using the small data set with Austin Appleby's \texttt{MurmurHash3} didn't show a significant reduction in collisions.
 
-Additionally, a local array of pointers to the hash table is allocated to be 1/50th the number of kmers. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided.
+Additionally, a local array of pointers to the hash table is allocated to be 1/50th the number of kmers. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided as shown in Figures~\ref{fig:smer_dist_small} and \ref{fig:smer_dist_large}.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{shorthisto.pdf}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Short data set)} \label{fig:smer_dist_small}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{longhisto.pdf}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Long data set)} \label{fig:smer_dist_large}
+\end{minipage}
+
+Since the size of the file and the number of threads/processes can be determined at run-time, it is possible to assign threads to read separate, non-overlapping blocks of lines from the file. Each process begins reading and, as it does so, adding kmers. 
+
+In our algorithm, adding a kmer is a two-step process. If a kmer hashes to an address owned by the process which read it, then the process saves the kmer to that address immediately. If, however, the kmer hashes to an address which is not owned by the process, then the process adds the kmer to a linked list in its private local storage: the kmer will be added to the shared space later. This scheme guarantees that kmers being added to the hashtable do not encounter race conditions.
+
+After all of the kmers have been read in this way, the kmers stored in the linked lists must be added to the hashtable. But race conditions must be avoided. One way to do this is to lock addresses or, more practically, blocks of addresses. But locks can create performance bottlenecks and introduce the possibility of deadlocks.
+
+Therefore, the hashtable is divided into evenly-sized and sequential blocks based on the number of threads. Each thread is given exclusive access to a block and deposits that block's associated kmers from its linked list. A barrier synchronizes the threads and then each thread does the same operation with the next block until each thread has seen every block.
+
+This round robin distribution must be performed twice because kmers may hash to filled slots in the table and, in the course of linear probing, be slotted for insertion into an address outside the block the kmer's depositing thread currently has access to. However, twice is guaranteed to be sufficient because the 33\% maximum occupancy of the hash table coupled with the uniform distribution of the hash function guarantees that there will be sufficient slots in each block such that no kmer will move across more than one boundary via linear probing.
+
+As the kmers are inserted into the hashtable, they are removed from the linked list. It is therefore simple to check that all kmers have been added: the list will empty if this is the case. As the kmers are inserted into the hashtable, the smers are noted and their final addresses saved to their inserting thread's private local memory.
+
+Once all of the kmers have been added to the hashtable, each thread iterates through its saved smers and traverses the table. No special synchronization is needed for this step because only read operations will take place.
+
+Kmers are read from a striped file. Such a file is distributed into blocks across multiple hard drives, which can increase data throughput. We don't expect to see much benefit from this when running on a single node due to contention for that node's connection with memory; however, when running across several nodes there may be a large benefit.
+
+For maximum benefit, each process should read memory from a separate part of the file, with no overlap. However, this is difficult to achieve if the number of processes might change. Therefore, the block size is chosen to be considerably smaller than the amount of data a process will read in. The effect is that the processes cycle between which drive they are getting data from. We do not attempt to synchronize this cycling and it is difficult to analyze theoretical (given potentially different read rates), but the ultimate effect is less contention than would be expected if everything were read from a single hard drive. For similar reasons, we write outputs to the scratch space for our tests.
 
 
-
-  % int bucket_size = 3*line_count/THREADS;
-  % hashtable_size  = bucket_size*THREADS;
-  % smers_size      = line_count/50/THREADS;
-  % kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
-  % smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
 
 
 
@@ -179,21 +207,7 @@ After testing the code further at this point, numerous deadlocks were witnessed.
 
 In the later stages of the code, local representations of the hash tables were created to avoid synchornization issues. We also began to wonder if things could be  made faster with linked lists, which would have $\circ (1)$ insertion time and $\circ(BinN)$ retrieval time, as opposed to open hash table approaches which have $\circ (BinN)$ for both. If the circular buffer method was still applied to linked lists, then the approach could remain lock free. 
 
-\begin{minipage}{\linewidth}
-  \captionsetup{type=figure}
-  \begin{center}
-  \includegraphics[width=0.5\textwidth]{shorthisto.png}
-  \end{center}
-  \caption{Distribution of start kmers to address space (Short data set)} \label{fig:xsl_script}
-\end{minipage}
 
-\begin{minipage}{\linewidth}
-  \captionsetup{type=figure}
-  \begin{center}
-  \includegraphics[width=0.5\textwidth]{longhisto.png}
-  \end{center}
-  \caption{Distribution of start kmers to address space (Long data set)} \label{fig:xsl_script}
-\end{minipage}
 
 
 figures/plots that could exist:
