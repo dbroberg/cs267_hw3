@@ -133,7 +133,7 @@ Separate chaining guarantees immediate insertion and retrieval proportional to b
 
 Therefore, we expect the only downside to our choice of open hashing to be the wasted memory. However, given the sizes of the datasets here, this is not problematic for us.
 
-The choice to use round robin kmer insertion (b) rather than locks was also motivated by design simplicity. Shared memory structures and deadlock potential were entirely avoided by this design. We therefore expect that this choice should be both faster and safer than alternative designs.
+The choice to use round robin kmer insertion (b) rather than locks was also motivated by design simplicity. Shared memory structures and deadlock potential were entirely avoided by this design. We therefore expect that this choice should be both faster and safer than alternative designs. An earlier alternative design we tried was to use atomic conditional-updates to write to relevant memory locations; however, these accesses were implemented as simple locks and not available on all of the UPC compiles we used. Thus, they added complexity with few additional benefits.
 
 Testing the foregoing assertions would require significant redesign of our algorithm, which we did not have time to do. Therefore, we rely on our arguments above as justification of the choice.
 
@@ -147,9 +147,6 @@ The simplest approach would be to have each thread allocate a portion of memory 
 Now each thread owns a part of the hashtable and a set of smers. Each thread will have approximately the same number of smers because the smers were evenly distributed in the input (see above). For each kmer, a thread sends a message to the node which owns that kmer's hash and receives back the value of the hash. Since each thread is doing this, threads must interleave work on their contigs with replies to incoming requests for values. Therefore, sends should be non-blocking and the thread should be able to receive messages whose tag corresponds to either to values being returned or values being requested.
 
 Race conditions for data will not occur here because each thread always has exclusive access to its own memory. Separate chaining is useful in this instance because then thread which owns an address can always be accurate predicted (i.e.\ there is no need for value or hashtable-write requests to be forwarded on to another thread).
-
-\section{Scalability}
-TODO
 
 \section{Results}
 
@@ -181,6 +178,82 @@ Figure~\ref{fig:small_single_times_scaling} shows how our algorithm scales on th
   \end{center}
   \caption{Scaling versus threads (Small data set)} \label{fig:small_single_times_scaling}
 \end{minipage}
+
+Figure~\ref{fig:large_mult_times} shows absolute run-times for varying numbers of threads for the large dataset. Our algorithm took 30 seconds to perform this operation using a single thread, so we achieve a 4x speed-up for the largest numbers of threads used. However, Figure~\ref{fig:large_mult_times_scaling} shows that this represents abysmal scaling.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{LargeMultTime.pdf}
+  \end{center}
+  \caption{Absolute run-times versus threads (Large data set)} \label{fig:large_mult_times}
+\end{minipage}
+
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{LargeMultScaling.pdf}
+  \end{center}
+  \caption{Scaling versus threads (Large data set)} \label{fig:large_mult_times_scaling}
+\end{minipage}
+
+We hypothesized that the poor scaling was due to the high volumes of internode communication necessary to explore the hashtable. To test this, we ran the big dataset on a single node with various numbers of threads. As shown in Figure~\ref{fig:multi_single_and_big} this achieves faster performance than dividing the work between eight nodes.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{MultiANDSingleBIGtime.pdf}
+  \end{center}
+  \caption{Absolute time versus threads including a single node (Large data set)} \label{fig:multi_single_and_big}
+\end{minipage}
+
+As Figure~\ref{fig:multi_single_and_big_scaling} shows, the run-times we see running on eight nodes seem to be part of the same scaling curve the single node experiences.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{MultiANDSingleBIGScaling.pdf}
+  \end{center}
+  \caption{Scaling versus threads including a single node (Large data set)} \label{fig:multi_single_and_big_scaling}
+\end{minipage}
+
+This suggests that the scaling is somehow inherent to the algorithm. The computational motif most strongly associated with our algorithm is ``graph traversal". The Berkeley View Dwarf Mine states that many current computer architectures fail to efficiently handle this motif because ``most searching algorithms end up depending almost entirely on random memory access latency". In our case, accessing random memory means utilizing relatively expensive communication channels (especially expensive when these channels are between nodes), so it should not be surprising that additional processing power does not translate to significantly better runtimes: many of the threads are competing for access to memory! This is true even with striped file access due to L1 and L2 caches.
+
+Figure~\ref{fig:split} shows a break-down of the run-times of our algorithm for various numbers of threads showing the costs of
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{single_split_time.pdf}
+  \end{center}
+  \caption{Absolute run-times versus threads for a single node showing break down by part of algorithm (Large data set)} \label{fig:split}
+\end{minipage}
+
+
+report/
+
+
+
+
+
+
+ % report/MultiANDSingleBIGScaling.pdf       | Bin 0 -> 12913 bytes
+ % report/MultiANDSingleBIGtime.pdf          | Bin 0 -> 11968 bytes
+ % report/SingleBIGScaling.pdf               | Bin 0 -> 13972 bytes
+
+
+
+
+% \item A description of the computational and communication motifs of the parallel algorithms.
+% \item Discussion of the scalability and relative costs of the parallel graph construction and traversal algorithms.
+% \item A discussion on using UPC for such an application with the underlying computational motif.
+
+
+
+
+
+
 
 
 
@@ -246,7 +319,7 @@ Within the serial code, many external functions and variables are referenced whi
 %\mycode{contig_generation}{Generation of contigs routine (Fortran)}{code-contig_generation.h}{fortran}
 
 
-
+\begin{comment}
 \section{UPC approach}
 The first thing to be done in the extension to UPC was to rewrite the packing and hashing functions for a PGAS framework. This gives us an initial list of start kmers ({\color{red}Elaborate on changes for these functions}). 
 
@@ -268,9 +341,10 @@ After testing the code further at this point, numerous deadlocks were witnessed.
 
 In the later stages of the code, local representations of the hash tables were created to avoid synchornization issues. We also began to wonder if things could be  made faster with linked lists, which would have $\circ (1)$ insertion time and $\circ(BinN)$ retrieval time, as opposed to open hash table approaches which have $\circ (BinN)$ for both. If the circular buffer method was still applied to linked lists, then the approach could remain lock free. 
 
+\end{comment}
 
 
-
+\begin{comment}
 figures/plots that could exist:
 \begin{itemize}
 \item timing plots?
@@ -289,6 +363,7 @@ List of suggested things to include from homework statement:
 \end{itemize}
 
 \section{Summary}
+\end{comment}
 
 
 \end{document}
