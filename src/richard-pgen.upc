@@ -72,7 +72,7 @@ int main(int argc, char *argv[]){
 
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
-  smers_size      = line_count/50/THREADS;
+  smers_size      = line_count/THREADS;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
   smers           = (kmer_ptr*) calloc(smers_size, sizeof(kmer_ptr));
 
@@ -133,7 +133,9 @@ int main(int argc, char *argv[]){
   // }
 
   kmlist_offload -= gettime();
-  printf("Loading kmlist\n");
+  if(MYTHREAD==0){
+    printf("Loading kmlist\n");
+  }
   for(int j=0;j<2;j++)                  //Do this twice to account for hash targets moving across boundaries
   for(int i=0;i<THREADS;i++){           //Move linked list into table
     upc_barrier;
