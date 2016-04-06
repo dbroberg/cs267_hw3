@@ -31,6 +31,7 @@ typedef uint64_t hash_t;
   #define MYTHREAD 0
   #define EXIT(X) exit(X)
   #define upc_memget memcpy
+  #define upc_threadof(X) 0
 #endif
 
 #ifndef TESTCOMPILE
@@ -55,6 +56,8 @@ typedef uint64_t hash_t;
   int kmers_inserted[THREADS];
   int kmers_added[THREADS];
   int nodes_inspected[THREADS];
+  int contig_count[THREADS];
+  int contigs_generated[THREADS];
 #endif
 
 int hashtable_size;
