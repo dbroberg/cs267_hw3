@@ -26,22 +26,22 @@ for i in shorttest:
 	perc.append(round(100*float(i[2])/float(tot),2))
 
 import matplotlib.pyplot as plt
-plt.figure(figsize=(30,15))
+plt.figure(figsize=(20,10))
 plt.subplots_adjust(bottom=0.32)
 #x=range(int(shorttest[-1][1]))
 x=range(len(shorttest))
 plt.bar(x,numset)
-plt.xticks(x,listset,rotation=45,size=30)
+plt.xticks(x,listset,rotation=45,size=20)
 plt.yticks(size=30)
-plt.ylabel('Number of kmers',size=50)
-plt.xlabel('Address range',size=50)
-plt.title('Histogram of kmers distributed (small set)',size=70)
+plt.ylabel('Number of kmers',size=30)
+plt.xlabel('Address range',size=30)
+plt.title('Histogram of kmers distributed (small set)',size=40)
 plt.grid()
 for i in range(len(shorttest)):
-	plt.text(i+.05,shorttest[i][2]-40,str(perc[i])+' %',color='w',size=30,verticalalignment='center')
+	plt.text(i+.05,shorttest[i][2]-40,str(perc[i])+' %',color='w',size=20,verticalalignment='center')
 
 
-plt.savefig('shorthisto.png')
+plt.savefig('shorthisto.pdf')
 
 longtest = [[1.0000 , 2699925.0000, 18187],
 [2699925.0000 , 5399849.0000 , 22391],
@@ -67,20 +67,20 @@ for i in longtest:
 	perc.append(round(100*float(i[2])/float(tot),2))
 
 plt.clf()
-plt.figure(figsize=(30,15))
+plt.figure(figsize=(20,10))
 plt.subplots_adjust(bottom=0.32)
 #x=range(int(shorttest[-1][1]))
 x=range(len(longtest))
 plt.bar(x,numset)
-plt.xticks(x,listset,rotation=45,size=30)
+plt.xticks(x,listset,rotation=45,size=20)
 plt.yticks(size=30)
-plt.ylabel('Number of kmers',size=50)
-plt.xlabel('Address range',size=50)
-plt.title('Histogram of kmers distributed (large set)',size=70)
+plt.ylabel('Number of kmers',size=30)
+plt.xlabel('Address range',size=30)
+plt.title('Histogram of kmers distributed (large set)',size=40)
 plt.grid()
 for i in range(len(longtest)):
-	plt.text(i+.38,longtest[i][2]-1000,str(perc[i])+' %',color='w',size=30,verticalalignment='center',horizontalalignment='center')
+	plt.text(i+.38,longtest[i][2]-1000,str(perc[i])+' %',color='w',size=20,verticalalignment='center',horizontalalignment='center')
 
-plt.savefig('longhisto.png')
+plt.savefig('longhisto.pdf')
 
 
