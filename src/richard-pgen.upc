@@ -72,7 +72,7 @@ int main(int argc, char *argv[]){
 
   int bucket_size = 3*line_count/THREADS;
   hashtable_size  = bucket_size*THREADS;
-  smers_size      = line_count/100/THREADS;
+  smers_size      = line_count/50/THREADS;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
   smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
 
