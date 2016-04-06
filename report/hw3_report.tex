@@ -179,6 +179,21 @@ After testing the code further at this point, numerous deadlocks were witnessed.
 
 In the later stages of the code, local representations of the hash tables were created to avoid synchornization issues. We also began to wonder if things could be  made faster with linked lists, which would have $\circ (1)$ insertion time and $\circ(BinN)$ retrieval time, as opposed to open hash table approaches which have $\circ (BinN)$ for both. If the circular buffer method was still applied to linked lists, then the approach could remain lock free. 
 
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{shorthisto.png}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Short data set)} \label{fig:xsl_script}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{longhisto.png}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Long data set)} \label{fig:xsl_script}
+\end{minipage}
 
 
 figures/plots that could exist:
