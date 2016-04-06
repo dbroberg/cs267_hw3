@@ -232,6 +232,133 @@ plt.savefig('LargeMultScaling.pdf')
 
 
 
+#now get the scaling plot for big data on single node...
+with open('../src/results/bigset_singlenode.dat','r') as f:
+	data=f.read()	
+
+data=data.split('\n')
+
+catdat=[]
+for i in range(48/2):
+	catdat.append(data[2*i]+' '+data[2*i+1])
+
+actdata1=[]
+for j in catdat:
+	actdata1.append([int(j.split(' ')[4]),float(j.split(' ')[7][:-1])])	
+
+
+singval=actdata1[0][1]  #this is ideal time...
+def returnvals(actdat):
+	x=[]
+	y=[]
+	for i in actdat:
+		x.append(i[0])
+		y.append(100*(float(singval)/i[0])/float(i[1]))
+	return x,y
+
+plt.clf()
+plt.figure(figsize=(7,5))
+xt,yt=returnvals(actdata1)
+plt.plot(xt,yt,'o')
+
+#plt.plot(xfull, func(np.array(xfull), *popt), 'k-', label="Fitted Curve")
+
+plt.legend(loc=1)
+
+plt.ylabel('Percentage of Ideal Scaling (%)',size=18)
+plt.xlabel('Threads',size=18)
+#plt.title('Performance of single node (small data set)')
+plt.savefig('SingleBIGScaling.pdf')
+
+#now do same plot but with large number of threads included as well?
+
+with open('../src/results/multBIG-output.dat','r') as f:
+	data=f.read()	
+
+data=data.split('\n')
+
+catdat=[]
+for i in range(50/2):
+	catdat.append(data[2*i]+' '+data[2*i+1])
+
+actdata=[]
+for j in catdat:
+	actdata.append([int(j.split(' ')[4]),float(j.split(' ')[7][:-1])])	
+
+cnt=-1
+sorteddata={0:[],1:[],2:[],3:[],4:[]}
+for i in actdata:
+	if i[0]==96:
+		cnt+=1
+	sorteddata[cnt].append(i)
+
+
+x=[]
+y=[]
+for i in range(len(sorteddata[0])):
+	x.append(sorteddata[0][i][0])
+	yval=np.mean([sorteddata[0][i][1],sorteddata[1][i][1],sorteddata[2][i][1],sorteddata[3][i][1],sorteddata[4][i][1]])
+	y.append(100*(singval/x[-1])/yval)
+
+#def func(x,a,b,c):
+#	return a /(c*x-b)
+
+#popt, pcov = curve_fit(func, xfull, yfull)
+#xfull=[]
+#for i in x:
+#	xfull.append(i)
+
+
+plt.clf()
+plt.figure(figsize=(7,5))
+xt,yt=returnvals(actdata1)
+plt.plot(xt,yt,'o')
+plt.plot(x,y,'o')
+
+#for i in xt:
+#	xfull.append(i)
+
+#xfull=xfull.sort()
+#plt.plot(xfull, func(np.array(xfull), *popt), 'k-', label="Fitted Curve")
+plt.legend(loc=1)
+plt.ylabel('Percentage of Ideal Scaling (%)',size=18)
+plt.xlabel('Threads',size=18)
+#plt.title('Performance of single node (small data set)')
+plt.savefig('MultiANDSingleBIGScaling.pdf')
+
+
+#Now with time...
+
+def returnvals(actdat):
+	x=[]
+	y=[]
+	for i in actdat:
+		x.append(i[0])
+		y.append(float(i[1]))
+	return x,y
+
+plt.clf()
+plt.figure(figsize=(7,5))
+xt,yt=returnvals(actdata1)
+plt.plot(xt,yt,'o',label='Single node data')
+
+x=[]
+y=[]
+for i in range(len(sorteddata[0])):
+	x.append(sorteddata[0][i][0])
+	yval=np.mean([sorteddata[0][i][1],sorteddata[1][i][1],sorteddata[2][i][1],sorteddata[3][i][1],sorteddata[4][i][1]])
+	y.append(yval)
+
+plt.plot(x,y,'o',label='8 node data')
+plt.legend(loc=1)
+plt.ylabel('Time (seconds)',size=18)
+plt.xlabel('Threads',size=18)
+plt.savefig('MultiANDSingleBIGtime.pdf')
+
+
+
+
+
 
 
 
