@@ -56,7 +56,7 @@ for j in range(4):
 plt.legend(loc=9)
 plt.ylabel('Time (seconds)',size=20)
 plt.xlabel('Threads',size=20)
-plt.title('Performance of single node (small data set)')
+#plt.title('Performance of single node (small data set)')
 plt.savefig('SingleTime.pdf')
 
 
@@ -106,17 +106,133 @@ plt.subplots_adjust(wspace=0.15)
 plt.legend(loc=9)
 #plt.ylabel('Time (seconds)',size=20)
 #plt.xlabel('Threads',size=20)
-plt.suptitle('Combined performance (small data set)',size=24)
+#plt.suptitle('Combined performance (small data set)',size=24)
 fig.text(0.5, 0.04, 'Threads', ha='center',size=20)
 fig.text(0.04, 0.5, 'Time (seconds)', va='center', rotation='vertical',size=20)
 plt.savefig('CombineTimes.pdf')
 
-
+#now redo just the multtimes plot
 plt.clf()
 plt.plot(xfull,yfull,'ko')
 plt.plot(xfull,yfull,'k')
 plt.ylabel('Time (seconds)',size=20)
 plt.xlabel('Threads',size=20)
-plt.title('Performance over 8 nodes (small data set)')
+#plt.title('Performance over 8 nodes (small data set)')
 plt.savefig('MultTimes.pdf')
+
+
+#now do time scaling for single node data
+#get 1node avg
+singthread=[]
+for i in range(4):
+	singthread.append(sorteddata[i][0][1])
+
+singval=np.mean(singthread)
+
+def returnvals(actdat):
+	x=[]
+	y=[]
+	for i in actdat:
+		x.append(i[0])
+		y.append(100*(float(singval)/i[0])/float(i[1]))
+	return x,y
+
+plt.clf()
+plt.figure(figsize=(7,5))
+for j in range(4):
+	xt,yt=returnvals(sorteddata[j])
+	plt.plot(xt,yt,'o',label='Job '+str(j+1))
+
+plt.ylim(0,100)
+plt.legend(loc=9)
+plt.ylabel('Percentage of Ideal Scaling (%)',size=18)
+plt.xlabel('Threads',size=18)
+#plt.title('Scaling on single node (small data set)',size=21)
+plt.savefig('SingleScaling.pdf')
+
+
+
+
+
+#Now Do similar plots but for BIG data set
+with open('../src/results/multBIG-output.dat','r') as f:
+	data=f.read()	
+
+data=data.split('\n')
+
+catdat=[]
+for i in range(50/2):
+	catdat.append(data[2*i]+' '+data[2*i+1])
+
+actdata=[]
+for j in catdat:
+	actdata.append([int(j.split(' ')[4]),float(j.split(' ')[7][:-1])])	
+
+cnt=-1
+sorteddata={0:[],1:[],2:[],3:[],4:[]}
+for i in actdata:
+	if i[0]==96:
+		cnt+=1
+	sorteddata[cnt].append(i)
+
+def returnvals(actdat):
+	x=[]
+	y=[]
+	for i in actdat:
+		x.append(i[0])
+		y.append(i[1])
+	return x,y
+
+plt.clf()
+plt.figure(figsize=(7,5))
+for j in range(5):
+	xt,yt=returnvals(sorteddata[j])
+	plt.plot(xt,yt,'o',label='Job '+str(j+1))
+
+#plt.plot(xfull, func(np.array(xfull), *popt), 'k-', label="Fitted Curve")
+
+plt.legend(loc=1)
+plt.ylabel('Time (seconds)',size=20)
+plt.xlabel('Threads',size=20)
+#plt.title('Performance of single node (small data set)')
+plt.savefig('LargeMultTime.pdf')
+
+#nOw do scaling for BIG data set
+with open('../src/results/singleBIG.dat','r') as f:
+	data1=f.read()	
+
+data1=data1.split('\n')
+singthread=[]
+for i in range(3):
+	singthread.append(float(data1[2*i+1].split()[-1][:-1]))
+
+singval=np.mean(singthread)  #this is ideal time...
+def returnvals(actdat):
+	x=[]
+	y=[]
+	for i in actdat:
+		x.append(i[0])
+		y.append(100*(float(singval)/i[0])/float(i[1]))
+	return x,y
+
+plt.clf()
+plt.figure(figsize=(7,5))
+for j in range(5):
+	xt,yt=returnvals(sorteddata[j])
+	plt.plot(xt,yt,'o',label='Job '+str(j+1))
+
+#plt.plot(xfull, func(np.array(xfull), *popt), 'k-', label="Fitted Curve")
+
+plt.legend(loc=1)
+
+plt.ylabel('Percentage of Ideal Scaling (%)',size=18)
+plt.xlabel('Threads',size=18)
+#plt.title('Performance of single node (small data set)')
+plt.savefig('LargeMultScaling.pdf')
+
+
+
+
+
+
 
