@@ -74,7 +74,7 @@ int main(int argc, char *argv[]){
   hashtable_size  = bucket_size*THREADS;
   smers_size      = line_count/50/THREADS;
   kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
-  smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
+  smers           = (kmer_ptr*) calloc(smers_size, sizeof(kmer_ptr));
 
   //Declare all buckets unused
   if(MYTHREAD==0){
