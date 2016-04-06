@@ -19,6 +19,7 @@
 #define CONTIG_SEQ_MAX     1000000
 
 typedef unsigned char ksym_t;
+typedef uint64_t hash_t;
 
 #ifndef TESTCOMPILE
   #define EXIT(X) upc_global_exit(X)
@@ -66,7 +67,7 @@ typedef struct {
 } kmer;
 
 struct kmlist_t {
-  int64_t hash;
+  hash_t hash;
   kmer km;
   struct kmlist_t *next;
 };
@@ -180,8 +181,8 @@ int CompareKmer(const ksym_t *seq1, const ksym_t *seq2){
   return memcmp(seq1, seq2, KMER_PACKED_LENGTH)==0; //Are sequences equal?
 }
 
-int64_t HashKmer(int64_t hashtable_size, const ksym_t *kpacked){
-  int64_t hashval;
+hash_t HashKmer(hash_t hashtable_size, const ksym_t *kpacked){
+  hash_t hashval;
   hashval = 5381;
   for(int i = 0; i < (KMER_PACKED_LENGTH); i++)
     hashval = kpacked[i] + (hashval << 5) + hashval;
@@ -189,7 +190,7 @@ int64_t HashKmer(int64_t hashtable_size, const ksym_t *kpacked){
   return hashval % hashtable_size;
 }
 
-void InsertKmer(int64_t hash, const kmer temp){
+void InsertKmer(hash_t hash, const kmer temp){
   kmers_inserted[MYTHREAD]++;
   assert(kmers[hash].l_ext==0);
   kmers[hash] = temp;
@@ -201,7 +202,7 @@ void InsertKmer(int64_t hash, const kmer temp){
   }
 }
 
-int64_t GetOpenBin(int64_t hash){
+hash_t GetOpenBin(hash_t hash){
   for(;kmers[hash].l_ext!=0;hash=(hash+1)%hashtable_size){}
   return hash;         
 }
@@ -211,7 +212,7 @@ void AddKmer(const ksym_t *raw_kmer, ksym_t l_ext, ksym_t r_ext){
   //printf("Packing: %.19s\n",raw_kmer);  
   PackSequence(raw_kmer,kmtemp.kmer);
   //PrintPackedKmer(kmer_packed);
-  int64_t hash = HashKmer(hashtable_size,kmtemp.kmer);
+  hash_t hash = HashKmer(hashtable_size,kmtemp.kmer);
   kmtemp.l_ext = l_ext;
   kmtemp.r_ext = r_ext;
 
@@ -275,7 +276,7 @@ void ShiftAndAdd(ksym_t *kpacked, char direction, ksym_t l_ext, ksym_t r_ext){
 }
 
 kmer_ptr FindKmer(const ksym_t *kstr){
-  int64_t hash = HashKmer(hashtable_size, kstr);
+  hash_t hash = HashKmer(hashtable_size, kstr);
   for(;kmers[hash].l_ext!=0;hash=(hash+1)%hashtable_size){
     ksym_t remote_kstr[KMER_PACKED_LENGTH];
     upc_memget(remote_kstr, kmers[hash].kmer, KMER_PACKED_LENGTH);
