@@ -86,16 +86,16 @@ Our program will construct this graph and traverse its connected components. To 
 
 Our algorithm begins by detecting how many kmers are in the input. It then allocates a shared memory hashtable three times larger than this number. Members of the hashtable are stored via open addressing with linear probing: this is wasteful of memory, but greatly simplifies the data structure, thereby reducing the potential for errors. Using a hashtable of size $3N$ ensures that occupancy stays well below 70\%, a point at which performance has been empirically shown to degrade significantly.
 
-Kmers are hashed using Dan Bernstein's \texttt{djb2} hash function. Tests using the small data set with Austin Appleby's \texttt{MurmurHash3} didn't show a significant reduction in collisions.
+Kmers are hashed using Dan Bernstein's \texttt{djb2} hash function. Tests using the small data set with Austin Appleby's \texttt{MurmurHash3} didn't show a significant reduction in collisions. Since kmer elements are drawn from a library of four symbols, only 2-bits of information are required to represent each symbol. Therefore, as kmers are read they are transformed to this more compact representation.
 
-Additionally, a local array of pointers to the hash table is allocated to be 1/50th the number of kmers. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided as shown in Figures~\ref{fig:smer_dist_small} and \ref{fig:smer_dist_large}.
+Additionally, a local array of pointers to the hash table is allocated. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided as shown in Figures~\ref{fig:smer_dist_small} and \ref{fig:smer_dist_large}.
 
 \begin{minipage}{\linewidth}
   \captionsetup{type=figure}
   \begin{center}
   \includegraphics[width=0.8\textwidth]{shorthisto.pdf}
   \end{center}
-  \caption{Distribution of start kmers to address space (Short data set)} \label{fig:smer_dist_small}
+  \caption{Distribution of start kmers to address space (Small data set)} \label{fig:smer_dist_small}
 \end{minipage}
 
 \begin{minipage}{\linewidth}
@@ -114,7 +114,7 @@ After all of the kmers have been read in this way, the kmers stored in the linke
 
 Therefore, the hashtable is divided into evenly-sized and sequential blocks based on the number of threads. Each thread is given exclusive access to a block and deposits that block's associated kmers from its linked list. A barrier synchronizes the threads and then each thread does the same operation with the next block until each thread has seen every block.
 
-This round robin distribution must be performed twice because kmers may hash to filled slots in the table and, in the course of linear probing, be slotted for insertion into an address outside the block the kmer's depositing thread currently has access to. However, twice is guaranteed to be sufficient because the 33\% maximum occupancy of the hash table coupled with the uniform distribution of the hash function guarantees that there will be sufficient slots in each block such that no kmer will move across more than one boundary via linear probing.
+This round robin distribution must be performed twice because kmers may hash to filled slots in the table and, in the course of linear probing, be slotted for insertion into an address outside the block the kmer's depositing thread currently has access to. However, twice is guaranteed to be sufficient because the 33\% maximum occupancy of the hash table coupled with the uniform distribution of the hash function guarantees that there will be sufficient slots in each block such that no kmer will move across more than one boundary via linear probing. UPC's default strict memory operation ordering guarantees that this round robin approach will not have race conditions since each thread has exclusive access to the memory it is manipulating and operations performed on that memory are guaranteed to be performed in sequential order.
 
 As the kmers are inserted into the hashtable, they are removed from the linked list. It is therefore simple to check that all kmers have been added: the list will empty if this is the case. As the kmers are inserted into the hashtable, the smers are noted and their final addresses saved to their inserting thread's private local memory.
 
@@ -123,6 +123,65 @@ Once all of the kmers have been added to the hashtable, each thread iterates thr
 Kmers are read from a striped file. Such a file is distributed into blocks across multiple hard drives, which can increase data throughput. We don't expect to see much benefit from this when running on a single node due to contention for that node's connection with memory; however, when running across several nodes there may be a large benefit.
 
 For maximum benefit, each process should read memory from a separate part of the file, with no overlap. However, this is difficult to achieve if the number of processes might change. Therefore, the block size is chosen to be considerably smaller than the amount of data a process will read in. The effect is that the processes cycle between which drive they are getting data from. We do not attempt to synchronize this cycling and it is difficult to analyze theoretical (given potentially different read rates), but the ultimate effect is less contention than would be expected if everything were read from a single hard drive. For similar reasons, we write outputs to the scratch space for our tests.
+
+\section{Design Choices and Optimizations}
+We made three major design choices: (a)~using open hashing with linear probing rather than separate chaining, (b)~using round robin exclusive access rather than locks, (c)~strip and memory blocking decisions.
+
+The choice to use open hashing with linear probing (a) was motivated by a desire for a simple algorithmic design which avoided complex structures in shared memory. For good performance, this design requires a hash function which not only provides a uniform distribution, but also even spacing to minimize collisions. We did not verify that \texttt{djb2} provides this, but reduced fallout from a bad hash spacing by using a $3N$-sized hashtable.
+
+Separate chaining guarantees immediate insertion and retrieval proportional to bin occupancy whereas open hashing provides insertion and retrievals which are both proportional to the number of adjacent occupied addresses. Therefore, separate chaining is likely to have faster insertion times. Again, using a sufficiently large hashtable, as we have, reduces this problem.
+
+Therefore, we expect the only downside to our choice of open hashing to be the wasted memory. However, given the sizes of the datasets here, this is not problematic for us.
+
+The choice to use round robin kmer insertion (b) rather than locks was also motivated by design simplicity. Shared memory structures and deadlock potential were entirely avoided by this design. We therefore expect that this choice should be both faster and safer than alternative designs.
+
+Testing the foregoing assertions would require significant redesign of our algorithm, which we did not have time to do. Therefore, we rely on our arguments above as justification of the choice.
+
+Our choice of file striping patterns and UPC memory blocking (c) provides another potential avenue for optimization. However, long queue times on Edison interfered with carrying out systematic tests.
+
+\section{What About MPI?}
+UPC was perhaps the largest design choice we made. (Of course, it wasn't really a choice because part of the assignment was to use it.) Using a two-sided communication paradigm, like MPI would necessitate a few changes to our algorithm.
+
+The simplest approach would be to have each thread allocate a portion of memory corresponding to part of the hashtable. As in our algorithm, each thread can then write to its portion of the hashtable and save kmers corresponding to other threads' address blocks in a list in its local memory. Since each thread knows which thread will ultimately own these saved kmers, the thread can send them directly to their owner using non-blocking I/O. Once they have all been sent, the thread can use blocking I/O to receive the additional kmers it owns from other threads. If this fills a message buffer, then the threads could alternate between send and receive modes several times if necessary.
+
+Now each thread owns a part of the hashtable and a set of smers. Each thread will have approximately the same number of smers because the smers were evenly distributed in the input (see above). For each kmer, a thread sends a message to the node which owns that kmer's hash and receives back the value of the hash. Since each thread is doing this, threads must interleave work on their contigs with replies to incoming requests for values. Therefore, sends should be non-blocking and the thread should be able to receive messages whose tag corresponds to either to values being returned or values being requested.
+
+Race conditions for data will not occur here because each thread always has exclusive access to its own memory. Separate chaining is useful in this instance because then thread which owns an address can always be accurate predicted (i.e.\ there is no need for value or hashtable-write requests to be forwarded on to another thread).
+
+\section{Scalability}
+TODO
+
+\section{Results}
+
+Figure~\ref{fig:small_single_times} shows the absolute run-times of our algorithm on the small dataset for varying numbers of threads. We also processed the small dataset across eight nodes with a much larger number of processors. As Figure~\ref{fig:small_mult_times} shows, using about eight threads on a single node is faster than the fastest time achieved running on many threads across many nodes. For this small dataset, the processing power of each thread is probably under-utilized and communication overhead likely dominates the time-to-completion. Therefore, we only analyze the small dataset in terms of running on a single node.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{SingleTime.pdf}
+  \end{center}
+  \caption{Absolute run-time versus threads (Small data set)} \label{fig:small_single_times}
+\end{minipage}
+
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{CombineTimes.pdf}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Small data set)} \label{fig:small_mult_times}
+\end{minipage}
+
+Figure~\ref{fig:small_single_times_scaling} shows how our algorithm scales on the small test verses idealized performance, as given by the formula $\frac{time_0/t}{time_t}$. The Ivy Bridge design links pairs of cores to shared memory buses. Given that our code is not cache-optimized, we expect minimal gains past 12 threads. Figure~\ref{fig:small_single_times} supports this.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{SingleScaling.pdf}
+  \end{center}
+  \caption{Scaling versus threads (Small data set)} \label{fig:small_single_times_scaling}
+\end{minipage}
+
 
 
 
@@ -138,6 +197,7 @@ After the hash table has been populated, the Graph Traversal step begins by loop
 Within the serial code, many external functions and variables are referenced which were defined in Algorithms~\ref{packingDNAseq}- ~\ref{contig_generation}. These are displayed below the serial implementation code.
 \end{comment}
 
+\begin{comment}
 \begin{table}
     \begin{tabular}[t]{|c|p{3.2cm}|}
         \hline
@@ -175,6 +235,7 @@ Within the serial code, many external functions and variables are referenced whi
     \end{tabular}
     \caption{Functions and Structures included in Algotithms~\ref{packingDNAseq}- ~\ref{contig_generation}}
 \end{table}
+\end{comment}
 
 %\mycode{serial}{Serial Implementation (C)}{code-serial.c}{c} 
 
@@ -215,16 +276,11 @@ figures/plots that could exist:
 \item timing plots?
 \end{itemize}
 
-List of suggested thigns to include from homework statement:
+List of suggested things to include from homework statement:
 \begin{itemize}
-\item A description of your distributed data structures and parallel algorithms
 \item A description of the computational and communication motifs of the parallel algorithms.
-\item A description of the design choices/optimizations that you tried and how did they affect the performance.
-\item A description of how you avoided race conditions.
-\item Speedup plots that show how closely your parallel code approaches the idealized p-times speedup in the two experimental scenarios described in the previous section.
 \item Discussion of the scalability and relative costs of the parallel graph construction and traversal algorithms.
 \item A discussion on using UPC for such an application with the underlying computational motif.
-\item A discussion on how would you implement the same parallel algorithms in a two-sided communication model (e.g. by using MPI).
 \end{itemize}
 
 \section{Performance}
