@@ -1,0 +1,10 @@
+Number of UPC threads: 96
+Total time: 1.953810s
+Number of UPC threads: 120
+Total time: 1.506417s
+Number of UPC threads: 144
+Total time: 1.332948s
+Number of UPC threads: 168
+Total time: 1.266537s
+Number of UPC threads: 192
+Total time: 1.165448s
