@@ -133,7 +133,9 @@ int main(int argc, char *argv[]){
   // }
 
   kmlist_offload -= gettime();
-  printf("Loading kmlist\n");
+  if(MYTHREAD==0){
+    printf("Loading kmlist\n");
+  }
   for(int j=0;j<2;j++)                  //Do this twice to account for hash targets moving across boundaries
   for(int i=0;i<THREADS;i++){           //Move linked list into table
     upc_barrier;
