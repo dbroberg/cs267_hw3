@@ -93,7 +93,20 @@ The problem then is to reassemble the original DNA by fitting the pieces togethe
 
 Our program will construct this graph and traverse its connected components. To do this, a hash table will be used to store nodes of the graph with hashed kmers acting as keys. The values of the hash table will correspond to the prefix and suffixes and, thereby, serve as edges linking the nodes together.
 
-Our algorithm begins by detecting how many kmers are in the input.
+Our algorithm begins by detecting how many kmers are in the input. It then allocates a shared memory hashtable three times larger than this number. Members of the hashtable are stored via open addressing with linear probing: this is wasteful of memory, but greatly simplifies the data structure, thereby reducing the potential for errors. Using a hashtable of size $3N$ ensures that occupancy stays well below 70\%, a point at which performance has been empirically shown to degrade significantly.
+
+Kmers are hashed using Dan Bernstein's \texttt{djb2} hash function. Tests using the small data set with Austin Appleby's \texttt{MurmurHash3} didn't show a significant reduction in collisions.
+
+Additionally, a local array of pointers to the hash table is allocated to be 1/50th the number of kmers. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided.
+
+
+
+  int bucket_size = 3*line_count/THREADS;
+  hashtable_size  = bucket_size*THREADS;
+  smers_size      = line_count/50/THREADS;
+  kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
+  smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
+
 
 
 \begin{comment}
