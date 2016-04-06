@@ -1,0 +1,1505 @@
+UPCR: UPC thread  0 of 96 on nid00046 (pshm node 0 of 8, process  0 of 96, pid=25742)
+UPCR: UPC thread 24 of 96 on nid00048 (pshm node 2 of 8, process 24 of 96, pid=14437)
+UPCR: UPC thread 12 of 96 on nid00047 (pshm node 1 of 8, process 12 of 96, pid=8961)
+UPCR: UPC thread 84 of 96 on nid00053 (pshm node 7 of 8, process 84 of 96, pid=41545)
+UPCR: UPC thread 60 of 96 on nid00051 (pshm node 5 of 8, process 60 of 96, pid=6545)
+UPCR: UPC thread 36 of 96 on nid00049 (pshm node 3 of 8, process 36 of 96, pid=13626)
+UPCR: UPC thread 48 of 96 on nid00050 (pshm node 4 of 8, process 48 of 96, pid=5308)
+UPCR: UPC thread 72 of 96 on nid00052 (pshm node 6 of 8, process 72 of 96, pid=45726)
+UPCR: UPC thread 25 of 96 on nid00048 (pshm node 2 of 8, process 25 of 96, pid=14438)
+UPCR: UPC thread 13 of 96 on nid00047 (pshm node 1 of 8, process 13 of 96, pid=8962)
+UPCR: UPC thread 85 of 96 on nid00053 (pshm node 7 of 8, process 85 of 96, pid=41546)
+UPCR: UPC thread 61 of 96 on nid00051 (pshm node 5 of 8, process 61 of 96, pid=6546)
+UPCR: UPC thread 26 of 96 on nid00048 (pshm node 2 of 8, process 26 of 96, pid=14439)
+UPCR: UPC thread 14 of 96 on nid00047 (pshm node 1 of 8, process 14 of 96, pid=8963)
+UPCR: UPC thread 88 of 96 on nid00053 (pshm node 7 of 8, process 88 of 96, pid=41549)
+UPCR: UPC thread 62 of 96 on nid00051 (pshm node 5 of 8, process 62 of 96, pid=6547)
+UPCR: UPC thread 27 of 96 on nid00048 (pshm node 2 of 8, process 27 of 96, pid=14440)
+UPCR: UPC thread 15 of 96 on nid00047 (pshm node 1 of 8, process 15 of 96, pid=8964)
+UPCR: UPC thread 89 of 96 on nid00053 (pshm node 7 of 8, process 89 of 96, pid=41550)
+UPCR: UPC thread 63 of 96 on nid00051 (pshm node 5 of 8, process 63 of 96, pid=6548)
+UPCR: UPC thread 28 of 96 on nid00048 (pshm node 2 of 8, process 28 of 96, pid=14441)
+UPCR: UPC thread 16 of 96 on nid00047 (pshm node 1 of 8, process 16 of 96, pid=8965)
+UPCR: UPC thread 90 of 96 on nid00053 (pshm node 7 of 8, process 90 of 96, pid=41551)
+UPCR: UPC thread 64 of 96 on nid00051 (pshm node 5 of 8, process 64 of 96, pid=6549)
+UPCR: UPC thread 29 of 96 on nid00048 (pshm node 2 of 8, process 29 of 96, pid=14442)
+UPCR: UPC thread 17 of 96 on nid00047 (pshm node 1 of 8, process 17 of 96, pid=8966)
+UPCR: UPC thread 91 of 96 on nid00053 (pshm node 7 of 8, process 91 of 96, pid=41552)
+UPCR: UPC thread 65 of 96 on nid00051 (pshm node 5 of 8, process 65 of 96, pid=6550)
+UPCR: UPC thread 30 of 96 on nid00048 (pshm node 2 of 8, process 30 of 96, pid=14443)
+UPCR: UPC thread 18 of 96 on nid00047 (pshm node 1 of 8, process 18 of 96, pid=8967)
+UPCR: UPC thread 93 of 96 on nid00053 (pshm node 7 of 8, process 93 of 96, pid=41554)
+UPCR: UPC thread 66 of 96 on nid00051 (pshm node 5 of 8, process 66 of 96, pid=6551)
+UPCR: UPC thread 31 of 96 on nid00048 (pshm node 2 of 8, process 31 of 96, pid=14444)
+UPCR: UPC thread 19 of 96 on nid00047 (pshm node 1 of 8, process 19 of 96, pid=8968)
+UPCR: UPC thread 94 of 96 on nid00053 (pshm node 7 of 8, process 94 of 96, pid=41555)
+UPCR: UPC thread 67 of 96 on nid00051 (pshm node 5 of 8, process 67 of 96, pid=6552)
+UPCR: UPC thread 32 of 96 on nid00048 (pshm node 2 of 8, process 32 of 96, pid=14445)
+UPCR: UPC thread 20 of 96 on nid00047 (pshm node 1 of 8, process 20 of 96, pid=8969)
+UPCR: UPC thread 95 of 96 on nid00053 (pshm node 7 of 8, process 95 of 96, pid=41556)
+UPCR: UPC thread 68 of 96 on nid00051 (pshm node 5 of 8, process 68 of 96, pid=6553)
+UPCR: UPC thread 33 of 96 on nid00048 (pshm node 2 of 8, process 33 of 96, pid=14446)
+UPCR: UPC thread 21 of 96 on nid00047 (pshm node 1 of 8, process 21 of 96, pid=8970)
+UPCR: UPC thread 86 of 96 on nid00053 (pshm node 7 of 8, process 86 of 96, pid=41547)
+UPCR: UPC thread 69 of 96 on nid00051 (pshm node 5 of 8, process 69 of 96, pid=6554)
+UPCR: UPC thread 34 of 96 on nid00048 (pshm node 2 of 8, process 34 of 96, pid=14447)
+UPCR: UPC thread 22 of 96 on nid00047 (pshm node 1 of 8, process 22 of 96, pid=8971)
+UPCR: UPC thread 70 of 96 on nid00051 (pshm node 5 of 8, process 70 of 96, pid=6555)
+UPCR: UPC thread 23 of 96 on nid00047 (pshm node 1 of 8, process 23 of 96, pid=8972)
+UPCR: UPC thread 87 of 96 on nid00053 (pshm node 7 of 8, process 87 of 96, pid=41548)
+UPCR: UPC thread 71 of 96 on nid00051 (pshm node 5 of 8, process 71 of 96, pid=6556)
+UPCR: UPC thread 35 of 96 on nid00048 (pshm node 2 of 8, process 35 of 96, pid=14448)
+UPCR: UPC thread 92 of 96 on nid00053 (pshm node 7 of 8, process 92 of 96, pid=41553)
+UPCR: UPC thread  1 of 96 on nid00046 (pshm node 0 of 8, process  1 of 96, pid=25743)
+UPCR: UPC thread 49 of 96 on nid00050 (pshm node 4 of 8, process 49 of 96, pid=5309)
+UPCR: UPC thread  2 of 96 on nid00046 (pshm node 0 of 8, process  2 of 96, pid=25744)
+UPCR: UPC thread 37 of 96 on nid00049 (pshm node 3 of 8, process 37 of 96, pid=13627)
+UPCR: UPC thread 50 of 96 on nid00050 (pshm node 4 of 8, process 50 of 96, pid=5310)
+UPCR: UPC thread  5 of 96 on nid00046 (pshm node 0 of 8, process  5 of 96, pid=25747)
+UPCR: UPC thread 73 of 96 on nid00052 (pshm node 6 of 8, process 73 of 96, pid=45727)
+UPCR: UPC thread 38 of 96 on nid00049 (pshm node 3 of 8, process 38 of 96, pid=13628)
+UPCR: UPC thread 51 of 96 on nid00050 (pshm node 4 of 8, process 51 of 96, pid=5311)
+UPCR: UPC thread  6 of 96 on nid00046 (pshm node 0 of 8, process  6 of 96, pid=25748)
+UPCR: UPC thread 74 of 96 on nid00052 (pshm node 6 of 8, process 74 of 96, pid=45728)
+UPCR: UPC thread 42 of 96 on nid00049 (pshm node 3 of 8, process 42 of 96, pid=13632)
+UPCR: UPC thread 52 of 96 on nid00050 (pshm node 4 of 8, process 52 of 96, pid=5312)
+UPCR: UPC thread  8 of 96 on nid00046 (pshm node 0 of 8, process  8 of 96, pid=25750)
+UPCR: UPC thread 78 of 96 on nid00052 (pshm node 6 of 8, process 78 of 96, pid=45732)
+UPCR: UPC thread 43 of 96 on nid00049 (pshm node 3 of 8, process 43 of 96, pid=13633)
+UPCR: UPC thread 53 of 96 on nid00050 (pshm node 4 of 8, process 53 of 96, pid=5313)
+UPCR: UPC thread  9 of 96 on nid00046 (pshm node 0 of 8, process  9 of 96, pid=25751)
+UPCR: UPC thread 79 of 96 on nid00052 (pshm node 6 of 8, process 79 of 96, pid=45733)
+UPCR: UPC thread 44 of 96 on nid00049 (pshm node 3 of 8, process 44 of 96, pid=13634)
+UPCR: UPC thread 54 of 96 on nid00050 (pshm node 4 of 8, process 54 of 96, pid=5314)
+UPCR: UPC thread 10 of 96 on nid00046 (pshm node 0 of 8, process 10 of 96, pid=25752)
+UPCR: UPC thread 80 of 96 on nid00052 (pshm node 6 of 8, process 80 of 96, pid=45734)
+UPCR: UPC thread 45 of 96 on nid00049 (pshm node 3 of 8, process 45 of 96, pid=13635)
+UPCR: UPC thread 55 of 96 on nid00050 (pshm node 4 of 8, process 55 of 96, pid=5315)
+UPCR: UPC thread 11 of 96 on nid00046 (pshm node 0 of 8, process 11 of 96, pid=25753)
+UPCR: UPC thread 81 of 96 on nid00052 (pshm node 6 of 8, process 81 of 96, pid=45735)
+UPCR: UPC thread 39 of 96 on nid00049 (pshm node 3 of 8, process 39 of 96, pid=13629)
+UPCR: UPC thread 56 of 96 on nid00050 (pshm node 4 of 8, process 56 of 96, pid=5316)
+UPCR: UPC thread  3 of 96 on nid00046 (pshm node 0 of 8, process  3 of 96, pid=25745)
+UPCR: UPC thread 82 of 96 on nid00052 (pshm node 6 of 8, process 82 of 96, pid=45736)
+UPCR: UPC thread 40 of 96 on nid00049 (pshm node 3 of 8, process 40 of 96, pid=13630)
+UPCR: UPC thread 57 of 96 on nid00050 (pshm node 4 of 8, process 57 of 96, pid=5317)
+UPCR: UPC thread  4 of 96 on nid00046 (pshm node 0 of 8, process  4 of 96, pid=25746)
+UPCR: UPC thread 83 of 96 on nid00052 (pshm node 6 of 8, process 83 of 96, pid=45737)
+UPCR: UPC thread 41 of 96 on nid00049 (pshm node 3 of 8, process 41 of 96, pid=13631)
+UPCR: UPC thread 58 of 96 on nid00050 (pshm node 4 of 8, process 58 of 96, pid=5318)
+UPCR: UPC thread  7 of 96 on nid00046 (pshm node 0 of 8, process  7 of 96, pid=25749)
+UPCR: UPC thread 75 of 96 on nid00052 (pshm node 6 of 8, process 75 of 96, pid=45729)
+UPCR: UPC thread 46 of 96 on nid00049 (pshm node 3 of 8, process 46 of 96, pid=13636)
+UPCR: UPC thread 59 of 96 on nid00050 (pshm node 4 of 8, process 59 of 96, pid=5319)
+UPCR: UPC thread 76 of 96 on nid00052 (pshm node 6 of 8, process 76 of 96, pid=45730)
+UPCR: UPC thread 47 of 96 on nid00049 (pshm node 3 of 8, process 47 of 96, pid=13637)
+UPCR: UPC thread 77 of 96 on nid00052 (pshm node 6 of 8, process 77 of 96, pid=45731)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 96
+Input reading time: 1.822168 seconds
+Graph traversal time: 5.096810 seconds
+Kmlist offload: 2.452073 seconds
+Total time: 9.371257s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread   0 of 120 on nid00046 (pshm node 0 of 8, process   0 of 120, pid=25969)
+UPCR: UPC thread   2 of 120 on nid00046 (pshm node 0 of 8, process   2 of 120, pid=25971)
+UPCR: UPC thread  90 of 120 on nid00052 (pshm node 6 of 8, process  90 of 120, pid=45841)
+UPCR: UPC thread 105 of 120 on nid00053 (pshm node 7 of 8, process 105 of 120, pid=41660)
+UPCR: UPC thread  32 of 120 on nid00048 (pshm node 2 of 8, process  32 of 120, pid=14597)
+UPCR: UPC thread  45 of 120 on nid00049 (pshm node 3 of 8, process  45 of 120, pid=13771)
+UPCR: UPC thread  60 of 120 on nid00050 (pshm node 4 of 8, process  60 of 120, pid=5430)
+UPCR: UPC thread  75 of 120 on nid00051 (pshm node 5 of 8, process  75 of 120, pid=6665)
+UPCR: UPC thread  15 of 120 on nid00047 (pshm node 1 of 8, process  15 of 120, pid=9161)
+UPCR: UPC thread   4 of 120 on nid00046 (pshm node 0 of 8, process   4 of 120, pid=25973)
+UPCR: UPC thread  93 of 120 on nid00052 (pshm node 6 of 8, process  93 of 120, pid=45844)
+UPCR: UPC thread 112 of 120 on nid00053 (pshm node 7 of 8, process 112 of 120, pid=41667)
+UPCR: UPC thread  33 of 120 on nid00048 (pshm node 2 of 8, process  33 of 120, pid=14598)
+UPCR: UPC thread  47 of 120 on nid00049 (pshm node 3 of 8, process  47 of 120, pid=13773)
+UPCR: UPC thread   8 of 120 on nid00046 (pshm node 0 of 8, process   8 of 120, pid=25977)
+UPCR: UPC thread  95 of 120 on nid00052 (pshm node 6 of 8, process  95 of 120, pid=45846)
+UPCR: UPC thread 113 of 120 on nid00053 (pshm node 7 of 8, process 113 of 120, pid=41668)
+UPCR: UPC thread  34 of 120 on nid00048 (pshm node 2 of 8, process  34 of 120, pid=14599)
+UPCR: UPC thread  49 of 120 on nid00049 (pshm node 3 of 8, process  49 of 120, pid=13775)
+UPCR: UPC thread   1 of 120 on nid00046 (pshm node 0 of 8, process   1 of 120, pid=25970)
+UPCR: UPC thread  97 of 120 on nid00052 (pshm node 6 of 8, process  97 of 120, pid=45848)
+UPCR: UPC thread 115 of 120 on nid00053 (pshm node 7 of 8, process 115 of 120, pid=41670)
+UPCR: UPC thread  35 of 120 on nid00048 (pshm node 2 of 8, process  35 of 120, pid=14600)
+UPCR: UPC thread  50 of 120 on nid00049 (pshm node 3 of 8, process  50 of 120, pid=13776)
+UPCR: UPC thread   3 of 120 on nid00046 (pshm node 0 of 8, process   3 of 120, pid=25972)
+UPCR: UPC thread  98 of 120 on nid00052 (pshm node 6 of 8, process  98 of 120, pid=45849)
+UPCR: UPC thread 106 of 120 on nid00053 (pshm node 7 of 8, process 106 of 120, pid=41661)
+UPCR: UPC thread  36 of 120 on nid00048 (pshm node 2 of 8, process  36 of 120, pid=14601)
+UPCR: UPC thread  51 of 120 on nid00049 (pshm node 3 of 8, process  51 of 120, pid=13777)
+UPCR: UPC thread   5 of 120 on nid00046 (pshm node 0 of 8, process   5 of 120, pid=25974)
+UPCR: UPC thread  99 of 120 on nid00052 (pshm node 6 of 8, process  99 of 120, pid=45850)
+UPCR: UPC thread 107 of 120 on nid00053 (pshm node 7 of 8, process 107 of 120, pid=41662)
+UPCR: UPC thread  38 of 120 on nid00048 (pshm node 2 of 8, process  38 of 120, pid=14603)
+UPCR: UPC thread  52 of 120 on nid00049 (pshm node 3 of 8, process  52 of 120, pid=13778)
+UPCR: UPC thread   6 of 120 on nid00046 (pshm node 0 of 8, process   6 of 120, pid=25975)
+UPCR: UPC thread 102 of 120 on nid00052 (pshm node 6 of 8, process 102 of 120, pid=45853)
+UPCR: UPC thread 108 of 120 on nid00053 (pshm node 7 of 8, process 108 of 120, pid=41663)
+UPCR: UPC thread  40 of 120 on nid00048 (pshm node 2 of 8, process  40 of 120, pid=14605)
+UPCR: UPC thread  53 of 120 on nid00049 (pshm node 3 of 8, process  53 of 120, pid=13779)
+UPCR: UPC thread   7 of 120 on nid00046 (pshm node 0 of 8, process   7 of 120, pid=25976)
+UPCR: UPC thread 104 of 120 on nid00052 (pshm node 6 of 8, process 104 of 120, pid=45855)
+UPCR: UPC thread 109 of 120 on nid00053 (pshm node 7 of 8, process 109 of 120, pid=41664)
+UPCR: UPC thread  54 of 120 on nid00049 (pshm node 3 of 8, process  54 of 120, pid=13780)
+UPCR: UPC thread   9 of 120 on nid00046 (pshm node 0 of 8, process   9 of 120, pid=25978)
+UPCR: UPC thread  91 of 120 on nid00052 (pshm node 6 of 8, process  91 of 120, pid=45842)
+UPCR: UPC thread 110 of 120 on nid00053 (pshm node 7 of 8, process 110 of 120, pid=41665)
+UPCR: UPC thread  43 of 120 on nid00048 (pshm node 2 of 8, process  43 of 120, pid=14608)
+UPCR: UPC thread  10 of 120 on nid00046 (pshm node 0 of 8, process  10 of 120, pid=25979)
+UPCR: UPC thread  92 of 120 on nid00052 (pshm node 6 of 8, process  92 of 120, pid=45843)
+UPCR: UPC thread  44 of 120 on nid00048 (pshm node 2 of 8, process  44 of 120, pid=14609)
+UPCR: UPC thread  55 of 120 on nid00049 (pshm node 3 of 8, process  55 of 120, pid=13781)
+UPCR: UPC thread  11 of 120 on nid00046 (pshm node 0 of 8, process  11 of 120, pid=25980)
+UPCR: UPC thread  94 of 120 on nid00052 (pshm node 6 of 8, process  94 of 120, pid=45845)
+UPCR: UPC thread 111 of 120 on nid00053 (pshm node 7 of 8, process 111 of 120, pid=41666)
+UPCR: UPC thread  30 of 120 on nid00048 (pshm node 2 of 8, process  30 of 120, pid=14595)
+UPCR: UPC thread  56 of 120 on nid00049 (pshm node 3 of 8, process  56 of 120, pid=13782)
+UPCR: UPC thread  12 of 120 on nid00046 (pshm node 0 of 8, process  12 of 120, pid=25981)
+UPCR: UPC thread  96 of 120 on nid00052 (pshm node 6 of 8, process  96 of 120, pid=45847)
+UPCR: UPC thread 114 of 120 on nid00053 (pshm node 7 of 8, process 114 of 120, pid=41669)
+UPCR: UPC thread  31 of 120 on nid00048 (pshm node 2 of 8, process  31 of 120, pid=14596)
+UPCR: UPC thread  57 of 120 on nid00049 (pshm node 3 of 8, process  57 of 120, pid=13783)
+UPCR: UPC thread  13 of 120 on nid00046 (pshm node 0 of 8, process  13 of 120, pid=25982)
+UPCR: UPC thread 100 of 120 on nid00052 (pshm node 6 of 8, process 100 of 120, pid=45851)
+UPCR: UPC thread 116 of 120 on nid00053 (pshm node 7 of 8, process 116 of 120, pid=41671)
+UPCR: UPC thread  37 of 120 on nid00048 (pshm node 2 of 8, process  37 of 120, pid=14602)
+UPCR: UPC thread  58 of 120 on nid00049 (pshm node 3 of 8, process  58 of 120, pid=13784)
+UPCR: UPC thread  14 of 120 on nid00046 (pshm node 0 of 8, process  14 of 120, pid=25983)
+UPCR: UPC thread 101 of 120 on nid00052 (pshm node 6 of 8, process 101 of 120, pid=45852)
+UPCR: UPC thread 117 of 120 on nid00053 (pshm node 7 of 8, process 117 of 120, pid=41672)
+UPCR: UPC thread  39 of 120 on nid00048 (pshm node 2 of 8, process  39 of 120, pid=14604)
+UPCR: UPC thread  59 of 120 on nid00049 (pshm node 3 of 8, process  59 of 120, pid=13785)
+UPCR: UPC thread 103 of 120 on nid00052 (pshm node 6 of 8, process 103 of 120, pid=45854)
+UPCR: UPC thread 118 of 120 on nid00053 (pshm node 7 of 8, process 118 of 120, pid=41673)
+UPCR: UPC thread  41 of 120 on nid00048 (pshm node 2 of 8, process  41 of 120, pid=14606)
+UPCR: UPC thread  46 of 120 on nid00049 (pshm node 3 of 8, process  46 of 120, pid=13772)
+UPCR: UPC thread 119 of 120 on nid00053 (pshm node 7 of 8, process 119 of 120, pid=41674)
+UPCR: UPC thread  42 of 120 on nid00048 (pshm node 2 of 8, process  42 of 120, pid=14607)
+UPCR: UPC thread  48 of 120 on nid00049 (pshm node 3 of 8, process  48 of 120, pid=13774)
+UPCR: UPC thread  78 of 120 on nid00051 (pshm node 5 of 8, process  78 of 120, pid=6668)
+UPCR: UPC thread  82 of 120 on nid00051 (pshm node 5 of 8, process  82 of 120, pid=6672)
+UPCR: UPC thread  66 of 120 on nid00050 (pshm node 4 of 8, process  66 of 120, pid=5436)
+UPCR: UPC thread  87 of 120 on nid00051 (pshm node 5 of 8, process  87 of 120, pid=6677)
+UPCR: UPC thread  25 of 120 on nid00047 (pshm node 1 of 8, process  25 of 120, pid=9171)
+UPCR: UPC thread  68 of 120 on nid00050 (pshm node 4 of 8, process  68 of 120, pid=5438)
+UPCR: UPC thread  76 of 120 on nid00051 (pshm node 5 of 8, process  76 of 120, pid=6666)
+UPCR: UPC thread  26 of 120 on nid00047 (pshm node 1 of 8, process  26 of 120, pid=9172)
+UPCR: UPC thread  72 of 120 on nid00050 (pshm node 4 of 8, process  72 of 120, pid=5442)
+UPCR: UPC thread  77 of 120 on nid00051 (pshm node 5 of 8, process  77 of 120, pid=6667)
+UPCR: UPC thread  28 of 120 on nid00047 (pshm node 1 of 8, process  28 of 120, pid=9174)
+UPCR: UPC thread  61 of 120 on nid00050 (pshm node 4 of 8, process  61 of 120, pid=5431)
+UPCR: UPC thread  79 of 120 on nid00051 (pshm node 5 of 8, process  79 of 120, pid=6669)
+UPCR: UPC thread  16 of 120 on nid00047 (pshm node 1 of 8, process  16 of 120, pid=9162)
+UPCR: UPC thread  62 of 120 on nid00050 (pshm node 4 of 8, process  62 of 120, pid=5432)
+UPCR: UPC thread  80 of 120 on nid00051 (pshm node 5 of 8, process  80 of 120, pid=6670)
+UPCR: UPC thread  17 of 120 on nid00047 (pshm node 1 of 8, process  17 of 120, pid=9163)
+UPCR: UPC thread  63 of 120 on nid00050 (pshm node 4 of 8, process  63 of 120, pid=5433)
+UPCR: UPC thread  81 of 120 on nid00051 (pshm node 5 of 8, process  81 of 120, pid=6671)
+UPCR: UPC thread  18 of 120 on nid00047 (pshm node 1 of 8, process  18 of 120, pid=9164)
+UPCR: UPC thread  64 of 120 on nid00050 (pshm node 4 of 8, process  64 of 120, pid=5434)
+UPCR: UPC thread  83 of 120 on nid00051 (pshm node 5 of 8, process  83 of 120, pid=6673)
+UPCR: UPC thread  19 of 120 on nid00047 (pshm node 1 of 8, process  19 of 120, pid=9165)
+UPCR: UPC thread  65 of 120 on nid00050 (pshm node 4 of 8, process  65 of 120, pid=5435)
+UPCR: UPC thread  84 of 120 on nid00051 (pshm node 5 of 8, process  84 of 120, pid=6674)
+UPCR: UPC thread  20 of 120 on nid00047 (pshm node 1 of 8, process  20 of 120, pid=9166)
+UPCR: UPC thread  67 of 120 on nid00050 (pshm node 4 of 8, process  67 of 120, pid=5437)
+UPCR: UPC thread  85 of 120 on nid00051 (pshm node 5 of 8, process  85 of 120, pid=6675)
+UPCR: UPC thread  21 of 120 on nid00047 (pshm node 1 of 8, process  21 of 120, pid=9167)
+UPCR: UPC thread  69 of 120 on nid00050 (pshm node 4 of 8, process  69 of 120, pid=5439)
+UPCR: UPC thread  86 of 120 on nid00051 (pshm node 5 of 8, process  86 of 120, pid=6676)
+UPCR: UPC thread  22 of 120 on nid00047 (pshm node 1 of 8, process  22 of 120, pid=9168)
+UPCR: UPC thread  70 of 120 on nid00050 (pshm node 4 of 8, process  70 of 120, pid=5440)
+UPCR: UPC thread  88 of 120 on nid00051 (pshm node 5 of 8, process  88 of 120, pid=6678)
+UPCR: UPC thread  23 of 120 on nid00047 (pshm node 1 of 8, process  23 of 120, pid=9169)
+UPCR: UPC thread  71 of 120 on nid00050 (pshm node 4 of 8, process  71 of 120, pid=5441)
+UPCR: UPC thread  89 of 120 on nid00051 (pshm node 5 of 8, process  89 of 120, pid=6679)
+UPCR: UPC thread  24 of 120 on nid00047 (pshm node 1 of 8, process  24 of 120, pid=9170)
+UPCR: UPC thread  73 of 120 on nid00050 (pshm node 4 of 8, process  73 of 120, pid=5443)
+UPCR: UPC thread  27 of 120 on nid00047 (pshm node 1 of 8, process  27 of 120, pid=9173)
+UPCR: UPC thread  74 of 120 on nid00050 (pshm node 4 of 8, process  74 of 120, pid=5444)
+UPCR: UPC thread  29 of 120 on nid00047 (pshm node 1 of 8, process  29 of 120, pid=9175)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 120
+Input reading time: 1.622935 seconds
+Graph traversal time: 3.947678 seconds
+Kmlist offload: 2.086407 seconds
+Total time: 7.657278s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread   0 of 144 on nid00046 (pshm node 0 of 8, process   0 of 144, pid=26250)
+UPCR: UPC thread  90 of 144 on nid00051 (pshm node 5 of 8, process  90 of 144, pid=6890)
+UPCR: UPC thread 108 of 144 on nid00052 (pshm node 6 of 8, process 108 of 144, pid=46069)
+UPCR: UPC thread  18 of 144 on nid00047 (pshm node 1 of 8, process  18 of 144, pid=9344)
+UPCR: UPC thread 126 of 144 on nid00053 (pshm node 7 of 8, process 126 of 144, pid=41789)
+UPCR: UPC thread  54 of 144 on nid00049 (pshm node 3 of 8, process  54 of 144, pid=13900)
+UPCR: UPC thread  72 of 144 on nid00050 (pshm node 4 of 8, process  72 of 144, pid=5571)
+UPCR: UPC thread   2 of 144 on nid00046 (pshm node 0 of 8, process   2 of 144, pid=26252)
+UPCR: UPC thread  36 of 144 on nid00048 (pshm node 2 of 8, process  36 of 144, pid=14797)
+UPCR: UPC thread  94 of 144 on nid00051 (pshm node 5 of 8, process  94 of 144, pid=6894)
+UPCR: UPC thread   3 of 144 on nid00046 (pshm node 0 of 8, process   3 of 144, pid=26253)
+UPCR: UPC thread  37 of 144 on nid00048 (pshm node 2 of 8, process  37 of 144, pid=14798)
+UPCR: UPC thread  95 of 144 on nid00051 (pshm node 5 of 8, process  95 of 144, pid=6895)
+UPCR: UPC thread   4 of 144 on nid00046 (pshm node 0 of 8, process   4 of 144, pid=26254)
+UPCR: UPC thread  38 of 144 on nid00048 (pshm node 2 of 8, process  38 of 144, pid=14799)
+UPCR: UPC thread  96 of 144 on nid00051 (pshm node 5 of 8, process  96 of 144, pid=6896)
+UPCR: UPC thread   5 of 144 on nid00046 (pshm node 0 of 8, process   5 of 144, pid=26255)
+UPCR: UPC thread  39 of 144 on nid00048 (pshm node 2 of 8, process  39 of 144, pid=14800)
+UPCR: UPC thread  98 of 144 on nid00051 (pshm node 5 of 8, process  98 of 144, pid=6898)
+UPCR: UPC thread   6 of 144 on nid00046 (pshm node 0 of 8, process   6 of 144, pid=26256)
+UPCR: UPC thread  40 of 144 on nid00048 (pshm node 2 of 8, process  40 of 144, pid=14801)
+UPCR: UPC thread  99 of 144 on nid00051 (pshm node 5 of 8, process  99 of 144, pid=6899)
+UPCR: UPC thread   7 of 144 on nid00046 (pshm node 0 of 8, process   7 of 144, pid=26257)
+UPCR: UPC thread  41 of 144 on nid00048 (pshm node 2 of 8, process  41 of 144, pid=14802)
+UPCR: UPC thread 101 of 144 on nid00051 (pshm node 5 of 8, process 101 of 144, pid=6901)
+UPCR: UPC thread   8 of 144 on nid00046 (pshm node 0 of 8, process   8 of 144, pid=26258)
+UPCR: UPC thread  10 of 144 on nid00046 (pshm node 0 of 8, process  10 of 144, pid=26260)
+UPCR: UPC thread  42 of 144 on nid00048 (pshm node 2 of 8, process  42 of 144, pid=14803)
+UPCR: UPC thread 104 of 144 on nid00051 (pshm node 5 of 8, process 104 of 144, pid=6904)
+UPCR: UPC thread  12 of 144 on nid00046 (pshm node 0 of 8, process  12 of 144, pid=26262)
+UPCR: UPC thread  43 of 144 on nid00048 (pshm node 2 of 8, process  43 of 144, pid=14804)
+UPCR: UPC thread 107 of 144 on nid00051 (pshm node 5 of 8, process 107 of 144, pid=6907)
+UPCR: UPC thread  13 of 144 on nid00046 (pshm node 0 of 8, process  13 of 144, pid=26263)
+UPCR: UPC thread  44 of 144 on nid00048 (pshm node 2 of 8, process  44 of 144, pid=14805)
+UPCR: UPC thread  91 of 144 on nid00051 (pshm node 5 of 8, process  91 of 144, pid=6891)
+UPCR: UPC thread  14 of 144 on nid00046 (pshm node 0 of 8, process  14 of 144, pid=26264)
+UPCR: UPC thread  45 of 144 on nid00048 (pshm node 2 of 8, process  45 of 144, pid=14806)
+UPCR: UPC thread  92 of 144 on nid00051 (pshm node 5 of 8, process  92 of 144, pid=6892)
+UPCR: UPC thread  15 of 144 on nid00046 (pshm node 0 of 8, process  15 of 144, pid=26265)
+UPCR: UPC thread  46 of 144 on nid00048 (pshm node 2 of 8, process  46 of 144, pid=14807)
+UPCR: UPC thread  93 of 144 on nid00051 (pshm node 5 of 8, process  93 of 144, pid=6893)
+UPCR: UPC thread  16 of 144 on nid00046 (pshm node 0 of 8, process  16 of 144, pid=26266)
+UPCR: UPC thread  47 of 144 on nid00048 (pshm node 2 of 8, process  47 of 144, pid=14808)
+UPCR: UPC thread  97 of 144 on nid00051 (pshm node 5 of 8, process  97 of 144, pid=6897)
+UPCR: UPC thread  17 of 144 on nid00046 (pshm node 0 of 8, process  17 of 144, pid=26267)
+UPCR: UPC thread  48 of 144 on nid00048 (pshm node 2 of 8, process  48 of 144, pid=14809)
+UPCR: UPC thread 100 of 144 on nid00051 (pshm node 5 of 8, process 100 of 144, pid=6900)
+UPCR: UPC thread   1 of 144 on nid00046 (pshm node 0 of 8, process   1 of 144, pid=26251)
+UPCR: UPC thread  49 of 144 on nid00048 (pshm node 2 of 8, process  49 of 144, pid=14810)
+UPCR: UPC thread 102 of 144 on nid00051 (pshm node 5 of 8, process 102 of 144, pid=6902)
+UPCR: UPC thread   9 of 144 on nid00046 (pshm node 0 of 8, process   9 of 144, pid=26259)
+UPCR: UPC thread  50 of 144 on nid00048 (pshm node 2 of 8, process  50 of 144, pid=14811)
+UPCR: UPC thread 103 of 144 on nid00051 (pshm node 5 of 8, process 103 of 144, pid=6903)
+UPCR: UPC thread  11 of 144 on nid00046 (pshm node 0 of 8, process  11 of 144, pid=26261)
+UPCR: UPC thread  51 of 144 on nid00048 (pshm node 2 of 8, process  51 of 144, pid=14812)
+UPCR: UPC thread 105 of 144 on nid00051 (pshm node 5 of 8, process 105 of 144, pid=6905)
+UPCR: UPC thread  52 of 144 on nid00048 (pshm node 2 of 8, process  52 of 144, pid=14813)
+UPCR: UPC thread 106 of 144 on nid00051 (pshm node 5 of 8, process 106 of 144, pid=6906)
+UPCR: UPC thread  53 of 144 on nid00048 (pshm node 2 of 8, process  53 of 144, pid=14814)
+UPCR: UPC thread 112 of 144 on nid00052 (pshm node 6 of 8, process 112 of 144, pid=46073)
+UPCR: UPC thread 127 of 144 on nid00053 (pshm node 7 of 8, process 127 of 144, pid=41790)
+UPCR: UPC thread 118 of 144 on nid00052 (pshm node 6 of 8, process 118 of 144, pid=46079)
+UPCR: UPC thread 132 of 144 on nid00053 (pshm node 7 of 8, process 132 of 144, pid=41795)
+UPCR: UPC thread  57 of 144 on nid00049 (pshm node 3 of 8, process  57 of 144, pid=13903)
+UPCR: UPC thread  82 of 144 on nid00050 (pshm node 4 of 8, process  82 of 144, pid=5581)
+UPCR: UPC thread 120 of 144 on nid00052 (pshm node 6 of 8, process 120 of 144, pid=46081)
+UPCR: UPC thread  28 of 144 on nid00047 (pshm node 1 of 8, process  28 of 144, pid=9354)
+UPCR: UPC thread 133 of 144 on nid00053 (pshm node 7 of 8, process 133 of 144, pid=41796)
+UPCR: UPC thread  58 of 144 on nid00049 (pshm node 3 of 8, process  58 of 144, pid=13904)
+UPCR: UPC thread  89 of 144 on nid00050 (pshm node 4 of 8, process  89 of 144, pid=5588)
+UPCR: UPC thread 121 of 144 on nid00052 (pshm node 6 of 8, process 121 of 144, pid=46082)
+UPCR: UPC thread  29 of 144 on nid00047 (pshm node 1 of 8, process  29 of 144, pid=9355)
+UPCR: UPC thread 134 of 144 on nid00053 (pshm node 7 of 8, process 134 of 144, pid=41797)
+UPCR: UPC thread  60 of 144 on nid00049 (pshm node 3 of 8, process  60 of 144, pid=13906)
+UPCR: UPC thread  73 of 144 on nid00050 (pshm node 4 of 8, process  73 of 144, pid=5572)
+UPCR: UPC thread 124 of 144 on nid00052 (pshm node 6 of 8, process 124 of 144, pid=46085)
+UPCR: UPC thread  31 of 144 on nid00047 (pshm node 1 of 8, process  31 of 144, pid=9357)
+UPCR: UPC thread 137 of 144 on nid00053 (pshm node 7 of 8, process 137 of 144, pid=41800)
+UPCR: UPC thread  62 of 144 on nid00049 (pshm node 3 of 8, process  62 of 144, pid=13908)
+UPCR: UPC thread  74 of 144 on nid00050 (pshm node 4 of 8, process  74 of 144, pid=5573)
+UPCR: UPC thread 125 of 144 on nid00052 (pshm node 6 of 8, process 125 of 144, pid=46086)
+UPCR: UPC thread  32 of 144 on nid00047 (pshm node 1 of 8, process  32 of 144, pid=9358)
+UPCR: UPC thread 138 of 144 on nid00053 (pshm node 7 of 8, process 138 of 144, pid=41801)
+UPCR: UPC thread  63 of 144 on nid00049 (pshm node 3 of 8, process  63 of 144, pid=13909)
+UPCR: UPC thread  75 of 144 on nid00050 (pshm node 4 of 8, process  75 of 144, pid=5574)
+UPCR: UPC thread 109 of 144 on nid00052 (pshm node 6 of 8, process 109 of 144, pid=46070)
+UPCR: UPC thread  33 of 144 on nid00047 (pshm node 1 of 8, process  33 of 144, pid=9359)
+UPCR: UPC thread 139 of 144 on nid00053 (pshm node 7 of 8, process 139 of 144, pid=41802)
+UPCR: UPC thread  67 of 144 on nid00049 (pshm node 3 of 8, process  67 of 144, pid=13913)
+UPCR: UPC thread  76 of 144 on nid00050 (pshm node 4 of 8, process  76 of 144, pid=5575)
+UPCR: UPC thread 110 of 144 on nid00052 (pshm node 6 of 8, process 110 of 144, pid=46071)
+UPCR: UPC thread  34 of 144 on nid00047 (pshm node 1 of 8, process  34 of 144, pid=9360)
+UPCR: UPC thread 140 of 144 on nid00053 (pshm node 7 of 8, process 140 of 144, pid=41803)
+UPCR: UPC thread  69 of 144 on nid00049 (pshm node 3 of 8, process  69 of 144, pid=13915)
+UPCR: UPC thread  77 of 144 on nid00050 (pshm node 4 of 8, process  77 of 144, pid=5576)
+UPCR: UPC thread 111 of 144 on nid00052 (pshm node 6 of 8, process 111 of 144, pid=46072)
+UPCR: UPC thread  35 of 144 on nid00047 (pshm node 1 of 8, process  35 of 144, pid=9361)
+UPCR: UPC thread 142 of 144 on nid00053 (pshm node 7 of 8, process 142 of 144, pid=41805)
+UPCR: UPC thread  71 of 144 on nid00049 (pshm node 3 of 8, process  71 of 144, pid=13917)
+UPCR: UPC thread  78 of 144 on nid00050 (pshm node 4 of 8, process  78 of 144, pid=5577)
+UPCR: UPC thread 113 of 144 on nid00052 (pshm node 6 of 8, process 113 of 144, pid=46074)
+UPCR: UPC thread  19 of 144 on nid00047 (pshm node 1 of 8, process  19 of 144, pid=9345)
+UPCR: UPC thread 128 of 144 on nid00053 (pshm node 7 of 8, process 128 of 144, pid=41791)
+UPCR: UPC thread  55 of 144 on nid00049 (pshm node 3 of 8, process  55 of 144, pid=13901)
+UPCR: UPC thread  79 of 144 on nid00050 (pshm node 4 of 8, process  79 of 144, pid=5578)
+UPCR: UPC thread 114 of 144 on nid00052 (pshm node 6 of 8, process 114 of 144, pid=46075)
+UPCR: UPC thread  20 of 144 on nid00047 (pshm node 1 of 8, process  20 of 144, pid=9346)
+UPCR: UPC thread 129 of 144 on nid00053 (pshm node 7 of 8, process 129 of 144, pid=41792)
+UPCR: UPC thread  56 of 144 on nid00049 (pshm node 3 of 8, process  56 of 144, pid=13902)
+UPCR: UPC thread  80 of 144 on nid00050 (pshm node 4 of 8, process  80 of 144, pid=5579)
+UPCR: UPC thread 115 of 144 on nid00052 (pshm node 6 of 8, process 115 of 144, pid=46076)
+UPCR: UPC thread  21 of 144 on nid00047 (pshm node 1 of 8, process  21 of 144, pid=9347)
+UPCR: UPC thread 130 of 144 on nid00053 (pshm node 7 of 8, process 130 of 144, pid=41793)
+UPCR: UPC thread  59 of 144 on nid00049 (pshm node 3 of 8, process  59 of 144, pid=13905)
+UPCR: UPC thread  81 of 144 on nid00050 (pshm node 4 of 8, process  81 of 144, pid=5580)
+UPCR: UPC thread 116 of 144 on nid00052 (pshm node 6 of 8, process 116 of 144, pid=46077)
+UPCR: UPC thread  22 of 144 on nid00047 (pshm node 1 of 8, process  22 of 144, pid=9348)
+UPCR: UPC thread 131 of 144 on nid00053 (pshm node 7 of 8, process 131 of 144, pid=41794)
+UPCR: UPC thread  61 of 144 on nid00049 (pshm node 3 of 8, process  61 of 144, pid=13907)
+UPCR: UPC thread  83 of 144 on nid00050 (pshm node 4 of 8, process  83 of 144, pid=5582)
+UPCR: UPC thread 117 of 144 on nid00052 (pshm node 6 of 8, process 117 of 144, pid=46078)
+UPCR: UPC thread  23 of 144 on nid00047 (pshm node 1 of 8, process  23 of 144, pid=9349)
+UPCR: UPC thread 135 of 144 on nid00053 (pshm node 7 of 8, process 135 of 144, pid=41798)
+UPCR: UPC thread  64 of 144 on nid00049 (pshm node 3 of 8, process  64 of 144, pid=13910)
+UPCR: UPC thread  84 of 144 on nid00050 (pshm node 4 of 8, process  84 of 144, pid=5583)
+UPCR: UPC thread 119 of 144 on nid00052 (pshm node 6 of 8, process 119 of 144, pid=46080)
+UPCR: UPC thread  24 of 144 on nid00047 (pshm node 1 of 8, process  24 of 144, pid=9350)
+UPCR: UPC thread 136 of 144 on nid00053 (pshm node 7 of 8, process 136 of 144, pid=41799)
+UPCR: UPC thread  65 of 144 on nid00049 (pshm node 3 of 8, process  65 of 144, pid=13911)
+UPCR: UPC thread  85 of 144 on nid00050 (pshm node 4 of 8, process  85 of 144, pid=5584)
+UPCR: UPC thread 122 of 144 on nid00052 (pshm node 6 of 8, process 122 of 144, pid=46083)
+UPCR: UPC thread  25 of 144 on nid00047 (pshm node 1 of 8, process  25 of 144, pid=9351)
+UPCR: UPC thread 141 of 144 on nid00053 (pshm node 7 of 8, process 141 of 144, pid=41804)
+UPCR: UPC thread  66 of 144 on nid00049 (pshm node 3 of 8, process  66 of 144, pid=13912)
+UPCR: UPC thread  86 of 144 on nid00050 (pshm node 4 of 8, process  86 of 144, pid=5585)
+UPCR: UPC thread 123 of 144 on nid00052 (pshm node 6 of 8, process 123 of 144, pid=46084)
+UPCR: UPC thread  26 of 144 on nid00047 (pshm node 1 of 8, process  26 of 144, pid=9352)
+UPCR: UPC thread 143 of 144 on nid00053 (pshm node 7 of 8, process 143 of 144, pid=41806)
+UPCR: UPC thread  68 of 144 on nid00049 (pshm node 3 of 8, process  68 of 144, pid=13914)
+UPCR: UPC thread  87 of 144 on nid00050 (pshm node 4 of 8, process  87 of 144, pid=5586)
+UPCR: UPC thread  27 of 144 on nid00047 (pshm node 1 of 8, process  27 of 144, pid=9353)
+UPCR: UPC thread  70 of 144 on nid00049 (pshm node 3 of 8, process  70 of 144, pid=13916)
+UPCR: UPC thread  88 of 144 on nid00050 (pshm node 4 of 8, process  88 of 144, pid=5587)
+UPCR: UPC thread  30 of 144 on nid00047 (pshm node 1 of 8, process  30 of 144, pid=9356)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 144
+Input reading time: 1.562313 seconds
+Graph traversal time: 4.648512 seconds
+Kmlist offload: 2.227487 seconds
+Total time: 8.438614s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread   0 of 168 on nid00046 (pshm node 0 of 8, process   0 of 168, pid=26472)
+UPCR: UPC thread 126 of 168 on nid00052 (pshm node 6 of 8, process 126 of 168, pid=46210)
+UPCR: UPC thread  63 of 168 on nid00049 (pshm node 3 of 8, process  63 of 168, pid=14043)
+UPCR: UPC thread 105 of 168 on nid00051 (pshm node 5 of 8, process 105 of 168, pid=7169)
+UPCR: UPC thread 147 of 168 on nid00053 (pshm node 7 of 8, process 147 of 168, pid=42059)
+UPCR: UPC thread   6 of 168 on nid00046 (pshm node 0 of 8, process   6 of 168, pid=26478)
+UPCR: UPC thread  42 of 168 on nid00048 (pshm node 2 of 8, process  42 of 168, pid=14950)
+UPCR: UPC thread  21 of 168 on nid00047 (pshm node 1 of 8, process  21 of 168, pid=9570)
+UPCR: UPC thread  84 of 168 on nid00050 (pshm node 4 of 8, process  84 of 168, pid=5837)
+UPCR: UPC thread  19 of 168 on nid00046 (pshm node 0 of 8, process  19 of 168, pid=26491)
+UPCR: UPC thread  48 of 168 on nid00048 (pshm node 2 of 8, process  48 of 168, pid=14956)
+UPCR: UPC thread   1 of 168 on nid00046 (pshm node 0 of 8, process   1 of 168, pid=26473)
+UPCR: UPC thread  49 of 168 on nid00048 (pshm node 2 of 8, process  49 of 168, pid=14957)
+UPCR: UPC thread   2 of 168 on nid00046 (pshm node 0 of 8, process   2 of 168, pid=26474)
+UPCR: UPC thread  50 of 168 on nid00048 (pshm node 2 of 8, process  50 of 168, pid=14958)
+UPCR: UPC thread   3 of 168 on nid00046 (pshm node 0 of 8, process   3 of 168, pid=26475)
+UPCR: UPC thread  52 of 168 on nid00048 (pshm node 2 of 8, process  52 of 168, pid=14960)
+UPCR: UPC thread   4 of 168 on nid00046 (pshm node 0 of 8, process   4 of 168, pid=26476)
+UPCR: UPC thread  53 of 168 on nid00048 (pshm node 2 of 8, process  53 of 168, pid=14961)
+UPCR: UPC thread   5 of 168 on nid00046 (pshm node 0 of 8, process   5 of 168, pid=26477)
+UPCR: UPC thread   7 of 168 on nid00046 (pshm node 0 of 8, process   7 of 168, pid=26479)
+UPCR: UPC thread  55 of 168 on nid00048 (pshm node 2 of 8, process  55 of 168, pid=14963)
+UPCR: UPC thread   8 of 168 on nid00046 (pshm node 0 of 8, process   8 of 168, pid=26480)
+UPCR: UPC thread  56 of 168 on nid00048 (pshm node 2 of 8, process  56 of 168, pid=14964)
+UPCR: UPC thread   9 of 168 on nid00046 (pshm node 0 of 8, process   9 of 168, pid=26481)
+UPCR: UPC thread  57 of 168 on nid00048 (pshm node 2 of 8, process  57 of 168, pid=14965)
+UPCR: UPC thread  10 of 168 on nid00046 (pshm node 0 of 8, process  10 of 168, pid=26482)
+UPCR: UPC thread  59 of 168 on nid00048 (pshm node 2 of 8, process  59 of 168, pid=14967)
+UPCR: UPC thread  11 of 168 on nid00046 (pshm node 0 of 8, process  11 of 168, pid=26483)
+UPCR: UPC thread  60 of 168 on nid00048 (pshm node 2 of 8, process  60 of 168, pid=14968)
+UPCR: UPC thread  12 of 168 on nid00046 (pshm node 0 of 8, process  12 of 168, pid=26484)
+UPCR: UPC thread  61 of 168 on nid00048 (pshm node 2 of 8, process  61 of 168, pid=14969)
+UPCR: UPC thread  13 of 168 on nid00046 (pshm node 0 of 8, process  13 of 168, pid=26485)
+UPCR: UPC thread  43 of 168 on nid00048 (pshm node 2 of 8, process  43 of 168, pid=14951)
+UPCR: UPC thread  14 of 168 on nid00046 (pshm node 0 of 8, process  14 of 168, pid=26486)
+UPCR: UPC thread  44 of 168 on nid00048 (pshm node 2 of 8, process  44 of 168, pid=14952)
+UPCR: UPC thread  15 of 168 on nid00046 (pshm node 0 of 8, process  15 of 168, pid=26487)
+UPCR: UPC thread  45 of 168 on nid00048 (pshm node 2 of 8, process  45 of 168, pid=14953)
+UPCR: UPC thread  16 of 168 on nid00046 (pshm node 0 of 8, process  16 of 168, pid=26488)
+UPCR: UPC thread  46 of 168 on nid00048 (pshm node 2 of 8, process  46 of 168, pid=14954)
+UPCR: UPC thread  17 of 168 on nid00046 (pshm node 0 of 8, process  17 of 168, pid=26489)
+UPCR: UPC thread  47 of 168 on nid00048 (pshm node 2 of 8, process  47 of 168, pid=14955)
+UPCR: UPC thread  18 of 168 on nid00046 (pshm node 0 of 8, process  18 of 168, pid=26490)
+UPCR: UPC thread  51 of 168 on nid00048 (pshm node 2 of 8, process  51 of 168, pid=14959)
+UPCR: UPC thread  20 of 168 on nid00046 (pshm node 0 of 8, process  20 of 168, pid=26492)
+UPCR: UPC thread  54 of 168 on nid00048 (pshm node 2 of 8, process  54 of 168, pid=14962)
+UPCR: UPC thread  58 of 168 on nid00048 (pshm node 2 of 8, process  58 of 168, pid=14966)
+UPCR: UPC thread  62 of 168 on nid00048 (pshm node 2 of 8, process  62 of 168, pid=14970)
+UPCR: UPC thread 134 of 168 on nid00052 (pshm node 6 of 8, process 134 of 168, pid=46218)
+UPCR: UPC thread  22 of 168 on nid00047 (pshm node 1 of 8, process  22 of 168, pid=9571)
+UPCR: UPC thread  85 of 168 on nid00050 (pshm node 4 of 8, process  85 of 168, pid=5838)
+UPCR: UPC thread 116 of 168 on nid00051 (pshm node 5 of 8, process 116 of 168, pid=7180)
+UPCR: UPC thread 159 of 168 on nid00053 (pshm node 7 of 8, process 159 of 168, pid=42071)
+UPCR: UPC thread 135 of 168 on nid00052 (pshm node 6 of 8, process 135 of 168, pid=46219)
+UPCR: UPC thread  25 of 168 on nid00047 (pshm node 1 of 8, process  25 of 168, pid=9574)
+UPCR: UPC thread  86 of 168 on nid00050 (pshm node 4 of 8, process  86 of 168, pid=5839)
+UPCR: UPC thread 106 of 168 on nid00051 (pshm node 5 of 8, process 106 of 168, pid=7170)
+UPCR: UPC thread 166 of 168 on nid00053 (pshm node 7 of 8, process 166 of 168, pid=42078)
+UPCR: UPC thread 137 of 168 on nid00052 (pshm node 6 of 8, process 137 of 168, pid=46221)
+UPCR: UPC thread  66 of 168 on nid00049 (pshm node 3 of 8, process  66 of 168, pid=14046)
+UPCR: UPC thread  26 of 168 on nid00047 (pshm node 1 of 8, process  26 of 168, pid=9575)
+UPCR: UPC thread  87 of 168 on nid00050 (pshm node 4 of 8, process  87 of 168, pid=5840)
+UPCR: UPC thread 107 of 168 on nid00051 (pshm node 5 of 8, process 107 of 168, pid=7171)
+UPCR: UPC thread 148 of 168 on nid00053 (pshm node 7 of 8, process 148 of 168, pid=42060)
+UPCR: UPC thread 138 of 168 on nid00052 (pshm node 6 of 8, process 138 of 168, pid=46222)
+UPCR: UPC thread  67 of 168 on nid00049 (pshm node 3 of 8, process  67 of 168, pid=14047)
+UPCR: UPC thread  27 of 168 on nid00047 (pshm node 1 of 8, process  27 of 168, pid=9576)
+UPCR: UPC thread  88 of 168 on nid00050 (pshm node 4 of 8, process  88 of 168, pid=5841)
+UPCR: UPC thread 108 of 168 on nid00051 (pshm node 5 of 8, process 108 of 168, pid=7172)
+UPCR: UPC thread 149 of 168 on nid00053 (pshm node 7 of 8, process 149 of 168, pid=42061)
+UPCR: UPC thread 139 of 168 on nid00052 (pshm node 6 of 8, process 139 of 168, pid=46223)
+UPCR: UPC thread  70 of 168 on nid00049 (pshm node 3 of 8, process  70 of 168, pid=14050)
+UPCR: UPC thread  28 of 168 on nid00047 (pshm node 1 of 8, process  28 of 168, pid=9577)
+UPCR: UPC thread  89 of 168 on nid00050 (pshm node 4 of 8, process  89 of 168, pid=5842)
+UPCR: UPC thread 109 of 168 on nid00051 (pshm node 5 of 8, process 109 of 168, pid=7173)
+UPCR: UPC thread 150 of 168 on nid00053 (pshm node 7 of 8, process 150 of 168, pid=42062)
+UPCR: UPC thread 144 of 168 on nid00052 (pshm node 6 of 8, process 144 of 168, pid=46228)
+UPCR: UPC thread  73 of 168 on nid00049 (pshm node 3 of 8, process  73 of 168, pid=14053)
+UPCR: UPC thread  29 of 168 on nid00047 (pshm node 1 of 8, process  29 of 168, pid=9578)
+UPCR: UPC thread  90 of 168 on nid00050 (pshm node 4 of 8, process  90 of 168, pid=5843)
+UPCR: UPC thread 110 of 168 on nid00051 (pshm node 5 of 8, process 110 of 168, pid=7174)
+UPCR: UPC thread 151 of 168 on nid00053 (pshm node 7 of 8, process 151 of 168, pid=42063)
+UPCR: UPC thread 146 of 168 on nid00052 (pshm node 6 of 8, process 146 of 168, pid=46230)
+UPCR: UPC thread  74 of 168 on nid00049 (pshm node 3 of 8, process  74 of 168, pid=14054)
+UPCR: UPC thread  30 of 168 on nid00047 (pshm node 1 of 8, process  30 of 168, pid=9579)
+UPCR: UPC thread  91 of 168 on nid00050 (pshm node 4 of 8, process  91 of 168, pid=5844)
+UPCR: UPC thread 111 of 168 on nid00051 (pshm node 5 of 8, process 111 of 168, pid=7175)
+UPCR: UPC thread 152 of 168 on nid00053 (pshm node 7 of 8, process 152 of 168, pid=42064)
+UPCR: UPC thread 127 of 168 on nid00052 (pshm node 6 of 8, process 127 of 168, pid=46211)
+UPCR: UPC thread  78 of 168 on nid00049 (pshm node 3 of 8, process  78 of 168, pid=14058)
+UPCR: UPC thread  31 of 168 on nid00047 (pshm node 1 of 8, process  31 of 168, pid=9580)
+UPCR: UPC thread  92 of 168 on nid00050 (pshm node 4 of 8, process  92 of 168, pid=5845)
+UPCR: UPC thread 112 of 168 on nid00051 (pshm node 5 of 8, process 112 of 168, pid=7176)
+UPCR: UPC thread 153 of 168 on nid00053 (pshm node 7 of 8, process 153 of 168, pid=42065)
+UPCR: UPC thread 128 of 168 on nid00052 (pshm node 6 of 8, process 128 of 168, pid=46212)
+UPCR: UPC thread  81 of 168 on nid00049 (pshm node 3 of 8, process  81 of 168, pid=14061)
+UPCR: UPC thread  32 of 168 on nid00047 (pshm node 1 of 8, process  32 of 168, pid=9581)
+UPCR: UPC thread  93 of 168 on nid00050 (pshm node 4 of 8, process  93 of 168, pid=5846)
+UPCR: UPC thread 113 of 168 on nid00051 (pshm node 5 of 8, process 113 of 168, pid=7177)
+UPCR: UPC thread 154 of 168 on nid00053 (pshm node 7 of 8, process 154 of 168, pid=42066)
+UPCR: UPC thread 129 of 168 on nid00052 (pshm node 6 of 8, process 129 of 168, pid=46213)
+UPCR: UPC thread  64 of 168 on nid00049 (pshm node 3 of 8, process  64 of 168, pid=14044)
+UPCR: UPC thread  33 of 168 on nid00047 (pshm node 1 of 8, process  33 of 168, pid=9582)
+UPCR: UPC thread  94 of 168 on nid00050 (pshm node 4 of 8, process  94 of 168, pid=5847)
+UPCR: UPC thread 114 of 168 on nid00051 (pshm node 5 of 8, process 114 of 168, pid=7178)
+UPCR: UPC thread 155 of 168 on nid00053 (pshm node 7 of 8, process 155 of 168, pid=42067)
+UPCR: UPC thread 130 of 168 on nid00052 (pshm node 6 of 8, process 130 of 168, pid=46214)
+UPCR: UPC thread  65 of 168 on nid00049 (pshm node 3 of 8, process  65 of 168, pid=14045)
+UPCR: UPC thread  34 of 168 on nid00047 (pshm node 1 of 8, process  34 of 168, pid=9583)
+UPCR: UPC thread  95 of 168 on nid00050 (pshm node 4 of 8, process  95 of 168, pid=5848)
+UPCR: UPC thread 115 of 168 on nid00051 (pshm node 5 of 8, process 115 of 168, pid=7179)
+UPCR: UPC thread 156 of 168 on nid00053 (pshm node 7 of 8, process 156 of 168, pid=42068)
+UPCR: UPC thread 131 of 168 on nid00052 (pshm node 6 of 8, process 131 of 168, pid=46215)
+UPCR: UPC thread  68 of 168 on nid00049 (pshm node 3 of 8, process  68 of 168, pid=14048)
+UPCR: UPC thread  35 of 168 on nid00047 (pshm node 1 of 8, process  35 of 168, pid=9584)
+UPCR: UPC thread  96 of 168 on nid00050 (pshm node 4 of 8, process  96 of 168, pid=5849)
+UPCR: UPC thread 117 of 168 on nid00051 (pshm node 5 of 8, process 117 of 168, pid=7181)
+UPCR: UPC thread 157 of 168 on nid00053 (pshm node 7 of 8, process 157 of 168, pid=42069)
+UPCR: UPC thread 132 of 168 on nid00052 (pshm node 6 of 8, process 132 of 168, pid=46216)
+UPCR: UPC thread  69 of 168 on nid00049 (pshm node 3 of 8, process  69 of 168, pid=14049)
+UPCR: UPC thread  36 of 168 on nid00047 (pshm node 1 of 8, process  36 of 168, pid=9585)
+UPCR: UPC thread  97 of 168 on nid00050 (pshm node 4 of 8, process  97 of 168, pid=5850)
+UPCR: UPC thread 118 of 168 on nid00051 (pshm node 5 of 8, process 118 of 168, pid=7182)
+UPCR: UPC thread 158 of 168 on nid00053 (pshm node 7 of 8, process 158 of 168, pid=42070)
+UPCR: UPC thread 133 of 168 on nid00052 (pshm node 6 of 8, process 133 of 168, pid=46217)
+UPCR: UPC thread  71 of 168 on nid00049 (pshm node 3 of 8, process  71 of 168, pid=14051)
+UPCR: UPC thread  37 of 168 on nid00047 (pshm node 1 of 8, process  37 of 168, pid=9586)
+UPCR: UPC thread  98 of 168 on nid00050 (pshm node 4 of 8, process  98 of 168, pid=5851)
+UPCR: UPC thread 119 of 168 on nid00051 (pshm node 5 of 8, process 119 of 168, pid=7183)
+UPCR: UPC thread 160 of 168 on nid00053 (pshm node 7 of 8, process 160 of 168, pid=42072)
+UPCR: UPC thread 136 of 168 on nid00052 (pshm node 6 of 8, process 136 of 168, pid=46220)
+UPCR: UPC thread  72 of 168 on nid00049 (pshm node 3 of 8, process  72 of 168, pid=14052)
+UPCR: UPC thread  38 of 168 on nid00047 (pshm node 1 of 8, process  38 of 168, pid=9587)
+UPCR: UPC thread  99 of 168 on nid00050 (pshm node 4 of 8, process  99 of 168, pid=5852)
+UPCR: UPC thread 120 of 168 on nid00051 (pshm node 5 of 8, process 120 of 168, pid=7184)
+UPCR: UPC thread 161 of 168 on nid00053 (pshm node 7 of 8, process 161 of 168, pid=42073)
+UPCR: UPC thread 140 of 168 on nid00052 (pshm node 6 of 8, process 140 of 168, pid=46224)
+UPCR: UPC thread  75 of 168 on nid00049 (pshm node 3 of 8, process  75 of 168, pid=14055)
+UPCR: UPC thread  39 of 168 on nid00047 (pshm node 1 of 8, process  39 of 168, pid=9588)
+UPCR: UPC thread 100 of 168 on nid00050 (pshm node 4 of 8, process 100 of 168, pid=5853)
+UPCR: UPC thread 121 of 168 on nid00051 (pshm node 5 of 8, process 121 of 168, pid=7185)
+UPCR: UPC thread 162 of 168 on nid00053 (pshm node 7 of 8, process 162 of 168, pid=42074)
+UPCR: UPC thread 141 of 168 on nid00052 (pshm node 6 of 8, process 141 of 168, pid=46225)
+UPCR: UPC thread  76 of 168 on nid00049 (pshm node 3 of 8, process  76 of 168, pid=14056)
+UPCR: UPC thread  40 of 168 on nid00047 (pshm node 1 of 8, process  40 of 168, pid=9589)
+UPCR: UPC thread 101 of 168 on nid00050 (pshm node 4 of 8, process 101 of 168, pid=5854)
+UPCR: UPC thread 122 of 168 on nid00051 (pshm node 5 of 8, process 122 of 168, pid=7186)
+UPCR: UPC thread 163 of 168 on nid00053 (pshm node 7 of 8, process 163 of 168, pid=42075)
+UPCR: UPC thread 142 of 168 on nid00052 (pshm node 6 of 8, process 142 of 168, pid=46226)
+UPCR: UPC thread  77 of 168 on nid00049 (pshm node 3 of 8, process  77 of 168, pid=14057)
+UPCR: UPC thread  41 of 168 on nid00047 (pshm node 1 of 8, process  41 of 168, pid=9590)
+UPCR: UPC thread 102 of 168 on nid00050 (pshm node 4 of 8, process 102 of 168, pid=5855)
+UPCR: UPC thread 123 of 168 on nid00051 (pshm node 5 of 8, process 123 of 168, pid=7187)
+UPCR: UPC thread 164 of 168 on nid00053 (pshm node 7 of 8, process 164 of 168, pid=42076)
+UPCR: UPC thread 143 of 168 on nid00052 (pshm node 6 of 8, process 143 of 168, pid=46227)
+UPCR: UPC thread  79 of 168 on nid00049 (pshm node 3 of 8, process  79 of 168, pid=14059)
+UPCR: UPC thread  23 of 168 on nid00047 (pshm node 1 of 8, process  23 of 168, pid=9572)
+UPCR: UPC thread 103 of 168 on nid00050 (pshm node 4 of 8, process 103 of 168, pid=5856)
+UPCR: UPC thread 124 of 168 on nid00051 (pshm node 5 of 8, process 124 of 168, pid=7188)
+UPCR: UPC thread 165 of 168 on nid00053 (pshm node 7 of 8, process 165 of 168, pid=42077)
+UPCR: UPC thread 145 of 168 on nid00052 (pshm node 6 of 8, process 145 of 168, pid=46229)
+UPCR: UPC thread  80 of 168 on nid00049 (pshm node 3 of 8, process  80 of 168, pid=14060)
+UPCR: UPC thread  24 of 168 on nid00047 (pshm node 1 of 8, process  24 of 168, pid=9573)
+UPCR: UPC thread 104 of 168 on nid00050 (pshm node 4 of 8, process 104 of 168, pid=5857)
+UPCR: UPC thread 125 of 168 on nid00051 (pshm node 5 of 8, process 125 of 168, pid=7189)
+UPCR: UPC thread 167 of 168 on nid00053 (pshm node 7 of 8, process 167 of 168, pid=42079)
+UPCR: UPC thread  82 of 168 on nid00049 (pshm node 3 of 8, process  82 of 168, pid=14062)
+UPCR: UPC thread  83 of 168 on nid00049 (pshm node 3 of 8, process  83 of 168, pid=14063)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 168
+Input reading time: 1.481918 seconds
+Graph traversal time: 3.272679 seconds
+Kmlist offload: 2.491765 seconds
+Total time: 7.246757s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread   1 of 192 on nid00046 (pshm node 0 of 8, process   1 of 192, pid=26836)
+UPCR: UPC thread 168 of 192 on nid00053 (pshm node 7 of 8, process 168 of 192, pid=42390)
+UPCR: UPC thread 144 of 192 on nid00052 (pshm node 6 of 8, process 144 of 192, pid=46483)
+UPCR: UPC thread 128 of 192 on nid00051 (pshm node 5 of 8, process 128 of 192, pid=7456)
+UPCR: UPC thread  24 of 192 on nid00047 (pshm node 1 of 8, process  24 of 192, pid=9847)
+UPCR: UPC thread 103 of 192 on nid00050 (pshm node 4 of 8, process 103 of 192, pid=6189)
+UPCR: UPC thread  48 of 192 on nid00048 (pshm node 2 of 8, process  48 of 192, pid=15261)
+UPCR: UPC thread  72 of 192 on nid00049 (pshm node 3 of 8, process  72 of 192, pid=14352)
+UPCR: UPC thread   3 of 192 on nid00046 (pshm node 0 of 8, process   3 of 192, pid=26838)
+UPCR: UPC thread 170 of 192 on nid00053 (pshm node 7 of 8, process 170 of 192, pid=42392)
+UPCR: UPC thread 146 of 192 on nid00052 (pshm node 6 of 8, process 146 of 192, pid=46485)
+UPCR: UPC thread 133 of 192 on nid00051 (pshm node 5 of 8, process 133 of 192, pid=7461)
+UPCR: UPC thread  32 of 192 on nid00047 (pshm node 1 of 8, process  32 of 192, pid=9855)
+UPCR: UPC thread   5 of 192 on nid00046 (pshm node 0 of 8, process   5 of 192, pid=26840)
+UPCR: UPC thread 186 of 192 on nid00053 (pshm node 7 of 8, process 186 of 192, pid=42408)
+UPCR: UPC thread 148 of 192 on nid00052 (pshm node 6 of 8, process 148 of 192, pid=46487)
+UPCR: UPC thread 134 of 192 on nid00051 (pshm node 5 of 8, process 134 of 192, pid=7462)
+UPCR: UPC thread  36 of 192 on nid00047 (pshm node 1 of 8, process  36 of 192, pid=9859)
+UPCR: UPC thread  12 of 192 on nid00046 (pshm node 0 of 8, process  12 of 192, pid=26847)
+UPCR: UPC thread 190 of 192 on nid00053 (pshm node 7 of 8, process 190 of 192, pid=42412)
+UPCR: UPC thread 153 of 192 on nid00052 (pshm node 6 of 8, process 153 of 192, pid=46492)
+UPCR: UPC thread 135 of 192 on nid00051 (pshm node 5 of 8, process 135 of 192, pid=7463)
+UPCR: UPC thread  25 of 192 on nid00047 (pshm node 1 of 8, process  25 of 192, pid=9848)
+UPCR: UPC thread  16 of 192 on nid00046 (pshm node 0 of 8, process  16 of 192, pid=26851)
+UPCR: UPC thread 191 of 192 on nid00053 (pshm node 7 of 8, process 191 of 192, pid=42413)
+UPCR: UPC thread 156 of 192 on nid00052 (pshm node 6 of 8, process 156 of 192, pid=46495)
+UPCR: UPC thread 139 of 192 on nid00051 (pshm node 5 of 8, process 139 of 192, pid=7467)
+UPCR: UPC thread  27 of 192 on nid00047 (pshm node 1 of 8, process  27 of 192, pid=9850)
+UPCR: UPC thread  17 of 192 on nid00046 (pshm node 0 of 8, process  17 of 192, pid=26852)
+UPCR: UPC thread 169 of 192 on nid00053 (pshm node 7 of 8, process 169 of 192, pid=42391)
+UPCR: UPC thread 158 of 192 on nid00052 (pshm node 6 of 8, process 158 of 192, pid=46497)
+UPCR: UPC thread 142 of 192 on nid00051 (pshm node 5 of 8, process 142 of 192, pid=7470)
+UPCR: UPC thread  28 of 192 on nid00047 (pshm node 1 of 8, process  28 of 192, pid=9851)
+UPCR: UPC thread  19 of 192 on nid00046 (pshm node 0 of 8, process  19 of 192, pid=26854)
+UPCR: UPC thread 171 of 192 on nid00053 (pshm node 7 of 8, process 171 of 192, pid=42393)
+UPCR: UPC thread  21 of 192 on nid00046 (pshm node 0 of 8, process  21 of 192, pid=26856)
+UPCR: UPC thread 172 of 192 on nid00053 (pshm node 7 of 8, process 172 of 192, pid=42394)
+UPCR: UPC thread 159 of 192 on nid00052 (pshm node 6 of 8, process 159 of 192, pid=46498)
+UPCR: UPC thread 120 of 192 on nid00051 (pshm node 5 of 8, process 120 of 192, pid=7448)
+UPCR: UPC thread  29 of 192 on nid00047 (pshm node 1 of 8, process  29 of 192, pid=9852)
+UPCR: UPC thread  22 of 192 on nid00046 (pshm node 0 of 8, process  22 of 192, pid=26857)
+UPCR: UPC thread 173 of 192 on nid00053 (pshm node 7 of 8, process 173 of 192, pid=42395)
+UPCR: UPC thread 160 of 192 on nid00052 (pshm node 6 of 8, process 160 of 192, pid=46499)
+UPCR: UPC thread 121 of 192 on nid00051 (pshm node 5 of 8, process 121 of 192, pid=7449)
+UPCR: UPC thread  30 of 192 on nid00047 (pshm node 1 of 8, process  30 of 192, pid=9853)
+UPCR: UPC thread   0 of 192 on nid00046 (pshm node 0 of 8, process   0 of 192, pid=26835)
+UPCR: UPC thread 174 of 192 on nid00053 (pshm node 7 of 8, process 174 of 192, pid=42396)
+UPCR: UPC thread 164 of 192 on nid00052 (pshm node 6 of 8, process 164 of 192, pid=46503)
+UPCR: UPC thread 122 of 192 on nid00051 (pshm node 5 of 8, process 122 of 192, pid=7450)
+UPCR: UPC thread  31 of 192 on nid00047 (pshm node 1 of 8, process  31 of 192, pid=9854)
+UPCR: UPC thread   2 of 192 on nid00046 (pshm node 0 of 8, process   2 of 192, pid=26837)
+UPCR: UPC thread 175 of 192 on nid00053 (pshm node 7 of 8, process 175 of 192, pid=42397)
+UPCR: UPC thread 167 of 192 on nid00052 (pshm node 6 of 8, process 167 of 192, pid=46506)
+UPCR: UPC thread 123 of 192 on nid00051 (pshm node 5 of 8, process 123 of 192, pid=7451)
+UPCR: UPC thread  33 of 192 on nid00047 (pshm node 1 of 8, process  33 of 192, pid=9856)
+UPCR: UPC thread   4 of 192 on nid00046 (pshm node 0 of 8, process   4 of 192, pid=26839)
+UPCR: UPC thread 176 of 192 on nid00053 (pshm node 7 of 8, process 176 of 192, pid=42398)
+UPCR: UPC thread 145 of 192 on nid00052 (pshm node 6 of 8, process 145 of 192, pid=46484)
+UPCR: UPC thread 124 of 192 on nid00051 (pshm node 5 of 8, process 124 of 192, pid=7452)
+UPCR: UPC thread  34 of 192 on nid00047 (pshm node 1 of 8, process  34 of 192, pid=9857)
+UPCR: UPC thread   6 of 192 on nid00046 (pshm node 0 of 8, process   6 of 192, pid=26841)
+UPCR: UPC thread 177 of 192 on nid00053 (pshm node 7 of 8, process 177 of 192, pid=42399)
+UPCR: UPC thread 147 of 192 on nid00052 (pshm node 6 of 8, process 147 of 192, pid=46486)
+UPCR: UPC thread 125 of 192 on nid00051 (pshm node 5 of 8, process 125 of 192, pid=7453)
+UPCR: UPC thread  35 of 192 on nid00047 (pshm node 1 of 8, process  35 of 192, pid=9858)
+UPCR: UPC thread   7 of 192 on nid00046 (pshm node 0 of 8, process   7 of 192, pid=26842)
+UPCR: UPC thread 178 of 192 on nid00053 (pshm node 7 of 8, process 178 of 192, pid=42400)
+UPCR: UPC thread 149 of 192 on nid00052 (pshm node 6 of 8, process 149 of 192, pid=46488)
+UPCR: UPC thread 126 of 192 on nid00051 (pshm node 5 of 8, process 126 of 192, pid=7454)
+UPCR: UPC thread  37 of 192 on nid00047 (pshm node 1 of 8, process  37 of 192, pid=9860)
+UPCR: UPC thread   8 of 192 on nid00046 (pshm node 0 of 8, process   8 of 192, pid=26843)
+UPCR: UPC thread 179 of 192 on nid00053 (pshm node 7 of 8, process 179 of 192, pid=42401)
+UPCR: UPC thread 150 of 192 on nid00052 (pshm node 6 of 8, process 150 of 192, pid=46489)
+UPCR: UPC thread 127 of 192 on nid00051 (pshm node 5 of 8, process 127 of 192, pid=7455)
+UPCR: UPC thread  38 of 192 on nid00047 (pshm node 1 of 8, process  38 of 192, pid=9861)
+UPCR: UPC thread   9 of 192 on nid00046 (pshm node 0 of 8, process   9 of 192, pid=26844)
+UPCR: UPC thread 180 of 192 on nid00053 (pshm node 7 of 8, process 180 of 192, pid=42402)
+UPCR: UPC thread 151 of 192 on nid00052 (pshm node 6 of 8, process 151 of 192, pid=46490)
+UPCR: UPC thread 129 of 192 on nid00051 (pshm node 5 of 8, process 129 of 192, pid=7457)
+UPCR: UPC thread  39 of 192 on nid00047 (pshm node 1 of 8, process  39 of 192, pid=9862)
+UPCR: UPC thread  10 of 192 on nid00046 (pshm node 0 of 8, process  10 of 192, pid=26845)
+UPCR: UPC thread 181 of 192 on nid00053 (pshm node 7 of 8, process 181 of 192, pid=42403)
+UPCR: UPC thread 152 of 192 on nid00052 (pshm node 6 of 8, process 152 of 192, pid=46491)
+UPCR: UPC thread 130 of 192 on nid00051 (pshm node 5 of 8, process 130 of 192, pid=7458)
+UPCR: UPC thread  40 of 192 on nid00047 (pshm node 1 of 8, process  40 of 192, pid=9863)
+UPCR: UPC thread  11 of 192 on nid00046 (pshm node 0 of 8, process  11 of 192, pid=26846)
+UPCR: UPC thread 182 of 192 on nid00053 (pshm node 7 of 8, process 182 of 192, pid=42404)
+UPCR: UPC thread 154 of 192 on nid00052 (pshm node 6 of 8, process 154 of 192, pid=46493)
+UPCR: UPC thread 131 of 192 on nid00051 (pshm node 5 of 8, process 131 of 192, pid=7459)
+UPCR: UPC thread  41 of 192 on nid00047 (pshm node 1 of 8, process  41 of 192, pid=9864)
+UPCR: UPC thread  13 of 192 on nid00046 (pshm node 0 of 8, process  13 of 192, pid=26848)
+UPCR: UPC thread 183 of 192 on nid00053 (pshm node 7 of 8, process 183 of 192, pid=42405)
+UPCR: UPC thread 155 of 192 on nid00052 (pshm node 6 of 8, process 155 of 192, pid=46494)
+UPCR: UPC thread 132 of 192 on nid00051 (pshm node 5 of 8, process 132 of 192, pid=7460)
+UPCR: UPC thread  42 of 192 on nid00047 (pshm node 1 of 8, process  42 of 192, pid=9865)
+UPCR: UPC thread  14 of 192 on nid00046 (pshm node 0 of 8, process  14 of 192, pid=26849)
+UPCR: UPC thread 184 of 192 on nid00053 (pshm node 7 of 8, process 184 of 192, pid=42406)
+UPCR: UPC thread 157 of 192 on nid00052 (pshm node 6 of 8, process 157 of 192, pid=46496)
+UPCR: UPC thread 136 of 192 on nid00051 (pshm node 5 of 8, process 136 of 192, pid=7464)
+UPCR: UPC thread  43 of 192 on nid00047 (pshm node 1 of 8, process  43 of 192, pid=9866)
+UPCR: UPC thread  15 of 192 on nid00046 (pshm node 0 of 8, process  15 of 192, pid=26850)
+UPCR: UPC thread 185 of 192 on nid00053 (pshm node 7 of 8, process 185 of 192, pid=42407)
+UPCR: UPC thread 161 of 192 on nid00052 (pshm node 6 of 8, process 161 of 192, pid=46500)
+UPCR: UPC thread 137 of 192 on nid00051 (pshm node 5 of 8, process 137 of 192, pid=7465)
+UPCR: UPC thread  44 of 192 on nid00047 (pshm node 1 of 8, process  44 of 192, pid=9867)
+UPCR: UPC thread  18 of 192 on nid00046 (pshm node 0 of 8, process  18 of 192, pid=26853)
+UPCR: UPC thread 187 of 192 on nid00053 (pshm node 7 of 8, process 187 of 192, pid=42409)
+UPCR: UPC thread 162 of 192 on nid00052 (pshm node 6 of 8, process 162 of 192, pid=46501)
+UPCR: UPC thread 138 of 192 on nid00051 (pshm node 5 of 8, process 138 of 192, pid=7466)
+UPCR: UPC thread  45 of 192 on nid00047 (pshm node 1 of 8, process  45 of 192, pid=9868)
+UPCR: UPC thread  20 of 192 on nid00046 (pshm node 0 of 8, process  20 of 192, pid=26855)
+UPCR: UPC thread 188 of 192 on nid00053 (pshm node 7 of 8, process 188 of 192, pid=42410)
+UPCR: UPC thread 163 of 192 on nid00052 (pshm node 6 of 8, process 163 of 192, pid=46502)
+UPCR: UPC thread 140 of 192 on nid00051 (pshm node 5 of 8, process 140 of 192, pid=7468)
+UPCR: UPC thread  46 of 192 on nid00047 (pshm node 1 of 8, process  46 of 192, pid=9869)
+UPCR: UPC thread  23 of 192 on nid00046 (pshm node 0 of 8, process  23 of 192, pid=26858)
+UPCR: UPC thread 189 of 192 on nid00053 (pshm node 7 of 8, process 189 of 192, pid=42411)
+UPCR: UPC thread 165 of 192 on nid00052 (pshm node 6 of 8, process 165 of 192, pid=46504)
+UPCR: UPC thread 141 of 192 on nid00051 (pshm node 5 of 8, process 141 of 192, pid=7469)
+UPCR: UPC thread  47 of 192 on nid00047 (pshm node 1 of 8, process  47 of 192, pid=9870)
+UPCR: UPC thread 166 of 192 on nid00052 (pshm node 6 of 8, process 166 of 192, pid=46505)
+UPCR: UPC thread 143 of 192 on nid00051 (pshm node 5 of 8, process 143 of 192, pid=7471)
+UPCR: UPC thread  26 of 192 on nid00047 (pshm node 1 of 8, process  26 of 192, pid=9849)
+UPCR: UPC thread 104 of 192 on nid00050 (pshm node 4 of 8, process 104 of 192, pid=6190)
+UPCR: UPC thread  58 of 192 on nid00048 (pshm node 2 of 8, process  58 of 192, pid=15271)
+UPCR: UPC thread  78 of 192 on nid00049 (pshm node 3 of 8, process  78 of 192, pid=14358)
+UPCR: UPC thread 105 of 192 on nid00050 (pshm node 4 of 8, process 105 of 192, pid=6191)
+UPCR: UPC thread  63 of 192 on nid00048 (pshm node 2 of 8, process  63 of 192, pid=15276)
+UPCR: UPC thread  80 of 192 on nid00049 (pshm node 3 of 8, process  80 of 192, pid=14360)
+UPCR: UPC thread 106 of 192 on nid00050 (pshm node 4 of 8, process 106 of 192, pid=6192)
+UPCR: UPC thread  64 of 192 on nid00048 (pshm node 2 of 8, process  64 of 192, pid=15277)
+UPCR: UPC thread  81 of 192 on nid00049 (pshm node 3 of 8, process  81 of 192, pid=14361)
+UPCR: UPC thread 107 of 192 on nid00050 (pshm node 4 of 8, process 107 of 192, pid=6193)
+UPCR: UPC thread  67 of 192 on nid00048 (pshm node 2 of 8, process  67 of 192, pid=15280)
+UPCR: UPC thread  83 of 192 on nid00049 (pshm node 3 of 8, process  83 of 192, pid=14363)
+UPCR: UPC thread 108 of 192 on nid00050 (pshm node 4 of 8, process 108 of 192, pid=6194)
+UPCR: UPC thread  70 of 192 on nid00048 (pshm node 2 of 8, process  70 of 192, pid=15283)
+UPCR: UPC thread  85 of 192 on nid00049 (pshm node 3 of 8, process  85 of 192, pid=14365)
+UPCR: UPC thread 109 of 192 on nid00050 (pshm node 4 of 8, process 109 of 192, pid=6195)
+UPCR: UPC thread  49 of 192 on nid00048 (pshm node 2 of 8, process  49 of 192, pid=15262)
+UPCR: UPC thread  88 of 192 on nid00049 (pshm node 3 of 8, process  88 of 192, pid=14368)
+UPCR: UPC thread 110 of 192 on nid00050 (pshm node 4 of 8, process 110 of 192, pid=6196)
+UPCR: UPC thread  50 of 192 on nid00048 (pshm node 2 of 8, process  50 of 192, pid=15263)
+UPCR: UPC thread  89 of 192 on nid00049 (pshm node 3 of 8, process  89 of 192, pid=14369)
+UPCR: UPC thread 111 of 192 on nid00050 (pshm node 4 of 8, process 111 of 192, pid=6197)
+UPCR: UPC thread  51 of 192 on nid00048 (pshm node 2 of 8, process  51 of 192, pid=15264)
+UPCR: UPC thread  90 of 192 on nid00049 (pshm node 3 of 8, process  90 of 192, pid=14370)
+UPCR: UPC thread 112 of 192 on nid00050 (pshm node 4 of 8, process 112 of 192, pid=6198)
+UPCR: UPC thread  52 of 192 on nid00048 (pshm node 2 of 8, process  52 of 192, pid=15265)
+UPCR: UPC thread  91 of 192 on nid00049 (pshm node 3 of 8, process  91 of 192, pid=14371)
+UPCR: UPC thread 113 of 192 on nid00050 (pshm node 4 of 8, process 113 of 192, pid=6199)
+UPCR: UPC thread  53 of 192 on nid00048 (pshm node 2 of 8, process  53 of 192, pid=15266)
+UPCR: UPC thread  93 of 192 on nid00049 (pshm node 3 of 8, process  93 of 192, pid=14373)
+UPCR: UPC thread 114 of 192 on nid00050 (pshm node 4 of 8, process 114 of 192, pid=6200)
+UPCR: UPC thread  54 of 192 on nid00048 (pshm node 2 of 8, process  54 of 192, pid=15267)
+UPCR: UPC thread  94 of 192 on nid00049 (pshm node 3 of 8, process  94 of 192, pid=14374)
+UPCR: UPC thread 115 of 192 on nid00050 (pshm node 4 of 8, process 115 of 192, pid=6201)
+UPCR: UPC thread  55 of 192 on nid00048 (pshm node 2 of 8, process  55 of 192, pid=15268)
+UPCR: UPC thread  95 of 192 on nid00049 (pshm node 3 of 8, process  95 of 192, pid=14375)
+UPCR: UPC thread 116 of 192 on nid00050 (pshm node 4 of 8, process 116 of 192, pid=6202)
+UPCR: UPC thread  56 of 192 on nid00048 (pshm node 2 of 8, process  56 of 192, pid=15269)
+UPCR: UPC thread  73 of 192 on nid00049 (pshm node 3 of 8, process  73 of 192, pid=14353)
+UPCR: UPC thread 117 of 192 on nid00050 (pshm node 4 of 8, process 117 of 192, pid=6203)
+UPCR: UPC thread  57 of 192 on nid00048 (pshm node 2 of 8, process  57 of 192, pid=15270)
+UPCR: UPC thread  74 of 192 on nid00049 (pshm node 3 of 8, process  74 of 192, pid=14354)
+UPCR: UPC thread 118 of 192 on nid00050 (pshm node 4 of 8, process 118 of 192, pid=6204)
+UPCR: UPC thread  59 of 192 on nid00048 (pshm node 2 of 8, process  59 of 192, pid=15272)
+UPCR: UPC thread  75 of 192 on nid00049 (pshm node 3 of 8, process  75 of 192, pid=14355)
+UPCR: UPC thread 119 of 192 on nid00050 (pshm node 4 of 8, process 119 of 192, pid=6205)
+UPCR: UPC thread  60 of 192 on nid00048 (pshm node 2 of 8, process  60 of 192, pid=15273)
+UPCR: UPC thread  76 of 192 on nid00049 (pshm node 3 of 8, process  76 of 192, pid=14356)
+UPCR: UPC thread  96 of 192 on nid00050 (pshm node 4 of 8, process  96 of 192, pid=6182)
+UPCR: UPC thread  61 of 192 on nid00048 (pshm node 2 of 8, process  61 of 192, pid=15274)
+UPCR: UPC thread  77 of 192 on nid00049 (pshm node 3 of 8, process  77 of 192, pid=14357)
+UPCR: UPC thread  97 of 192 on nid00050 (pshm node 4 of 8, process  97 of 192, pid=6183)
+UPCR: UPC thread  62 of 192 on nid00048 (pshm node 2 of 8, process  62 of 192, pid=15275)
+UPCR: UPC thread  79 of 192 on nid00049 (pshm node 3 of 8, process  79 of 192, pid=14359)
+UPCR: UPC thread  98 of 192 on nid00050 (pshm node 4 of 8, process  98 of 192, pid=6184)
+UPCR: UPC thread  65 of 192 on nid00048 (pshm node 2 of 8, process  65 of 192, pid=15278)
+UPCR: UPC thread  82 of 192 on nid00049 (pshm node 3 of 8, process  82 of 192, pid=14362)
+UPCR: UPC thread  99 of 192 on nid00050 (pshm node 4 of 8, process  99 of 192, pid=6185)
+UPCR: UPC thread  66 of 192 on nid00048 (pshm node 2 of 8, process  66 of 192, pid=15279)
+UPCR: UPC thread  84 of 192 on nid00049 (pshm node 3 of 8, process  84 of 192, pid=14364)
+UPCR: UPC thread 100 of 192 on nid00050 (pshm node 4 of 8, process 100 of 192, pid=6186)
+UPCR: UPC thread  68 of 192 on nid00048 (pshm node 2 of 8, process  68 of 192, pid=15281)
+UPCR: UPC thread  86 of 192 on nid00049 (pshm node 3 of 8, process  86 of 192, pid=14366)
+UPCR: UPC thread 101 of 192 on nid00050 (pshm node 4 of 8, process 101 of 192, pid=6187)
+UPCR: UPC thread  69 of 192 on nid00048 (pshm node 2 of 8, process  69 of 192, pid=15282)
+UPCR: UPC thread  87 of 192 on nid00049 (pshm node 3 of 8, process  87 of 192, pid=14367)
+UPCR: UPC thread 102 of 192 on nid00050 (pshm node 4 of 8, process 102 of 192, pid=6188)
+UPCR: UPC thread  71 of 192 on nid00048 (pshm node 2 of 8, process  71 of 192, pid=15284)
+UPCR: UPC thread  92 of 192 on nid00049 (pshm node 3 of 8, process  92 of 192, pid=14372)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 55
+Kmer count:  27000544
+Kmer length: 51
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 210550
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/largeinput
+Number of UPC threads: 192
+Input reading time: 1.449916 seconds
+Graph traversal time: 3.622369 seconds
+Kmlist offload: 2.153204 seconds
+Total time: 7.226070s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
