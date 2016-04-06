@@ -49,7 +49,7 @@
 
 \title{CS 267: Homework 3}
 \author{Richard Barnes, Danny Broberg, Jiayuan Chen}
-\date{April 1, 2016}
+\date{April 5, 2016}
 
 \hypersetup{
   pdfauthor={Richard Barnes, Danny Broberg, Jiayuan Chen},
@@ -62,6 +62,7 @@
 \maketitle
 
 \section{Introduction}
+<<<<<<< HEAD
 This report describes our implementation of a de novo genome DNA assembly program using Unified Parallel C (UPC). UPC is an extension of the C language, outfitted for a Partitioned Global Address Space (PGAS) programming model. This model associates memory physically with specific processes but enables shared access. This bears syntatic similarities to OpenMP and other shared memory programming models.
 
 Our paper is organized as follows:
@@ -69,8 +70,17 @@ Our paper is organized as follows:
 \item description of the computational resources
 \item a section that describes the general serial algorithm approach
 \item a section that describes the general extension to UPC
+=======
+This report describes our implementation of Unified Parallel C (UPC) for de novo genome DNA assembly. UPC is an extension of the C language, outfitted for a Partitioned Global Address Space (PGAS) programming model. This model has the advantage of a shared address space accessible by all the processors, but each variable is physically associated with a specific processor. 
+
+Our paper is organized as follows:
+\begin{itemize}
+\item A description of the computational resources
+\item A description of the general serial algorithm approach
+\item Our approach to extending the code to UPC
+>>>>>>> 1ab5813c3218a04be5d916ea2fc2530e59ca0d87
 \item evaluation of the code's performance
-\end{enumerate}
+\end{itemize}
 
 \section{Machine Description}
 For our codes we use NERSC's Edison machine. The machine has 5,576 compute nodes. Each node has 64GB DDR3 1866\,MHz RAM and two sockets, each of which is populated with a 12-core Intel ``Ivy Bridge" processor running at 2.4\,GHz. Each core has one or two user threads, a 256 bit vector unit, and is nominally capable of 19.2 Gflops. Notably, for our purposes, each core has its own L1 and L2 cache. The L1 cache has 64\,KB (32\,KB instruction cache, 32\,KB data) and the L2 cache has 256\,KB. The 12 cores collectively share a 30\,MB L3 cache. The caches have a bandwidth of 100, 40, and 23 Gbyte/s, respectively.\footnote{\url{http://www.nersc.gov/users/computational-systems/edison/configuration/}} Both the L1 and L2 caches are 8-way and have a 64 byte line size.\footnote{\url{http://www.7-cpu.com/cpu/IvyBridge.html}} 
@@ -96,6 +106,44 @@ After the hash table has been populated, the Graph Traversal step begins by loop
 Within the serial code, many external functions and variables are referenced which were defined in Algorithms~\ref{packingDNAseq}- ~\ref{contig_generation}. These are displayed below the serial implementation code.
 \end{comment}
 
+\begin{table}
+    \begin{tabular}[t]{|c|p{3.2cm}|}
+        \hline
+        &Alg. ~\ref{packingDNAseq} (packing sequences)\\ \hline
+        1&\emph{Function} for initial lookup of kmers \\ \hline
+        2&\emph{Function} to convert FourMer to packed\\ \hline
+        3&\emph{Function} to pack sequences \\ \hline   
+        4&\emph{Function} to unpack sequences \\ \hline
+        5&\emph{Function} to compare packed sequences \\ \hline   
+    \end{tabular}
+    \hfill
+    \begin{tabular}[t]{|c|p{3.2cm}|}
+        \hline
+        &Alg. ~\ref{kmer_hash} (kmer hashing)\\ \hline
+        1&\emph{Function} to create hash table and pre-allocate memory\\ \hline
+        2&\emph{Function} to compute hash sequence values \\ \hline
+        3&\emph{Function} to return hash value of a kmer \\ \hline   
+        4&\emph{Function} to look up Kmer and return a pointer to it\\ \hline
+        5&\emph{Function} to add a kmer to hash table\\ \hline   
+        6&\emph{Function} to add a kmer to start list  \\ \hline     
+        7&\emph{Function} to deallocate memory buffers\\ \hline     
+        8&\emph{Function} to deallocate hash table memory\\ \hline     
+    \end{tabular}
+    \hfill
+    \begin{tabular}[t]{|c|p{3.2cm}|}
+        \hline
+        &Algorithm ~\ref{contig_generation} (contig generation) \\ \hline
+        1&\emph{Function} for time keeping\\ \hline
+        2&\emph{Structure} for Kmer data \\ \hline
+        3&\emph{Structure} for start-kmer \\ \hline   
+        4&\emph{Structure} for buckets\\ \hline
+        5&\emph{Structure} for hash table \\ \hline   
+        6&\emph{Structure} for working memory buffers\\ \hline   
+        7&\emph{Function} for getting number of Kmers in file \\ \hline   
+    \end{tabular}
+    \caption{Functions and Structures included in Algotithms~\ref{packingDNAseq}- ~\ref{contig_generation}}
+\end{table}
+
 %\mycode{serial}{Serial Implementation (C)}{code-serial.c}{c} 
 
 %\mycode{packingDNAseq}{DNA packing routine (Fortran)}{code-packingDNAseq.h}{fortran}
@@ -107,10 +155,49 @@ Within the serial code, many external functions and variables are referenced whi
 
 
 \section{UPC approach}
-Our extension to the UPC langauge follows the general outline of the serial code...
+The first thing to be done in the extension to UPC was to rewrite the packing and hashing functions for a PGAS framework. This gives us an initial list of start kmers ({\color{red}Elaborate on changes for these functions}). 
+
+Next a function was built for finding the next kmer, so that graph traversal can occur in the partition global address space. This allows one to get to the point of allowing contigs to be generated({\color{red}Elaborate on changes for this function}).
+
+At this point a choice needed to be made for the communication of PGAS threads. We decided to read input into a circular buffer that all the threads could then have blocks of dedicated address space in. ({\color{red}insert better explanation of how this buffer works?})
+
+Later we considered the option of enabling parallel read-in capabilties, since at this point the UPC code did a sequential read in and then distributed the input accross the partitioned global memory space. This means that the only benefit from using PGAS came from having access to a large memory space, but no improvements in speed could be gained yet. 
+
+ To perform a parallel read-in, we hoped to involve atomics on the hash table - and we consider the use of conditional swap as a method for implementing this. However, atomic procedures are not traditionally used for individual bytes and we were not able to find a Berkeley UPC atomics library. We therefore considered using UPC locks instead - which has it's own difficulties due to the inability to lock an openly addressed hash table. As an alternative strategy we decided to partition the table into blocks of 100 do locking on the individual blocks. ({\color{red}Insert code to describe how this works}) 
+
+ This methodology works only if the probability of a lock collision is relatively small. ({\color{red}Insert part about the relative probability of collisions existing for certain hash tables... ?}) 
+
+%stuff about number of collisions existing for different types of hash tables (amount of randomness)?
+%sequence starting kmers are distributed fairly evenly throughout the test file
+%more stuff about randomness of kmers being distributed being important for load balancing? In real life it is possible to randomize the line order of the file...but this means each processor can keep track of its starting-mers locally
+
+After testing the code further at this point, numerous deadlocks were witnessed. To address this issue, we decided to try synchronized rotating access to chunks of the table - which resulted in an intiial code that was faster than the serial version. ({\color{red}Insert a figure comparing initial performance against serial version?})
+
+In the later stages of the code, local representations of the hash tables were created to avoid synchornization issues. We also began to wonder if things could be  made faster with linked lists, which would have $\circ (1)$ insertion time and $\circ(BinN)$ retrieval time, as opposed to open hash table approaches which have $\circ (BinN)$ for both. If the circular buffer method was still applied to linked lists, then the approach could remain lock free. 
+
+
+
+figures/plots that could exist:
+\begin{itemize}
+\item distribution of large and small k-mer test set distributions
+\end{itemize}
+
+List of suggested thigns to include from homework statement:
+\begin{itemize}
+\item A description of your distributed data structures and parallel algorithms
+\item A description of the computational and communication motifs of the parallel algorithms.
+\item A description of the design choices/optimizations that you tried and how did they affect the performance.
+\item A description of how you avoided race conditions.
+\item Speedup plots that show how closely your parallel code approaches the idealized p-times speedup in the two experimental scenarios described in the previous section.
+\item Discussion of the scalability and relative costs of the parallel graph construction and traversal algorithms.
+\item A discussion on using UPC for such an application with the underlying computational motif.
+\item A discussion on how would you implement the same parallel algorithms in a two-sided communication model (e.g. by using MPI).
+\end{itemize}
 
 \section{Performance}
-
+\begin{itemize}
+\item Simple compared results against serial implementation.
+\end{itemize}
 
 \section{Summary}
 
