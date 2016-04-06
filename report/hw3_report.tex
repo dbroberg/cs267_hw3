@@ -148,6 +148,9 @@ Now each thread owns a part of the hashtable and a set of smers. Each thread wil
 
 Race conditions for data will not occur here because each thread always has exclusive access to its own memory. Separate chaining is useful in this instance because then thread which owns an address can always be accurate predicted (i.e.\ there is no need for value or hashtable-write requests to be forwarded on to another thread).
 
+\section{Scalability}
+TODO
+
 \section{Results}
 
 Figure~\ref{fig:small_single_times} shows the absolute run-times of our algorithm on the small dataset for varying numbers of threads. We also processed the small dataset across eight nodes with a much larger number of processors. As Figure~\ref{fig:small_mult_times} shows, using about eight threads on a single node is faster than the fastest time achieved running on many threads across many nodes. For this small dataset, the processing power of each thread is probably under-utilized and communication overhead likely dominates the time-to-completion. Therefore, we only analyze the small dataset in terms of running on a single node.
@@ -168,6 +171,17 @@ Figure~\ref{fig:small_single_times} shows the absolute run-times of our algorith
   \end{center}
   \caption{Distribution of start kmers to address space (Small data set)} \label{fig:small_mult_times}
 \end{minipage}
+
+Figure~\ref{fig:small_single_times_scaling} shows how our algorithm scales on the small test verses idealized performance, as given by the formula $\frac{time_0/t}{time_t}$. The Ivy Bridge design links pairs of cores to shared memory buses. Given that our code is not cache-optimized, we expect minimal gains past 12 threads. Figure~\ref{fig:small_single_times} supports this.
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{SingleScaling.pdf}
+  \end{center}
+  \caption{Scaling versus threads (Small data set)} \label{fig:small_single_times_scaling}
+\end{minipage}
+
 
 
 
