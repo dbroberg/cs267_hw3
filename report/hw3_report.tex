@@ -6,6 +6,7 @@
 \usepackage{minted}
 \usepackage{mdframed}
 \usepackage{color}
+\usepackage{verbatim}
 \usepackage[
   hmargin={1.3in,1.3in},
   vmargin={1in,1in},
@@ -62,7 +63,6 @@
 \maketitle
 
 \section{Introduction}
-<<<<<<< HEAD
 This report describes our implementation of a de novo genome DNA assembly program using Unified Parallel C (UPC). UPC is an extension of the C language, outfitted for a Partitioned Global Address Space (PGAS) programming model. This model associates memory physically with specific processes but enables shared access. This bears syntatic similarities to OpenMP and other shared memory programming models.
 
 Our paper is organized as follows:
@@ -70,17 +70,8 @@ Our paper is organized as follows:
 \item description of the computational resources
 \item a section that describes the general serial algorithm approach
 \item a section that describes the general extension to UPC
-=======
-This report describes our implementation of Unified Parallel C (UPC) for de novo genome DNA assembly. UPC is an extension of the C language, outfitted for a Partitioned Global Address Space (PGAS) programming model. This model has the advantage of a shared address space accessible by all the processors, but each variable is physically associated with a specific processor. 
-
-Our paper is organized as follows:
-\begin{itemize}
-\item A description of the computational resources
-\item A description of the general serial algorithm approach
-\item Our approach to extending the code to UPC
->>>>>>> 1ab5813c3218a04be5d916ea2fc2530e59ca0d87
 \item evaluation of the code's performance
-\end{itemize}
+\end{enumerate}
 
 \section{Machine Description}
 For our codes we use NERSC's Edison machine. The machine has 5,576 compute nodes. Each node has 64GB DDR3 1866\,MHz RAM and two sockets, each of which is populated with a 12-core Intel ``Ivy Bridge" processor running at 2.4\,GHz. Each core has one or two user threads, a 256 bit vector unit, and is nominally capable of 19.2 Gflops. Notably, for our purposes, each core has its own L1 and L2 cache. The L1 cache has 64\,KB (32\,KB instruction cache, 32\,KB data) and the L2 cache has 256\,KB. The 12 cores collectively share a 30\,MB L3 cache. The caches have a bandwidth of 100, 40, and 23 Gbyte/s, respectively.\footnote{\url{http://www.nersc.gov/users/computational-systems/edison/configuration/}} Both the L1 and L2 caches are 8-way and have a 64 byte line size.\footnote{\url{http://www.7-cpu.com/cpu/IvyBridge.html}} 
@@ -93,7 +84,20 @@ The problem then is to reassemble the original DNA by fitting the pieces togethe
 
 Our program will construct this graph and traverse its connected components. To do this, a hash table will be used to store nodes of the graph with hashed kmers acting as keys. The values of the hash table will correspond to the prefix and suffixes and, thereby, serve as edges linking the nodes together.
 
-Our algorithm begins by detecting how many kmers are in the input.
+Our algorithm begins by detecting how many kmers are in the input. It then allocates a shared memory hashtable three times larger than this number. Members of the hashtable are stored via open addressing with linear probing: this is wasteful of memory, but greatly simplifies the data structure, thereby reducing the potential for errors. Using a hashtable of size $3N$ ensures that occupancy stays well below 70\%, a point at which performance has been empirically shown to degrade significantly.
+
+Kmers are hashed using Dan Bernstein's \texttt{djb2} hash function. Tests using the small data set with Austin Appleby's \texttt{MurmurHash3} didn't show a significant reduction in collisions.
+
+Additionally, a local array of pointers to the hash table is allocated to be 1/50th the number of kmers. As the process reads kmers and adds them to the hash table, it makes a note of which kmers have prefixes indicating that they begin sequences and uses this local array to store that information. These starting-kmers (smers) form the starting points of the graph traversals which generated the contiguous (output) sequences. One might worry that storing smers locally would result in them being unevenly distributed; however, this is not a problem if we assume (a)~that the smers are distributed evenly throughout the file and (b)~that the smers, on average, are part of components of approximately equal size. These assumptions are reasonable because it is possible to randomize the order of the lines in the input file, which means that smers are evenly distributed and, therefore, component sizes should therefore be as well. For the purposes of the assignment, we do not randomize the input, but do verify that the assumption is at least nominally fulfilled by the test data provided.
+
+
+
+  % int bucket_size = 3*line_count/THREADS;
+  % hashtable_size  = bucket_size*THREADS;
+  % smers_size      = line_count/50/THREADS;
+  % kmers           = upc_all_alloc(THREADS, bucket_size*sizeof(kmer));
+  % smers           = (kmer_ptr*) calloc(line_count/100/THREADS, sizeof(kmer_ptr));
+
 
 
 \begin{comment}
@@ -175,11 +179,26 @@ After testing the code further at this point, numerous deadlocks were witnessed.
 
 In the later stages of the code, local representations of the hash tables were created to avoid synchornization issues. We also began to wonder if things could be  made faster with linked lists, which would have $\circ (1)$ insertion time and $\circ(BinN)$ retrieval time, as opposed to open hash table approaches which have $\circ (BinN)$ for both. If the circular buffer method was still applied to linked lists, then the approach could remain lock free. 
 
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{shorthisto.png}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Short data set)} \label{fig:xsl_script}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+  \captionsetup{type=figure}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{longhisto.png}
+  \end{center}
+  \caption{Distribution of start kmers to address space (Long data set)} \label{fig:xsl_script}
+\end{minipage}
 
 
 figures/plots that could exist:
 \begin{itemize}
-\item distribution of large and small k-mer test set distributions
+\item timing plots?
 \end{itemize}
 
 List of suggested thigns to include from homework statement:
