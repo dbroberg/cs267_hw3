@@ -218,9 +218,9 @@ As Figure~\ref{fig:multi_single_and_big_scaling} shows, the run-times we see run
   \caption{Scaling versus threads including a single node (Large data set)} \label{fig:multi_single_and_big_scaling}
 \end{minipage}
 
-This suggests that the scaling is somehow inherent to the algorithm. The computational motif most strongly associated with our algorithm is ``graph traversal". The Berkeley View Dwarf Mine states that many current computer architectures fail to efficiently handle this motif because ``most searching algorithms end up depending almost entirely on random memory access latency". In our case, accessing random memory means utilizing relatively expensive communication channels (especially expensive when these channels are between nodes), so it should not be surprising that additional processing power does not translate to significantly better runtimes: many of the threads are competing for access to memory! This is true even with striped file access due to L1 and L2 caches.
+This suggests that the scaling is somehow inherent to the algorithm. The computational motif most strongly associated with our algorithm is ``graph traversal". The Berkeley View Dwarf Mine states that many current computer architectures fail to efficiently handle this motif because ``most searching algorithms end up depending almost entirely on random memory access latency". In our case, accessing random memory means utilizing relatively expensive communication channels (especially expensive when these channels are between nodes), so it should not be surprising that additional processing power does not translate to significantly better runtimes: many of the threads are competing for access to memory! This is true even with striped file access due to L1 and L2 caches. UPC still seems like a good choice for this motif since the computation requires large memories and every other way we've covered for distributed memory would have even higher communication costs. Perhaps further progress would be made by having exceptionally light-weight processes run on all but the first node: these processes would do no computation, but allow access to their shared memory.
 
-Figure~\ref{fig:split} shows a break-down of the run-times of our algorithm for various numbers of threads showing the costs of
+Figure~\ref{fig:split} shows a break-down of the run-times of our algorithm for various numbers of threads showing the costs of both graph construction and traversal. As might be expected, construction takes longer than traversal, but the two follow similar curves. Therefore, optimizing construction is likely to bring gains regardless of communication details or other factors. 
 
 \begin{minipage}{\linewidth}
   \captionsetup{type=figure}
@@ -230,25 +230,7 @@ Figure~\ref{fig:split} shows a break-down of the run-times of our algorithm for 
   \caption{Absolute run-times versus threads for a single node showing break down by part of algorithm (Large data set)} \label{fig:split}
 \end{minipage}
 
-
-report/
-
-
-
-
-
-
- % report/MultiANDSingleBIGScaling.pdf       | Bin 0 -> 12913 bytes
- % report/MultiANDSingleBIGtime.pdf          | Bin 0 -> 11968 bytes
- % report/SingleBIGScaling.pdf               | Bin 0 -> 13972 bytes
-
-
-
-
-% \item A description of the computational and communication motifs of the parallel algorithms.
-% \item Discussion of the scalability and relative costs of the parallel graph construction and traversal algorithms.
-% \item A discussion on using UPC for such an application with the underlying computational motif.
-
+Likewise, it's possible that optimizing for our algorithm's communication motif could be helpful. Our algorithm uses round robin node-to-node communication for building the hashtable and limited scatter operations for during memory allocation. Traversal is accomplished with essentially random node-to-node communication. Thus, a fully-connected (or close to) architecture is useful for us. Given the small numbers of nodes involved, this may be technically and monetarily feasible.
 
 
 
