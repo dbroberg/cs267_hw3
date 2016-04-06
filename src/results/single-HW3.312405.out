@@ -1,0 +1,912 @@
+UPCR: UPC thread 0 of 1 on nid00202 (pshm node 0 of 1, process 0 of 1, pid=34617)
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 1
+Input reading time: 2.889653 seconds
+Graph traversal time: 1.279320 seconds
+Kmlist offload: 0.000006 seconds
+Total time: 4.168979s
+UPCR: UPC thread 0 of 2 on nid00202 (pshm node 0 of 1, process 0 of 2, pid=34724)
+UPCR: UPC thread 1 of 2 on nid00202 (pshm node 0 of 1, process 1 of 2, pid=34725)
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 2
+Input reading time: 1.671989 seconds
+Graph traversal time: 0.768325 seconds
+Kmlist offload: 0.388379 seconds
+Total time: 2.828693s
+Loading kmlist
+UPCR: UPC thread 0 of 3 on nid00202 (pshm node 0 of 1, process 0 of 3, pid=34840)
+UPCR: UPC thread 1 of 3 on nid00202 (pshm node 0 of 1, process 1 of 3, pid=34841)
+UPCR: UPC thread 2 of 3 on nid00202 (pshm node 0 of 1, process 2 of 3, pid=34842)
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 3
+Input reading time: 1.141213 seconds
+Graph traversal time: 0.626059 seconds
+Kmlist offload: 0.432202 seconds
+Total time: 2.199474s
+UPCR: UPC thread 0 of 4 on nid00202 (pshm node 0 of 1, process 0 of 4, pid=34951)
+UPCR: UPC thread 1 of 4 on nid00202 (pshm node 0 of 1, process 1 of 4, pid=34952)
+UPCR: UPC thread 3 of 4 on nid00202 (pshm node 0 of 1, process 3 of 4, pid=34954)
+UPCR: UPC thread 2 of 4 on nid00202 (pshm node 0 of 1, process 2 of 4, pid=34953)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 4
+Input reading time: 0.923721 seconds
+Graph traversal time: 0.611582 seconds
+Kmlist offload: 0.433949 seconds
+Total time: 1.969252s
+UPCR: UPC thread 0 of 5 on nid00202 (pshm node 0 of 1, process 0 of 5, pid=35070)
+UPCR: UPC thread 1 of 5 on nid00202 (pshm node 0 of 1, process 1 of 5, pid=35071)
+UPCR: UPC thread 2 of 5 on nid00202 (pshm node 0 of 1, process 2 of 5, pid=35072)
+UPCR: UPC thread 3 of 5 on nid00202 (pshm node 0 of 1, process 3 of 5, pid=35073)
+UPCR: UPC thread 4 of 5 on nid00202 (pshm node 0 of 1, process 4 of 5, pid=35074)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 5
+Input reading time: 0.824924 seconds
+Graph traversal time: 0.758004 seconds
+Kmlist offload: 0.392109 seconds
+Total time: 1.975037s
+UPCR: UPC thread 0 of 6 on nid00202 (pshm node 0 of 1, process 0 of 6, pid=35212)
+UPCR: UPC thread 1 of 6 on nid00202 (pshm node 0 of 1, process 1 of 6, pid=35213)
+UPCR: UPC thread 2 of 6 on nid00202 (pshm node 0 of 1, process 2 of 6, pid=35214)
+UPCR: UPC thread 3 of 6 on nid00202 (pshm node 0 of 1, process 3 of 6, pid=35215)
+UPCR: UPC thread 4 of 6 on nid00202 (pshm node 0 of 1, process 4 of 6, pid=35216)
+UPCR: UPC thread 5 of 6 on nid00202 (pshm node 0 of 1, process 5 of 6, pid=35217)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 6
+Input reading time: 0.799190 seconds
+Graph traversal time: 0.368916 seconds
+Kmlist offload: 0.330564 seconds
+Total time: 1.498670s
+UPCR: UPC thread 0 of 7 on nid00202 (pshm node 0 of 1, process 0 of 7, pid=35351)
+UPCR: UPC thread 1 of 7 on nid00202 (pshm node 0 of 1, process 1 of 7, pid=35352)
+UPCR: UPC thread 2 of 7 on nid00202 (pshm node 0 of 1, process 2 of 7, pid=35353)
+UPCR: UPC thread 3 of 7 on nid00202 (pshm node 0 of 1, process 3 of 7, pid=35354)
+UPCR: UPC thread 4 of 7 on nid00202 (pshm node 0 of 1, process 4 of 7, pid=35355)
+UPCR: UPC thread 5 of 7 on nid00202 (pshm node 0 of 1, process 5 of 7, pid=35356)
+UPCR: UPC thread 6 of 7 on nid00202 (pshm node 0 of 1, process 6 of 7, pid=35357)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 7
+Input reading time: 0.689108 seconds
+Graph traversal time: 0.335342 seconds
+Kmlist offload: 0.362577 seconds
+Total time: 1.387027s
+UPCR: UPC thread 0 of 8 on nid00202 (pshm node 0 of 1, process 0 of 8, pid=35520)
+UPCR: UPC thread 2 of 8 on nid00202 (pshm node 0 of 1, process 2 of 8, pid=35522)
+UPCR: UPC thread 3 of 8 on nid00202 (pshm node 0 of 1, process 3 of 8, pid=35523)
+UPCR: UPC thread 4 of 8 on nid00202 (pshm node 0 of 1, process 4 of 8, pid=35524)
+UPCR: UPC thread 5 of 8 on nid00202 (pshm node 0 of 1, process 5 of 8, pid=35525)
+UPCR: UPC thread 6 of 8 on nid00202 (pshm node 0 of 1, process 6 of 8, pid=35526)
+UPCR: UPC thread 7 of 8 on nid00202 (pshm node 0 of 1, process 7 of 8, pid=35527)
+UPCR: UPC thread 1 of 8 on nid00202 (pshm node 0 of 1, process 1 of 8, pid=35521)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 8
+Input reading time: 0.643822 seconds
+Graph traversal time: 0.243568 seconds
+Kmlist offload: 0.320897 seconds
+Total time: 1.208287s
+UPCR: UPC thread 0 of 9 on nid00202 (pshm node 0 of 1, process 0 of 9, pid=35687)
+UPCR: UPC thread 1 of 9 on nid00202 (pshm node 0 of 1, process 1 of 9, pid=35688)
+UPCR: UPC thread 2 of 9 on nid00202 (pshm node 0 of 1, process 2 of 9, pid=35689)
+UPCR: UPC thread 3 of 9 on nid00202 (pshm node 0 of 1, process 3 of 9, pid=35690)
+UPCR: UPC thread 4 of 9 on nid00202 (pshm node 0 of 1, process 4 of 9, pid=35691)
+UPCR: UPC thread 5 of 9 on nid00202 (pshm node 0 of 1, process 5 of 9, pid=35692)
+UPCR: UPC thread 6 of 9 on nid00202 (pshm node 0 of 1, process 6 of 9, pid=35693)
+UPCR: UPC thread 7 of 9 on nid00202 (pshm node 0 of 1, process 7 of 9, pid=35694)
+UPCR: UPC thread 8 of 9 on nid00202 (pshm node 0 of 1, process 8 of 9, pid=35695)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 9
+Input reading time: 0.595325 seconds
+Graph traversal time: 0.681614 seconds
+Kmlist offload: 0.310196 seconds
+Total time: 1.587135s
+UPCR: UPC thread 0 of 10 on nid00202 (pshm node 0 of 1, process  0 of 10, pid=35826)
+UPCR: UPC thread 1 of 10 on nid00202 (pshm node 0 of 1, process  1 of 10, pid=35827)
+UPCR: UPC thread 2 of 10 on nid00202 (pshm node 0 of 1, process  2 of 10, pid=35828)
+UPCR: UPC thread 3 of 10 on nid00202 (pshm node 0 of 1, process  3 of 10, pid=35829)
+UPCR: UPC thread 4 of 10 on nid00202 (pshm node 0 of 1, process  4 of 10, pid=35830)
+UPCR: UPC thread 5 of 10 on nid00202 (pshm node 0 of 1, process  5 of 10, pid=35831)
+UPCR: UPC thread 6 of 10 on nid00202 (pshm node 0 of 1, process  6 of 10, pid=35832)
+UPCR: UPC thread 7 of 10 on nid00202 (pshm node 0 of 1, process  7 of 10, pid=35833)
+UPCR: UPC thread 8 of 10 on nid00202 (pshm node 0 of 1, process  8 of 10, pid=35834)
+UPCR: UPC thread 9 of 10 on nid00202 (pshm node 0 of 1, process  9 of 10, pid=35835)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 10
+Input reading time: 0.608272 seconds
+Graph traversal time: 0.999945 seconds
+Kmlist offload: 0.522535 seconds
+Total time: 2.130752s
+UPCR: UPC thread  3 of 11 on nid00202 (pshm node 0 of 1, process  3 of 11, pid=35999)
+UPCR: UPC thread  4 of 11 on nid00202 (pshm node 0 of 1, process  4 of 11, pid=36000)
+UPCR: UPC thread  5 of 11 on nid00202 (pshm node 0 of 1, process  5 of 11, pid=36001)
+UPCR: UPC thread  6 of 11 on nid00202 (pshm node 0 of 1, process  6 of 11, pid=36002)
+UPCR: UPC thread  7 of 11 on nid00202 (pshm node 0 of 1, process  7 of 11, pid=36003)
+UPCR: UPC thread  8 of 11 on nid00202 (pshm node 0 of 1, process  8 of 11, pid=36004)
+UPCR: UPC thread  9 of 11 on nid00202 (pshm node 0 of 1, process  9 of 11, pid=36005)
+UPCR: UPC thread 10 of 11 on nid00202 (pshm node 0 of 1, process 10 of 11, pid=36006)
+UPCR: UPC thread  0 of 11 on nid00202 (pshm node 0 of 1, process  0 of 11, pid=35996)
+UPCR: UPC thread  1 of 11 on nid00202 (pshm node 0 of 1, process  1 of 11, pid=35997)
+UPCR: UPC thread  2 of 11 on nid00202 (pshm node 0 of 1, process  2 of 11, pid=35998)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 11
+Input reading time: 0.621267 seconds
+Graph traversal time: 0.254398 seconds
+Kmlist offload: 1.928636 seconds
+Total time: 2.804301s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 12 on nid00202 (pshm node 0 of 1, process  0 of 12, pid=36176)
+UPCR: UPC thread  1 of 12 on nid00202 (pshm node 0 of 1, process  1 of 12, pid=36177)
+UPCR: UPC thread  4 of 12 on nid00202 (pshm node 0 of 1, process  4 of 12, pid=36180)
+UPCR: UPC thread  5 of 12 on nid00202 (pshm node 0 of 1, process  5 of 12, pid=36181)
+UPCR: UPC thread  6 of 12 on nid00202 (pshm node 0 of 1, process  6 of 12, pid=36182)
+UPCR: UPC thread  7 of 12 on nid00202 (pshm node 0 of 1, process  7 of 12, pid=36183)
+UPCR: UPC thread  8 of 12 on nid00202 (pshm node 0 of 1, process  8 of 12, pid=36184)
+UPCR: UPC thread  9 of 12 on nid00202 (pshm node 0 of 1, process  9 of 12, pid=36185)
+UPCR: UPC thread 10 of 12 on nid00202 (pshm node 0 of 1, process 10 of 12, pid=36186)
+UPCR: UPC thread 11 of 12 on nid00202 (pshm node 0 of 1, process 11 of 12, pid=36187)
+UPCR: UPC thread  2 of 12 on nid00202 (pshm node 0 of 1, process  2 of 12, pid=36178)
+UPCR: UPC thread  3 of 12 on nid00202 (pshm node 0 of 1, process  3 of 12, pid=36179)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 12
+Input reading time: 0.533338 seconds
+Graph traversal time: 0.504231 seconds
+Kmlist offload: 0.291376 seconds
+Total time: 1.328945s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 13 on nid00202 (pshm node 0 of 1, process  0 of 13, pid=36331)
+UPCR: UPC thread  4 of 13 on nid00202 (pshm node 0 of 1, process  4 of 13, pid=36335)
+UPCR: UPC thread  5 of 13 on nid00202 (pshm node 0 of 1, process  5 of 13, pid=36336)
+UPCR: UPC thread  7 of 13 on nid00202 (pshm node 0 of 1, process  7 of 13, pid=36338)
+UPCR: UPC thread  9 of 13 on nid00202 (pshm node 0 of 1, process  9 of 13, pid=36340)
+UPCR: UPC thread 11 of 13 on nid00202 (pshm node 0 of 1, process 11 of 13, pid=36342)
+UPCR: UPC thread 12 of 13 on nid00202 (pshm node 0 of 1, process 12 of 13, pid=36343)
+UPCR: UPC thread  1 of 13 on nid00202 (pshm node 0 of 1, process  1 of 13, pid=36332)
+UPCR: UPC thread  2 of 13 on nid00202 (pshm node 0 of 1, process  2 of 13, pid=36333)
+UPCR: UPC thread  3 of 13 on nid00202 (pshm node 0 of 1, process  3 of 13, pid=36334)
+UPCR: UPC thread  6 of 13 on nid00202 (pshm node 0 of 1, process  6 of 13, pid=36337)
+UPCR: UPC thread  8 of 13 on nid00202 (pshm node 0 of 1, process  8 of 13, pid=36339)
+UPCR: UPC thread 10 of 13 on nid00202 (pshm node 0 of 1, process 10 of 13, pid=36341)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 13
+Input reading time: 0.538895 seconds
+Graph traversal time: 0.395301 seconds
+Kmlist offload: 0.289358 seconds
+Total time: 1.223554s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 14 on nid00202 (pshm node 0 of 1, process  0 of 14, pid=36528)
+UPCR: UPC thread  2 of 14 on nid00202 (pshm node 0 of 1, process  2 of 14, pid=36530)
+UPCR: UPC thread  3 of 14 on nid00202 (pshm node 0 of 1, process  3 of 14, pid=36531)
+UPCR: UPC thread  5 of 14 on nid00202 (pshm node 0 of 1, process  5 of 14, pid=36533)
+UPCR: UPC thread  8 of 14 on nid00202 (pshm node 0 of 1, process  8 of 14, pid=36536)
+UPCR: UPC thread 11 of 14 on nid00202 (pshm node 0 of 1, process 11 of 14, pid=36539)
+UPCR: UPC thread 13 of 14 on nid00202 (pshm node 0 of 1, process 13 of 14, pid=36541)
+UPCR: UPC thread  1 of 14 on nid00202 (pshm node 0 of 1, process  1 of 14, pid=36529)
+UPCR: UPC thread  4 of 14 on nid00202 (pshm node 0 of 1, process  4 of 14, pid=36532)
+UPCR: UPC thread  6 of 14 on nid00202 (pshm node 0 of 1, process  6 of 14, pid=36534)
+UPCR: UPC thread  7 of 14 on nid00202 (pshm node 0 of 1, process  7 of 14, pid=36535)
+UPCR: UPC thread  9 of 14 on nid00202 (pshm node 0 of 1, process  9 of 14, pid=36537)
+UPCR: UPC thread 10 of 14 on nid00202 (pshm node 0 of 1, process 10 of 14, pid=36538)
+UPCR: UPC thread 12 of 14 on nid00202 (pshm node 0 of 1, process 12 of 14, pid=36540)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 14
+Input reading time: 0.458330 seconds
+Graph traversal time: 0.557159 seconds
+Kmlist offload: 0.283252 seconds
+Total time: 1.298741s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 15 on nid00202 (pshm node 0 of 1, process  0 of 15, pid=36691)
+UPCR: UPC thread  1 of 15 on nid00202 (pshm node 0 of 1, process  1 of 15, pid=36692)
+UPCR: UPC thread  3 of 15 on nid00202 (pshm node 0 of 1, process  3 of 15, pid=36694)
+UPCR: UPC thread  4 of 15 on nid00202 (pshm node 0 of 1, process  4 of 15, pid=36695)
+UPCR: UPC thread  5 of 15 on nid00202 (pshm node 0 of 1, process  5 of 15, pid=36696)
+UPCR: UPC thread  7 of 15 on nid00202 (pshm node 0 of 1, process  7 of 15, pid=36698)
+UPCR: UPC thread  8 of 15 on nid00202 (pshm node 0 of 1, process  8 of 15, pid=36699)
+UPCR: UPC thread  9 of 15 on nid00202 (pshm node 0 of 1, process  9 of 15, pid=36700)
+UPCR: UPC thread 10 of 15 on nid00202 (pshm node 0 of 1, process 10 of 15, pid=36701)
+UPCR: UPC thread 11 of 15 on nid00202 (pshm node 0 of 1, process 11 of 15, pid=36702)
+UPCR: UPC thread 12 of 15 on nid00202 (pshm node 0 of 1, process 12 of 15, pid=36703)
+UPCR: UPC thread 13 of 15 on nid00202 (pshm node 0 of 1, process 13 of 15, pid=36704)
+UPCR: UPC thread 14 of 15 on nid00202 (pshm node 0 of 1, process 14 of 15, pid=36705)
+UPCR: UPC thread  2 of 15 on nid00202 (pshm node 0 of 1, process  2 of 15, pid=36693)
+UPCR: UPC thread  6 of 15 on nid00202 (pshm node 0 of 1, process  6 of 15, pid=36697)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 15
+Input reading time: 0.499707 seconds
+Graph traversal time: 2.022608 seconds
+Kmlist offload: 0.328247 seconds
+Total time: 2.850562s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 16 on nid00202 (pshm node 0 of 1, process  0 of 16, pid=36853)
+UPCR: UPC thread  1 of 16 on nid00202 (pshm node 0 of 1, process  1 of 16, pid=36854)
+UPCR: UPC thread  2 of 16 on nid00202 (pshm node 0 of 1, process  2 of 16, pid=36855)
+UPCR: UPC thread  3 of 16 on nid00202 (pshm node 0 of 1, process  3 of 16, pid=36856)
+UPCR: UPC thread  4 of 16 on nid00202 (pshm node 0 of 1, process  4 of 16, pid=36857)
+UPCR: UPC thread  5 of 16 on nid00202 (pshm node 0 of 1, process  5 of 16, pid=36858)
+UPCR: UPC thread  6 of 16 on nid00202 (pshm node 0 of 1, process  6 of 16, pid=36859)
+UPCR: UPC thread  7 of 16 on nid00202 (pshm node 0 of 1, process  7 of 16, pid=36860)
+UPCR: UPC thread  8 of 16 on nid00202 (pshm node 0 of 1, process  8 of 16, pid=36861)
+UPCR: UPC thread  9 of 16 on nid00202 (pshm node 0 of 1, process  9 of 16, pid=36862)
+UPCR: UPC thread 10 of 16 on nid00202 (pshm node 0 of 1, process 10 of 16, pid=36863)
+UPCR: UPC thread 11 of 16 on nid00202 (pshm node 0 of 1, process 11 of 16, pid=36864)
+UPCR: UPC thread 12 of 16 on nid00202 (pshm node 0 of 1, process 12 of 16, pid=36865)
+UPCR: UPC thread 13 of 16 on nid00202 (pshm node 0 of 1, process 13 of 16, pid=36866)
+UPCR: UPC thread 14 of 16 on nid00202 (pshm node 0 of 1, process 14 of 16, pid=36867)
+UPCR: UPC thread 15 of 16 on nid00202 (pshm node 0 of 1, process 15 of 16, pid=36868)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 16
+Input reading time: 0.450983 seconds
+Graph traversal time: 0.429083 seconds
+Kmlist offload: 0.320511 seconds
+Total time: 1.200577s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 17 on nid00202 (pshm node 0 of 1, process  0 of 17, pid=37032)
+UPCR: UPC thread  2 of 17 on nid00202 (pshm node 0 of 1, process  2 of 17, pid=37034)
+UPCR: UPC thread  9 of 17 on nid00202 (pshm node 0 of 1, process  9 of 17, pid=37041)
+UPCR: UPC thread 10 of 17 on nid00202 (pshm node 0 of 1, process 10 of 17, pid=37042)
+UPCR: UPC thread 13 of 17 on nid00202 (pshm node 0 of 1, process 13 of 17, pid=37045)
+UPCR: UPC thread 16 of 17 on nid00202 (pshm node 0 of 1, process 16 of 17, pid=37048)
+UPCR: UPC thread  1 of 17 on nid00202 (pshm node 0 of 1, process  1 of 17, pid=37033)
+UPCR: UPC thread  3 of 17 on nid00202 (pshm node 0 of 1, process  3 of 17, pid=37035)
+UPCR: UPC thread  4 of 17 on nid00202 (pshm node 0 of 1, process  4 of 17, pid=37036)
+UPCR: UPC thread  5 of 17 on nid00202 (pshm node 0 of 1, process  5 of 17, pid=37037)
+UPCR: UPC thread  6 of 17 on nid00202 (pshm node 0 of 1, process  6 of 17, pid=37038)
+UPCR: UPC thread  7 of 17 on nid00202 (pshm node 0 of 1, process  7 of 17, pid=37039)
+UPCR: UPC thread  8 of 17 on nid00202 (pshm node 0 of 1, process  8 of 17, pid=37040)
+UPCR: UPC thread 11 of 17 on nid00202 (pshm node 0 of 1, process 11 of 17, pid=37043)
+UPCR: UPC thread 12 of 17 on nid00202 (pshm node 0 of 1, process 12 of 17, pid=37044)
+UPCR: UPC thread 14 of 17 on nid00202 (pshm node 0 of 1, process 14 of 17, pid=37046)
+UPCR: UPC thread 15 of 17 on nid00202 (pshm node 0 of 1, process 15 of 17, pid=37047)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 17
+Input reading time: 0.491080 seconds
+Graph traversal time: 0.324592 seconds
+Kmlist offload: 0.290575 seconds
+Total time: 1.106247s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 18 on nid00202 (pshm node 0 of 1, process  0 of 18, pid=37209)
+UPCR: UPC thread  9 of 18 on nid00202 (pshm node 0 of 1, process  9 of 18, pid=37218)
+UPCR: UPC thread 11 of 18 on nid00202 (pshm node 0 of 1, process 11 of 18, pid=37220)
+UPCR: UPC thread 13 of 18 on nid00202 (pshm node 0 of 1, process 13 of 18, pid=37222)
+UPCR: UPC thread 14 of 18 on nid00202 (pshm node 0 of 1, process 14 of 18, pid=37223)
+UPCR: UPC thread 15 of 18 on nid00202 (pshm node 0 of 1, process 15 of 18, pid=37224)
+UPCR: UPC thread 16 of 18 on nid00202 (pshm node 0 of 1, process 16 of 18, pid=37225)
+UPCR: UPC thread 17 of 18 on nid00202 (pshm node 0 of 1, process 17 of 18, pid=37226)
+UPCR: UPC thread  1 of 18 on nid00202 (pshm node 0 of 1, process  1 of 18, pid=37210)
+UPCR: UPC thread  2 of 18 on nid00202 (pshm node 0 of 1, process  2 of 18, pid=37211)
+UPCR: UPC thread  3 of 18 on nid00202 (pshm node 0 of 1, process  3 of 18, pid=37212)
+UPCR: UPC thread  4 of 18 on nid00202 (pshm node 0 of 1, process  4 of 18, pid=37213)
+UPCR: UPC thread  5 of 18 on nid00202 (pshm node 0 of 1, process  5 of 18, pid=37214)
+UPCR: UPC thread  6 of 18 on nid00202 (pshm node 0 of 1, process  6 of 18, pid=37215)
+UPCR: UPC thread  7 of 18 on nid00202 (pshm node 0 of 1, process  7 of 18, pid=37216)
+UPCR: UPC thread  8 of 18 on nid00202 (pshm node 0 of 1, process  8 of 18, pid=37217)
+UPCR: UPC thread 10 of 18 on nid00202 (pshm node 0 of 1, process 10 of 18, pid=37219)
+UPCR: UPC thread 12 of 18 on nid00202 (pshm node 0 of 1, process 12 of 18, pid=37221)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 18
+Input reading time: 0.453709 seconds
+Graph traversal time: 0.410542 seconds
+Kmlist offload: 0.277300 seconds
+Total time: 1.141551s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 19 on nid00202 (pshm node 0 of 1, process  0 of 19, pid=37448)
+UPCR: UPC thread  2 of 19 on nid00202 (pshm node 0 of 1, process  2 of 19, pid=37450)
+UPCR: UPC thread  4 of 19 on nid00202 (pshm node 0 of 1, process  4 of 19, pid=37452)
+UPCR: UPC thread  6 of 19 on nid00202 (pshm node 0 of 1, process  6 of 19, pid=37454)
+UPCR: UPC thread 13 of 19 on nid00202 (pshm node 0 of 1, process 13 of 19, pid=37461)
+UPCR: UPC thread 14 of 19 on nid00202 (pshm node 0 of 1, process 14 of 19, pid=37462)
+UPCR: UPC thread 15 of 19 on nid00202 (pshm node 0 of 1, process 15 of 19, pid=37463)
+UPCR: UPC thread 18 of 19 on nid00202 (pshm node 0 of 1, process 18 of 19, pid=37466)
+UPCR: UPC thread  1 of 19 on nid00202 (pshm node 0 of 1, process  1 of 19, pid=37449)
+UPCR: UPC thread  3 of 19 on nid00202 (pshm node 0 of 1, process  3 of 19, pid=37451)
+UPCR: UPC thread  5 of 19 on nid00202 (pshm node 0 of 1, process  5 of 19, pid=37453)
+UPCR: UPC thread  7 of 19 on nid00202 (pshm node 0 of 1, process  7 of 19, pid=37455)
+UPCR: UPC thread  8 of 19 on nid00202 (pshm node 0 of 1, process  8 of 19, pid=37456)
+UPCR: UPC thread  9 of 19 on nid00202 (pshm node 0 of 1, process  9 of 19, pid=37457)
+UPCR: UPC thread 10 of 19 on nid00202 (pshm node 0 of 1, process 10 of 19, pid=37458)
+UPCR: UPC thread 11 of 19 on nid00202 (pshm node 0 of 1, process 11 of 19, pid=37459)
+UPCR: UPC thread 12 of 19 on nid00202 (pshm node 0 of 1, process 12 of 19, pid=37460)
+UPCR: UPC thread 16 of 19 on nid00202 (pshm node 0 of 1, process 16 of 19, pid=37464)
+UPCR: UPC thread 17 of 19 on nid00202 (pshm node 0 of 1, process 17 of 19, pid=37465)
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 19
+Input reading time: 0.426029 seconds
+Graph traversal time: 0.140438 seconds
+Kmlist offload: 0.279741 seconds
+Total time: 0.846208s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 20 on nid00202 (pshm node 0 of 1, process  0 of 20, pid=37684)
+UPCR: UPC thread 10 of 20 on nid00202 (pshm node 0 of 1, process 10 of 20, pid=37694)
+UPCR: UPC thread 16 of 20 on nid00202 (pshm node 0 of 1, process 16 of 20, pid=37700)
+UPCR: UPC thread  1 of 20 on nid00202 (pshm node 0 of 1, process  1 of 20, pid=37685)
+UPCR: UPC thread  2 of 20 on nid00202 (pshm node 0 of 1, process  2 of 20, pid=37686)
+UPCR: UPC thread  3 of 20 on nid00202 (pshm node 0 of 1, process  3 of 20, pid=37687)
+UPCR: UPC thread  4 of 20 on nid00202 (pshm node 0 of 1, process  4 of 20, pid=37688)
+UPCR: UPC thread  5 of 20 on nid00202 (pshm node 0 of 1, process  5 of 20, pid=37689)
+UPCR: UPC thread  6 of 20 on nid00202 (pshm node 0 of 1, process  6 of 20, pid=37690)
+UPCR: UPC thread  7 of 20 on nid00202 (pshm node 0 of 1, process  7 of 20, pid=37691)
+UPCR: UPC thread  8 of 20 on nid00202 (pshm node 0 of 1, process  8 of 20, pid=37692)
+UPCR: UPC thread  9 of 20 on nid00202 (pshm node 0 of 1, process  9 of 20, pid=37693)
+UPCR: UPC thread 11 of 20 on nid00202 (pshm node 0 of 1, process 11 of 20, pid=37695)
+UPCR: UPC thread 12 of 20 on nid00202 (pshm node 0 of 1, process 12 of 20, pid=37696)
+UPCR: UPC thread 13 of 20 on nid00202 (pshm node 0 of 1, process 13 of 20, pid=37697)
+UPCR: UPC thread 14 of 20 on nid00202 (pshm node 0 of 1, process 14 of 20, pid=37698)
+UPCR: UPC thread 15 of 20 on nid00202 (pshm node 0 of 1, process 15 of 20, pid=37699)
+UPCR: UPC thread 17 of 20 on nid00202 (pshm node 0 of 1, process 17 of 20, pid=37701)
+UPCR: UPC thread 18 of 20 on nid00202 (pshm node 0 of 1, process 18 of 20, pid=37702)
+UPCR: UPC thread 19 of 20 on nid00202 (pshm node 0 of 1, process 19 of 20, pid=37703)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 20
+Input reading time: 0.464557 seconds
+Graph traversal time: 0.731134 seconds
+Kmlist offload: 0.274062 seconds
+Total time: 1.469753s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 21 on nid00202 (pshm node 0 of 1, process  0 of 21, pid=37871)
+UPCR: UPC thread 16 of 21 on nid00202 (pshm node 0 of 1, process 16 of 21, pid=37888)
+UPCR: UPC thread  1 of 21 on nid00202 (pshm node 0 of 1, process  1 of 21, pid=37872)
+UPCR: UPC thread  2 of 21 on nid00202 (pshm node 0 of 1, process  2 of 21, pid=37873)
+UPCR: UPC thread  3 of 21 on nid00202 (pshm node 0 of 1, process  3 of 21, pid=37874)
+UPCR: UPC thread  4 of 21 on nid00202 (pshm node 0 of 1, process  4 of 21, pid=37875)
+UPCR: UPC thread  5 of 21 on nid00202 (pshm node 0 of 1, process  5 of 21, pid=37876)
+UPCR: UPC thread  6 of 21 on nid00202 (pshm node 0 of 1, process  6 of 21, pid=37877)
+UPCR: UPC thread  7 of 21 on nid00202 (pshm node 0 of 1, process  7 of 21, pid=37878)
+UPCR: UPC thread  8 of 21 on nid00202 (pshm node 0 of 1, process  8 of 21, pid=37880)
+UPCR: UPC thread  9 of 21 on nid00202 (pshm node 0 of 1, process  9 of 21, pid=37881)
+UPCR: UPC thread 10 of 21 on nid00202 (pshm node 0 of 1, process 10 of 21, pid=37882)
+UPCR: UPC thread 11 of 21 on nid00202 (pshm node 0 of 1, process 11 of 21, pid=37883)
+UPCR: UPC thread 12 of 21 on nid00202 (pshm node 0 of 1, process 12 of 21, pid=37884)
+UPCR: UPC thread 13 of 21 on nid00202 (pshm node 0 of 1, process 13 of 21, pid=37885)
+UPCR: UPC thread 14 of 21 on nid00202 (pshm node 0 of 1, process 14 of 21, pid=37886)
+UPCR: UPC thread 15 of 21 on nid00202 (pshm node 0 of 1, process 15 of 21, pid=37887)
+UPCR: UPC thread 17 of 21 on nid00202 (pshm node 0 of 1, process 17 of 21, pid=37889)
+UPCR: UPC thread 18 of 21 on nid00202 (pshm node 0 of 1, process 18 of 21, pid=37890)
+UPCR: UPC thread 19 of 21 on nid00202 (pshm node 0 of 1, process 19 of 21, pid=37891)
+UPCR: UPC thread 20 of 21 on nid00202 (pshm node 0 of 1, process 20 of 21, pid=37892)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 21
+Input reading time: 0.449427 seconds
+Graph traversal time: 0.134310 seconds
+Kmlist offload: 0.259447 seconds
+Total time: 0.843184s
+UPCR: UPC thread  4 of 22 on nid00202 (pshm node 0 of 1, process  4 of 22, pid=38065)
+UPCR: UPC thread  6 of 22 on nid00202 (pshm node 0 of 1, process  6 of 22, pid=38067)
+UPCR: UPC thread 10 of 22 on nid00202 (pshm node 0 of 1, process 10 of 22, pid=38071)
+UPCR: UPC thread 16 of 22 on nid00202 (pshm node 0 of 1, process 16 of 22, pid=38077)
+UPCR: UPC thread 20 of 22 on nid00202 (pshm node 0 of 1, process 20 of 22, pid=38081)
+UPCR: UPC thread  0 of 22 on nid00202 (pshm node 0 of 1, process  0 of 22, pid=38061)
+UPCR: UPC thread  1 of 22 on nid00202 (pshm node 0 of 1, process  1 of 22, pid=38062)
+UPCR: UPC thread  2 of 22 on nid00202 (pshm node 0 of 1, process  2 of 22, pid=38063)
+UPCR: UPC thread  3 of 22 on nid00202 (pshm node 0 of 1, process  3 of 22, pid=38064)
+UPCR: UPC thread  5 of 22 on nid00202 (pshm node 0 of 1, process  5 of 22, pid=38066)
+UPCR: UPC thread  7 of 22 on nid00202 (pshm node 0 of 1, process  7 of 22, pid=38068)
+UPCR: UPC thread  8 of 22 on nid00202 (pshm node 0 of 1, process  8 of 22, pid=38069)
+UPCR: UPC thread  9 of 22 on nid00202 (pshm node 0 of 1, process  9 of 22, pid=38070)
+UPCR: UPC thread 11 of 22 on nid00202 (pshm node 0 of 1, process 11 of 22, pid=38072)
+UPCR: UPC thread 12 of 22 on nid00202 (pshm node 0 of 1, process 12 of 22, pid=38073)
+UPCR: UPC thread 13 of 22 on nid00202 (pshm node 0 of 1, process 13 of 22, pid=38074)
+UPCR: UPC thread 14 of 22 on nid00202 (pshm node 0 of 1, process 14 of 22, pid=38075)
+UPCR: UPC thread 15 of 22 on nid00202 (pshm node 0 of 1, process 15 of 22, pid=38076)
+UPCR: UPC thread 17 of 22 on nid00202 (pshm node 0 of 1, process 17 of 22, pid=38078)
+UPCR: UPC thread 18 of 22 on nid00202 (pshm node 0 of 1, process 18 of 22, pid=38079)
+UPCR: UPC thread 19 of 22 on nid00202 (pshm node 0 of 1, process 19 of 22, pid=38080)
+UPCR: UPC thread 21 of 22 on nid00202 (pshm node 0 of 1, process 21 of 22, pid=38082)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 22
+Input reading time: 0.483361 seconds
+Graph traversal time: 0.130027 seconds
+Kmlist offload: 0.255660 seconds
+Total time: 0.869048s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  2 of 23 on nid00202 (pshm node 0 of 1, process  2 of 23, pid=38259)
+UPCR: UPC thread  3 of 23 on nid00202 (pshm node 0 of 1, process  3 of 23, pid=38260)
+UPCR: UPC thread  4 of 23 on nid00202 (pshm node 0 of 1, process  4 of 23, pid=38261)
+UPCR: UPC thread  7 of 23 on nid00202 (pshm node 0 of 1, process  7 of 23, pid=38264)
+UPCR: UPC thread 13 of 23 on nid00202 (pshm node 0 of 1, process 13 of 23, pid=38270)
+UPCR: UPC thread 15 of 23 on nid00202 (pshm node 0 of 1, process 15 of 23, pid=38272)
+UPCR: UPC thread 16 of 23 on nid00202 (pshm node 0 of 1, process 16 of 23, pid=38273)
+UPCR: UPC thread 17 of 23 on nid00202 (pshm node 0 of 1, process 17 of 23, pid=38274)
+UPCR: UPC thread 19 of 23 on nid00202 (pshm node 0 of 1, process 19 of 23, pid=38276)
+UPCR: UPC thread 20 of 23 on nid00202 (pshm node 0 of 1, process 20 of 23, pid=38277)
+UPCR: UPC thread 21 of 23 on nid00202 (pshm node 0 of 1, process 21 of 23, pid=38278)
+UPCR: UPC thread  0 of 23 on nid00202 (pshm node 0 of 1, process  0 of 23, pid=38257)
+UPCR: UPC thread  1 of 23 on nid00202 (pshm node 0 of 1, process  1 of 23, pid=38258)
+UPCR: UPC thread  5 of 23 on nid00202 (pshm node 0 of 1, process  5 of 23, pid=38262)
+UPCR: UPC thread  6 of 23 on nid00202 (pshm node 0 of 1, process  6 of 23, pid=38263)
+UPCR: UPC thread  8 of 23 on nid00202 (pshm node 0 of 1, process  8 of 23, pid=38265)
+UPCR: UPC thread  9 of 23 on nid00202 (pshm node 0 of 1, process  9 of 23, pid=38266)
+UPCR: UPC thread 10 of 23 on nid00202 (pshm node 0 of 1, process 10 of 23, pid=38267)
+UPCR: UPC thread 11 of 23 on nid00202 (pshm node 0 of 1, process 11 of 23, pid=38268)
+UPCR: UPC thread 12 of 23 on nid00202 (pshm node 0 of 1, process 12 of 23, pid=38269)
+UPCR: UPC thread 14 of 23 on nid00202 (pshm node 0 of 1, process 14 of 23, pid=38271)
+UPCR: UPC thread 18 of 23 on nid00202 (pshm node 0 of 1, process 18 of 23, pid=38275)
+UPCR: UPC thread 22 of 23 on nid00202 (pshm node 0 of 1, process 22 of 23, pid=38279)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 23
+Input reading time: 0.572575 seconds
+Graph traversal time: 0.130893 seconds
+Kmlist offload: 0.242700 seconds
+Total time: 0.946168s
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+UPCR: UPC thread  0 of 24 on nid00202 (pshm node 0 of 1, process  0 of 24, pid=38570)
+UPCR: UPC thread  6 of 24 on nid00202 (pshm node 0 of 1, process  6 of 24, pid=38576)
+UPCR: UPC thread 12 of 24 on nid00202 (pshm node 0 of 1, process 12 of 24, pid=38582)
+UPCR: UPC thread 22 of 24 on nid00202 (pshm node 0 of 1, process 22 of 24, pid=38592)
+UPCR: UPC thread  1 of 24 on nid00202 (pshm node 0 of 1, process  1 of 24, pid=38571)
+UPCR: UPC thread  2 of 24 on nid00202 (pshm node 0 of 1, process  2 of 24, pid=38572)
+UPCR: UPC thread  3 of 24 on nid00202 (pshm node 0 of 1, process  3 of 24, pid=38573)
+UPCR: UPC thread  4 of 24 on nid00202 (pshm node 0 of 1, process  4 of 24, pid=38574)
+UPCR: UPC thread  5 of 24 on nid00202 (pshm node 0 of 1, process  5 of 24, pid=38575)
+UPCR: UPC thread  7 of 24 on nid00202 (pshm node 0 of 1, process  7 of 24, pid=38577)
+UPCR: UPC thread  8 of 24 on nid00202 (pshm node 0 of 1, process  8 of 24, pid=38578)
+UPCR: UPC thread  9 of 24 on nid00202 (pshm node 0 of 1, process  9 of 24, pid=38579)
+UPCR: UPC thread 10 of 24 on nid00202 (pshm node 0 of 1, process 10 of 24, pid=38580)
+UPCR: UPC thread 11 of 24 on nid00202 (pshm node 0 of 1, process 11 of 24, pid=38581)
+UPCR: UPC thread 13 of 24 on nid00202 (pshm node 0 of 1, process 13 of 24, pid=38583)
+UPCR: UPC thread 14 of 24 on nid00202 (pshm node 0 of 1, process 14 of 24, pid=38584)
+UPCR: UPC thread 15 of 24 on nid00202 (pshm node 0 of 1, process 15 of 24, pid=38585)
+UPCR: UPC thread 16 of 24 on nid00202 (pshm node 0 of 1, process 16 of 24, pid=38586)
+UPCR: UPC thread 17 of 24 on nid00202 (pshm node 0 of 1, process 17 of 24, pid=38587)
+UPCR: UPC thread 18 of 24 on nid00202 (pshm node 0 of 1, process 18 of 24, pid=38588)
+UPCR: UPC thread 19 of 24 on nid00202 (pshm node 0 of 1, process 19 of 24, pid=38589)
+UPCR: UPC thread 20 of 24 on nid00202 (pshm node 0 of 1, process 20 of 24, pid=38590)
+UPCR: UPC thread 21 of 24 on nid00202 (pshm node 0 of 1, process 21 of 24, pid=38591)
+UPCR: UPC thread 23 of 24 on nid00202 (pshm node 0 of 1, process 23 of 24, pid=38593)
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Loading kmlist
+Line length: 23
+Kmer count:  4514197
+Kmer length: 19
+Initializing hash table
+Reading file
+Loading kmlist
+Generating contigs...
+Contigs generated: 5736
+/global/u1/r/rbarnes/cs267/hw3/src/./pgen: Input set: /scratch2/scratchdirs/rbarnes/data/test
+Number of UPC threads: 24
+Input reading time: 0.422841 seconds
+Graph traversal time: 0.132556 seconds
+Kmlist offload: 0.233649 seconds
+Total time: 0.789046s
+Loading kmlist
